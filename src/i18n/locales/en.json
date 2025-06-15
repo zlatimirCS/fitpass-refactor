@@ -1,0 +1,19 @@
+{
+  "home": {
+    "title": "Welcome to Our Website",
+    "description": "Your one-stop destination for all your needs"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are a passionate team dedicated to creating amazing experiences",
+    "mission": "Our Mission",
+    "missionText": "To provide innovative solutions that make a difference in people's lives",
+    "vision": "Our Vision",
+    "visionText": "To be the leading platform in our industry, known for excellence and innovation"
+  }
+}

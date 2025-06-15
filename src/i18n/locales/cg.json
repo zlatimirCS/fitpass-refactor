@@ -1,0 +1,19 @@
+{
+  "home": {
+    "title": "Bienvenue sur Notre Site Web",
+    "description": "Votre destination unique pour tous vos besoins"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "description": "Nous sommes une équipe passionnée dédiée à la création d'expériences incroyables",
+    "mission": "Notre Mission",
+    "missionText": "Fournir des solutions innovantes qui font une différence dans la vie des gens",
+    "vision": "Notre Vision",
+    "visionText": "Être la plateforme leader dans notre industrie, reconnue pour l'excellence et l'innovation"
+  }
+}
