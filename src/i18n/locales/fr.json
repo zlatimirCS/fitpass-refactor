@@ -6,7 +6,8 @@
   "navigation": {
     "home": "Accueil",
     "about": "À Propos",
-    "contact": "Contact"
+    "contact": "Contact",
+    "explore-network": "Explorer le Réseau"
   },
   "about": {
     "title": "À Propos de Nous",
@@ -15,5 +16,13 @@
     "missionText": "Fournir des solutions innovantes qui font une différence dans la vie des gens",
     "vision": "Notre Vision",
     "visionText": "Être la plateforme leader dans notre industrie, reconnue pour l'excellence et l'innovation"
+  },
+  "explore-network": {
+    "title": "Explorez Notre Réseau",
+    "description": "Découvrez des installations et des équipements incroyables dans notre réseau",
+    "search": "Rechercher des installations",
+    "filter": "Filtrer par",
+    "categories": "Catégories",
+    "location": "Emplacement"
   }
 }

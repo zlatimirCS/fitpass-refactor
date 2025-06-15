@@ -23,6 +23,18 @@ export default createMiddleware({
       sr: "/kontakt",
       fr: "/contact",
     },
+    "/explore-network": {
+      en: "/explore-network",
+      cg: "/istrazi-mrezu",
+      sr: "/istrazi-mrezu",
+      fr: "/explorer-reseau",
+    },
+    "/explore-network/[slug]": {
+      en: "/explore-network/[slug]",
+      cg: "/istrazi-mrezu/[slug]",
+      sr: "/istrazi-mrezu/[slug]",
+      fr: "/explorer-reseau/[slug]",
+    },
   },
 });
 

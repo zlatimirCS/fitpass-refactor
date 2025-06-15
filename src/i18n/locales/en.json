@@ -6,7 +6,8 @@
   "navigation": {
     "home": "Home",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "explore-network": "Explore Network"
   },
   "about": {
     "title": "About Us",
@@ -15,5 +16,13 @@
     "missionText": "To provide innovative solutions that make a difference in people's lives",
     "vision": "Our Vision",
     "visionText": "To be the leading platform in our industry, known for excellence and innovation"
+  },
+  "explore-network": {
+    "title": "Explore Our Network",
+    "description": "Discover amazing venues and facilities in our network",
+    "search": "Search venues",
+    "filter": "Filter by",
+    "categories": "Categories",
+    "location": "Location"
   }
 }

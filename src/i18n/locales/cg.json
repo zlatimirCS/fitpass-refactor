@@ -1,19 +1,28 @@
 {
   "home": {
-    "title": "Bienvenue sur Notre Site Web",
-    "description": "Votre destination unique pour tous vos besoins"
+    "title": "Dobrodošli na našu web stranicu",
+    "description": "Vaša destinacija za sve vaše potrebe"
   },
   "navigation": {
-    "home": "Accueil",
-    "about": "À Propos",
-    "contact": "Contact"
+    "home": "Početna",
+    "about": "O nama",
+    "contact": "Kontakt",
+    "explore-network": "Istraži mrežu"
   },
   "about": {
-    "title": "À Propos de Nous",
-    "description": "Nous sommes une équipe passionnée dédiée à la création d'expériences incroyables",
-    "mission": "Notre Mission",
-    "missionText": "Fournir des solutions innovantes qui font une différence dans la vie des gens",
-    "vision": "Notre Vision",
-    "visionText": "Être la plateforme leader dans notre industrie, reconnue pour l'excellence et l'innovation"
+    "title": "O nama",
+    "description": "Mi smo strastveni tim posvećen stvaranju nevjerovatnih iskustava",
+    "mission": "Naša misija",
+    "missionText": "Pružiti inovativna rješenja koja čine razliku u životima ljudi",
+    "vision": "Naša vizija",
+    "visionText": "Biti vodeća platforma u našoj industriji, poznata po izvrsnosti i inovacijama"
+  },
+  "explore-network": {
+    "title": "Istražite našu mrežu",
+    "description": "Otkrijte nevjerovatne objekte i sadržaje u našoj mreži",
+    "search": "Pretraži objekte",
+    "filter": "Filtriraj po",
+    "categories": "Kategorije",
+    "location": "Lokacija"
   }
 }

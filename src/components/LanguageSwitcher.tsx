@@ -24,8 +24,16 @@ export default function LanguageSwitcher() {
         // Try to find the logical page key for the current path
         const currentPath = segments[2];
         const logicalKey = reversePathMapping[locale][currentPath];
+
         if (logicalKey && pathMapping[newLocale][logicalKey]) {
-          newPath = `/${newLocale}/${pathMapping[newLocale][logicalKey]}`;
+          // If we have a slug (segments[3]), include it in the new path
+          if (segments.length > 3) {
+            newPath = `/${newLocale}/${
+              pathMapping[newLocale][logicalKey]
+            }/${segments.slice(3).join("/")}`;
+          } else {
+            newPath = `/${newLocale}/${pathMapping[newLocale][logicalKey]}`;
+          }
         } else {
           // fallback: just swap locale
           newPath = `/${newLocale}/${segments.slice(2).join("/")}`;
