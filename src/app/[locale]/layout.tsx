@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { AppProvider } from "@/context/AppProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,10 +35,12 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <header className="container mx-auto px-4 py-4 flex justify-end">
-            <LanguageSwitcher />
-          </header>
-          {children}
+          <AppProvider>
+            <header className="container mx-auto px-4 py-4 flex justify-end">
+              <LanguageSwitcher />
+            </header>
+            {children}
+          </AppProvider>
         </NextIntlClientProvider>
       </body>
     </html>

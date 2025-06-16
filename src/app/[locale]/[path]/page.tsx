@@ -10,7 +10,11 @@ import {
   type Locale,
 } from "@/i18n/pathMapping";
 
-export default function DynamicPage({ params }: { params: { path: string } }) {
+export default async function DynamicPage({
+  params,
+}: {
+  params: { path: string };
+}) {
   const locale = useLocale() as Locale;
   const t = useTranslations();
 
