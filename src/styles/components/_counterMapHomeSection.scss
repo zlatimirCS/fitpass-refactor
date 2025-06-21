@@ -85,7 +85,7 @@
   }
   &__inner {
     position: relative;
-    background: url("/assets/images/fitpass-map-img.png");
+    background: url('/assets/images/fitpass-map-img.png');
     box-shadow: none;
     height: 100%;
     max-width: 67rem;
@@ -94,11 +94,12 @@
     align-items: center;
     justify-content: center;
     @media (min-width: 1024px) {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;

@@ -1,6 +1,6 @@
 .explore-network-coming-soon {
   position: relative;
-  background-image: url("/assets/images/Networkpic.webp");
+  background-image: url('/assets/images/Networkpic.webp');
   background-repeat: no-repeat;
   // background-size: cover;
   // background-position: top center;
@@ -11,7 +11,7 @@
   @media (min-width: 1024px) {
     min-height: calc(100vh - 153px);
     padding: 12rem 0 0 0;
-    background-image: url("/assets/images/Networkpic.webp");
+    background-image: url('/assets/images/Networkpic.webp');
     background-repeat: no-repeat;
     background-position: 26% 41%;
   }

@@ -1,8 +1,8 @@
 import CompaniesPartnersGrid from './CompaniesPartnersGrid';
 import EveryoneWinsHomeSection from './EveryoneWinsHomeSection';
-import {CmsDataHp} from '@/types/types'; // Adjust the import path as necessary
+import { CmsDataHp } from '@/types/types'; // Adjust the import path as necessary
 
-const HomepageContent = ({cmsDataHp}: CmsDataHp) => {
+const HomepageContent = ({ cmsDataHp }: CmsDataHp) => {
   if (!cmsDataHp) {
     return <p>There was an error loading data</p>;
   }

@@ -149,10 +149,10 @@
         line-height: 1.1;
       }
     }
-    & input[type="text"],
-    & input[type="email"],
-    & input[type="number"],
-    & input[type="tel"] {
+    & input[type='text'],
+    & input[type='email'],
+    & input[type='number'],
+    & input[type='tel'] {
       width: 100%;
       border: none;
       background-color: transparent;
@@ -196,7 +196,7 @@
       padding-left: 8px;
       border-radius: 0;
       font-size: 18px;
-      background-image: url("/assets/icons/arrow-down-s-line.svg"); // Path to your custom arrow image
+      background-image: url('/assets/icons/arrow-down-s-line.svg'); // Path to your custom arrow image
       background-repeat: no-repeat;
       background-position: right 0px center; // Adjusts the position of the arrow
       background-size: 25px; // Adjusts the size of the arrow
@@ -211,7 +211,7 @@
       // align-items: center;
       gap: 1rem;
       // padding-left: 2rem;
-      & input[type="checkbox"] {
+      & input[type='checkbox'] {
         -webkit-appearance: none;
         width: 20px;
         height: 20px;
@@ -222,7 +222,7 @@
         cursor: pointer;
         flex-shrink: 0;
         &:checked::after {
-          content: "";
+          content: '';
           position: absolute;
           left: 7px;
           top: 3px;

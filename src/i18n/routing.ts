@@ -1,4 +1,4 @@
-import {defineRouting} from 'next-intl/routing';
+import { defineRouting } from 'next-intl/routing';
 
 export const routing = defineRouting({
   locales: ['en', 'de'],
@@ -6,7 +6,7 @@ export const routing = defineRouting({
   pathnames: {
     '/': '/',
     '/about': {
-      de: '/ueber'
-    }
-  }
+      de: '/ueber',
+    },
+  },
 });

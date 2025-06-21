@@ -1,5 +1,5 @@
-import React, {memo} from 'react';
-import {BtnFormProps} from '@/types/types';
+import { BtnFormProps } from '@/types/types';
+import { memo } from 'react';
 
 const BtnForm = ({
   text,
@@ -9,11 +9,11 @@ const BtnForm = ({
   primaryBg,
   white,
   noHover,
-  onClick
+  onClick,
 }: BtnFormProps) => {
   return (
     <button
-      type="submit"
+      type='submit'
       className={`btn-form ${noHover ? 'no-hover' : ''} ${
         primary ? 'primary' : 'secondary'
       } ${bigger ? 'bigger' : ''} ${letterSpace ? 'letter-space' : ''}

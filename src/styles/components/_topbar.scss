@@ -144,8 +144,8 @@
       gap: 15px;
       margin-bottom: 25px;
     }
-    & input[type="text"],
-    & input[type="email"] {
+    & input[type='text'],
+    & input[type='email'] {
       width: 100%;
       border: none;
       background-color: transparent;
@@ -196,7 +196,7 @@
     gap: 1rem;
     // padding-left: 2rem;
     margin-top: 10px;
-    & input[type="checkbox"] {
+    & input[type='checkbox'] {
       -webkit-appearance: none;
       width: 20px;
       height: 20px;
@@ -207,7 +207,7 @@
       cursor: pointer;
       flex-shrink: 0;
       &:checked::after {
-        content: "";
+        content: '';
         position: absolute;
         left: 9px;
         top: 5px;

@@ -1,5 +1,5 @@
 .home-page-slider-wrapper {
-  background-image: url("/assets/images/fitpass-arrived-v2.webp");
+  background-image: url('/assets/images/fitpass-arrived-v2.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 55% 80%;
@@ -18,7 +18,7 @@
   @media (min-width: 1024px) {
     max-height: 700px;
     background-position: 50% 50%;
-    background-image: url("/assets/images/fitpass-arrived-slider-image.webp");
+    background-image: url('/assets/images/fitpass-arrived-slider-image.webp');
   }
   &--header {
     @media (min-width: 1024px) {

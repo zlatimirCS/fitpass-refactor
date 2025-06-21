@@ -21,7 +21,7 @@
     bottom: -2rem;
     width: 80rem;
     height: 51.2rem;
-    background-image: url("/assets/images/ilustration-background-header.png");
+    background-image: url('/assets/images/ilustration-background-header.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right bottom;
@@ -139,9 +139,9 @@
 }
 
 .home-page-slider-wrapper.home-page-slider-wrapper--header.custom {
-  background-image: url("/assets/dummyImages/mobile-v.jpg");
+  background-image: url('/assets/dummyImages/mobile-v.jpg');
   @media (min-width: 1024px) {
-    background-image: url("/assets/dummyImages/hero-custom-slider.jpg");
+    background-image: url('/assets/dummyImages/hero-custom-slider.jpg');
   }
 }
 

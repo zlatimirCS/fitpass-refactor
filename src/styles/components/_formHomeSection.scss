@@ -39,10 +39,10 @@
 }
 
 .form-home-right {
-  & input[type="text"],
-  & input[type="email"],
-  & input[type="tel"],
-  & input[type="number"] {
+  & input[type='text'],
+  & input[type='email'],
+  & input[type='tel'],
+  & input[type='number'] {
     width: 100%;
     padding: 1.5rem 2rem;
     border: none;
@@ -95,7 +95,7 @@
     align-items: center;
     gap: 1.5rem;
     padding-left: 2rem;
-    & input[type="checkbox"] {
+    & input[type='checkbox'] {
       -webkit-appearance: none;
       width: 25px;
       height: 25px;
@@ -105,7 +105,7 @@
       position: relative;
       cursor: pointer;
       &:checked::after {
-        content: "";
+        content: '';
         position: absolute;
         left: 9px;
         top: 5px;

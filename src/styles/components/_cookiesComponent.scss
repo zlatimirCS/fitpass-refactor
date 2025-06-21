@@ -100,7 +100,7 @@
     display: block;
   }
   ol > li:before {
-    content: counters(item, ".") " ";
+    content: counters(item, '.') ' ';
     counter-increment: item;
   }
   ul {
@@ -112,7 +112,7 @@
   }
   ul li {
     &::before {
-      content: "• ";
+      content: '• ';
     }
     margin-bottom: 5px;
   }

@@ -3,7 +3,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "lint": "eslint src && tsc && prettier src --check",
+    "lint": "eslint src && tsc && prettier --check .",
+    "lint:fix": "eslint src --fix && prettier --write .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "pnpm run test:playwright && pnpm run test:jest",
     "test:playwright": "playwright test",
     "test:jest": "jest",
@@ -37,10 +40,5 @@
     "postcss": "^8.5.3",
     "prettier": "^3.3.3",
     "typescript": "^5.5.3"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "bracketSpacing": false,
-    "trailingComma": "none"
   }
 }

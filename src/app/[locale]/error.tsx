@@ -1,7 +1,7 @@
 'use client';
 
-import {useTranslations} from 'next-intl';
-import {useEffect} from 'react';
+import { useTranslations } from 'next-intl';
+import { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
   reset(): void;
 };
 
-export default function Error({error, reset}: Props) {
+export default function Error({ error, reset }: Props) {
   const t = useTranslations('Error');
 
   useEffect(() => {
@@ -20,16 +20,16 @@ export default function Error({error, reset}: Props) {
     <PageLayout title={t('title')}>
       <div>
         {t.rich('description', {
-          p: (chunks) => <p className="mt-4">{chunks}</p>,
-          retry: (chunks) => (
+          p: chunks => <p className='mt-4'>{chunks}</p>,
+          retry: chunks => (
             <button
-              className="text-white underline underline-offset-2"
+              className='text-white underline underline-offset-2'
               onClick={reset}
-              type="button"
+              type='button'
             >
               {chunks}
             </button>
-          )
+          ),
         })}
       </div>
     </PageLayout>
