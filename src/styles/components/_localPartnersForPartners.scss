@@ -1,0 +1,113 @@
+.local-partners-for-partners {
+  // padding: 7rem;
+  padding: 4.5rem 0 4.5rem 0;
+  & .local-partners-for-companies__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem;
+    background-color: #f5f6f7;
+    border-radius: 15px;
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      padding: 7rem;
+    }
+    & article {
+      width: 100%;
+      margin-bottom: 6rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @media (min-width: 1024px) {
+        width: 50%;
+        margin-bottom: 0;
+      }
+      & h2 {
+        font-size: 24px;
+        margin-bottom: 5.6rem;
+        line-height: 1.2;
+        @media (min-width: 960px) {
+          font-size: 32px;
+        }
+        & span {
+          font-weight: 400;
+          display: block;
+          &.bold {
+            font-weight: 800;
+          }
+        }
+      }
+      &.flex-article {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & .inner-flex-article {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          & img {
+            width: 100%;
+            max-width: 300px;
+            max-height: 100px;
+            object-fit: contain;
+            object-position: bottom center;
+          }
+        }
+        & p {
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: 800;
+          font-size: 44px;
+        }
+      }
+    }
+  }
+  & .simple-steps-container {
+    margin-bottom: 5.6rem;
+    & .simple-step {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 50px;
+      align-items: flex-start;
+      @media (min-width: 960px) {
+        gap: 15px;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      & .simple-step-icon {
+        width: 30px;
+        height: 30px;
+        background-color: $primaryColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        font-weight: 800;
+        border-radius: 50%;
+        line-height: 1;
+        flex-shrink: 0;
+        font-size: 16px;
+      }
+      & .simple-step-content {
+        padding-top: 5px;
+        & h3 {
+          font-size: 16px;
+          color: #373737;
+          line-height: 1;
+          margin-bottom: 10px;
+          font-weight: 800;
+          @media (min-width: 960px) {
+            font-size: 18px;
+          }
+        }
+        & p {
+          font-size: 16px;
+          color: #7a7a7a;
+          line-height: 1.4;
+          // font-weight: 600;
+        }
+      }
+    }
+  }
+}

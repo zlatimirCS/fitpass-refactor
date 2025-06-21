@@ -1,0 +1,82 @@
+.company-employees {
+  position: relative;
+  padding: 6rem 0 9rem 0;
+  background-color: $lightGray;
+  overflow: hidden;
+  color: $primaryColor;
+  @media (min-width: 567px) {
+    padding: 9rem 0 9rem 0;
+  }
+}
+
+.company-employees-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 430px;
+    & h2 {
+      font-weight: 800;
+      text-align: center;
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+      &.secondary {
+        color: $mainBlue;
+      }
+    }
+    & p {
+      font-size: 3rem;
+      text-align: center;
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+      &.secondary {
+        color: $mainBlue;
+      }
+    }
+    & ul {
+      margin-top: 4rem;
+      max-width: 300px;
+      @media (min-width: 768px) {
+        max-width: 100%;
+      }
+      &.mb {
+        margin-bottom: 6rem;
+      }
+      & li {
+        font-size: 2.2rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 2rem;
+        color: #2e272d;
+        @media (min-width: 1024px) {
+          font-size: 2rem;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        & img {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+          object-position: center;
+          margin-top: 5px;
+        }
+      }
+    }
+    & .btn-form {
+      align-self: center;
+    }
+  }
+}

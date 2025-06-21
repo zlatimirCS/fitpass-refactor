@@ -1,0 +1,113 @@
+.explore-network-search-result-section {
+  & .wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 24px 20px;
+    gap: 16px;
+    margin: 0 auto;
+
+    @media (min-width: 1024px) {
+      padding: 40px 20px;
+    }
+
+    & .search-result-wrapper,
+    .sorters-wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    & .search-result-wrapper {
+      display: flex;
+      gap: 18px;
+
+      & .result {
+        font-size: 24px;
+        color: #373737;
+        font-weight: bold;
+      }
+
+      & .locations {
+        font-size: 20px;
+        font-weight: bold;
+        color: #e64410;
+      }
+
+      & button {
+        border: 1px solid #eaeaea;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        overflow: visible;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        padding: 8px 24px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #a09e9e;
+        border-radius: 19px;
+      }
+    }
+
+    & .sorters-wrapper {
+      display: flex;
+      gap: 18px;
+
+      & p {
+        font-size: 20px;
+        color: #aaaaaa;
+        font-weight: 500;
+      }
+
+      & .btns-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+
+        & button {
+          border: 1px solid #eaeaea;
+          margin: 0;
+          padding: 0;
+          width: auto;
+          overflow: visible;
+          background: transparent;
+          color: inherit;
+          font: inherit;
+          padding: 8px 16px;
+          font-size: 14px;
+          font-weight: 500;
+          color: #a09e9e;
+          border-radius: 19px;
+
+          &.choosen {
+            color: $mainBlue;
+            border: 2px solid $mainBlue;
+          }
+        }
+      }
+    }
+  }
+
+  & .products-grid {
+    padding: 0 0 100px;
+
+    & .products-grid-wrapper {
+      position: relative;
+      // width: 95vw;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      column-gap: 35px;
+      padding: 0 16px;
+
+      @media (min-width: 600px) {
+        gap: 80px;
+        column-gap: 35px;
+      }
+    }
+  }
+}

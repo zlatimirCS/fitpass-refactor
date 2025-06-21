@@ -1,31 +1,7 @@
 import Link from 'next/link';
+import {CmsDataHp} from '@/types/types';
 
-type MainHpData = {
-  section1Card1Icon?: string;
-  section1Card1Title?: string;
-  section1Card1SubtitlePart1?: string;
-  section1Card1SubtitlePart2?: string;
-  section1Card1ButtonUrl?: string;
-  section1Card1ButtonText?: string;
-  section1Card2Icon?: string;
-  section1Card2Title?: string;
-  section1Card2SubtitlePart1?: string;
-  section1Card2SubtitlePart2?: string;
-  section1Card2ButtonUrl?: string;
-  section1Card2ButtonText?: string;
-};
-
-interface CompaniesPartnersGridProps {
-  mainHpData?: MainHpData;
-}
-
-const CompaniesPartnersGrid = async ({
-  mainHpData
-}: CompaniesPartnersGridProps) => {
-  if (!mainHpData) {
-    return <p>There was an error loading data</p>;
-  }
-
+const CompaniesPartnersGrid = ({cmsDataHp}: CmsDataHp) => {
   return (
     <>
       <section className="explore-network-coming-soon-content topBottomSpacing">
@@ -36,8 +12,8 @@ const CompaniesPartnersGrid = async ({
                 <div
                   style={{
                     backgroundImage: `url(${
-                      mainHpData
-                        ? mainHpData?.section1Card1Icon
+                      cmsDataHp
+                        ? cmsDataHp?.section1Card1Icon
                         : '/assets/icons/iconComp.svg'
                     })`
                   }}
@@ -45,30 +21,30 @@ const CompaniesPartnersGrid = async ({
                 ></div>
                 <div>
                   <h3>
-                    {mainHpData?.section1Card1Title
-                      ? mainHpData?.section1Card1Title
+                    {cmsDataHp?.section1Card1Title
+                      ? cmsDataHp?.section1Card1Title
                       : ''}
                   </h3>
                   <p>
-                    {mainHpData?.section1Card1SubtitlePart1
-                      ? mainHpData?.section1Card1SubtitlePart1
+                    {cmsDataHp?.section1Card1SubtitlePart1
+                      ? cmsDataHp?.section1Card1SubtitlePart1
                       : ''}
                     <br />
-                    {mainHpData?.section1Card1SubtitlePart2
-                      ? mainHpData?.section1Card1SubtitlePart2
+                    {cmsDataHp?.section1Card1SubtitlePart2
+                      ? cmsDataHp?.section1Card1SubtitlePart2
                       : ''}
                   </p>
                 </div>
                 <Link
                   href={
-                    mainHpData?.section1Card1ButtonUrl
-                      ? mainHpData?.section1Card1ButtonUrl
+                    cmsDataHp?.section1Card1ButtonUrl
+                      ? cmsDataHp?.section1Card1ButtonUrl
                       : '/'
                   }
                 >
                   <button className="card-btn">
-                    {mainHpData?.section1Card1ButtonText
-                      ? mainHpData?.section1Card1ButtonText
+                    {cmsDataHp?.section1Card1ButtonText
+                      ? cmsDataHp?.section1Card1ButtonText
                       : ''}
                   </button>
                 </Link>
@@ -78,38 +54,38 @@ const CompaniesPartnersGrid = async ({
                   className="card-icon"
                   style={{
                     backgroundImage: `url(${
-                      mainHpData?.section1Card2Icon
-                        ? mainHpData?.section1Card2Icon
+                      cmsDataHp?.section1Card2Icon
+                        ? cmsDataHp?.section1Card2Icon
                         : '/assets/icons/iconPartn.svg'
                     })`
                   }}
                 ></div>
                 <div>
                   <h3>
-                    {mainHpData?.section1Card2Title
-                      ? mainHpData?.section1Card2Title
+                    {cmsDataHp?.section1Card2Title
+                      ? cmsDataHp?.section1Card2Title
                       : ''}
                   </h3>
                   <p>
-                    {mainHpData?.section1Card2SubtitlePart1
-                      ? mainHpData?.section1Card2SubtitlePart1
+                    {cmsDataHp?.section1Card2SubtitlePart1
+                      ? cmsDataHp?.section1Card2SubtitlePart1
                       : ''}
                     <br />
-                    {mainHpData?.section1Card2SubtitlePart2
-                      ? mainHpData?.section1Card2SubtitlePart2
+                    {cmsDataHp?.section1Card2SubtitlePart2
+                      ? cmsDataHp?.section1Card2SubtitlePart2
                       : ''}
                   </p>
                 </div>
                 <Link
                   href={
-                    mainHpData?.section1Card2ButtonUrl
-                      ? mainHpData?.section1Card2ButtonUrl
+                    cmsDataHp?.section1Card2ButtonUrl
+                      ? cmsDataHp?.section1Card2ButtonUrl
                       : '/'
                   }
                 >
                   <button className="card-btn">
-                    {mainHpData?.section1Card2ButtonText
-                      ? mainHpData?.section1Card2ButtonText
+                    {cmsDataHp?.section1Card2ButtonText
+                      ? cmsDataHp?.section1Card2ButtonText
                       : ''}
                   </button>
                 </Link>

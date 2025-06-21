@@ -1,0 +1,61 @@
+.home-page-slider-wrapper {
+  background-image: url("/assets/images/fitpass-arrived-v2.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 55% 80%;
+  // height: 110rem;
+  // max-height: 700px;
+  height: calc(100vh - 210px);
+  @media (min-width: 280px) {
+    height: calc(100vh - 220px);
+  }
+  @media (min-width: 411px) {
+    height: calc(100vh - 250px);
+  }
+  @media (min-width: 768px) {
+    max-height: 800px;
+  }
+  @media (min-width: 1024px) {
+    max-height: 700px;
+    background-position: 50% 50%;
+    background-image: url("/assets/images/fitpass-arrived-slider-image.webp");
+  }
+  &--header {
+    @media (min-width: 1024px) {
+      height: calc(100vh - 100px);
+    }
+    background-size: cover;
+    &.for-companies {
+      background-position: 75% 100%;
+      @media (min-width: 411px) {
+        background-position: 75% 100%;
+      }
+      @media (min-width: 567px) {
+        background-position: 75% 100%;
+      }
+      @media (min-width: 1024px) {
+        background-position: 50% 100%;
+      }
+    }
+  }
+}
+
+.swiper-pagination {
+  bottom: 5px !important;
+}
+
+.swiper-pagination-bullet {
+  background: transparent !important;
+  border: 1px solid $white !important;
+  width: 10px !important;
+  height: 10px !important;
+  opacity: 1 !important;
+  @media (min-width: 1024px) {
+    width: 15px !important;
+    height: 15px !important;
+    border: 2px solid $white !important;
+  }
+  &-active {
+    background: $white !important;
+  }
+}

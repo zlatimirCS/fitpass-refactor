@@ -1,0 +1,31 @@
+.for-partners-info {
+  padding: 4.5rem 0 4.5rem 0;
+  & h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #373737;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    @media (min-width: 960px) {
+      font-size: 32px;
+    }
+  }
+  & .wrapper-accordions {
+    @media (min-width: 1024px) {
+      max-width: 50%;
+    }
+  }
+  & .for-partners-acc-title {
+    font-size: 16px;
+    color: 373737;
+    font-weight: 800;
+    @media (min-width: 1024px) {
+      font-size: 18px;
+    }
+  }
+  & .for-partners-acc-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: #7a7a7a;
+  }
+}

@@ -1,0 +1,67 @@
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  color: $primaryColor;
+  background-color: #f5f6f7;
+  border-radius: 10px;
+  padding: 2.5rem;
+  align-items: center;
+  min-height: 31rem;
+  padding: 4rem;
+  @media (min-width: 1024px) {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.4s;
+    filter: grayscale(0%);
+    padding: 3.5rem;
+  }
+
+  & .benefit-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: 1024px) {
+      width: 50%;
+    }
+  }
+
+  & .title {
+    font-size: 18px;
+    font-weight: 800;
+    color: $primaryColor;
+    text-align: center;
+    line-height: 1.2;
+    @media (min-width: 1024px) {
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+  & .subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: #373737;
+    text-align: center;
+    @media (min-width: 1024px) {
+      text-align: left;
+    }
+  }
+  & img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    object-position: top left;
+
+    @media (min-width: 1024px) {
+      width: 120px;
+      height: 120px;
+      object-position: unset;
+    }
+  }
+  // &:active {
+  //   transform: scale(0.98);
+  // }
+}

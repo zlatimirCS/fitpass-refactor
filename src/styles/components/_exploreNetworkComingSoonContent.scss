@@ -1,0 +1,14 @@
+.explore-network-coming-soon-content {
+  & .hero-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    // background-color: yellow;
+    // background-image: url("/assets/images/card-img-left.png");
+    background-size: contain;
+    background-position: center !important;
+    background-repeat: no-repeat;
+  }
+}

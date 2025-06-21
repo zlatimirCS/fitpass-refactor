@@ -1,0 +1,40 @@
+// FITPASS MEMBERSHIP SECTION HOME
+.membership-home {
+  position: relative;
+  padding: 9rem 0 9rem 0;
+  color: $white;
+  @media (min-width: 567px) {
+    padding: 20rem 0 17rem 0;
+  }
+  & h2 {
+    position: relative;
+  }
+  & span {
+    font-weight: 400;
+    display: block;
+    &.bold {
+      font-weight: 800;
+    }
+  }
+}
+
+.membership-home__head {
+  position: relative;
+  margin-bottom: 6rem;
+  z-index: 3;
+}
+
+.membership-home__bottom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 3;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100rem;
+  }
+}
+// FITPASS MEMBERSHIP SECTION HOME

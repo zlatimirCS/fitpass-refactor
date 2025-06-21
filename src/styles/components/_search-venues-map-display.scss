@@ -1,0 +1,278 @@
+.search-venues-map-display {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  & .modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    @media (min-width: 1200px) {
+      height: 90%;
+      width: 90%;
+      top: 5%;
+      left: 5%;
+      bottom: 5%;
+      right: 5%;
+      // transform: translate(-50%, -50%);
+      border-radius: 5px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      height: 90%;
+    }
+    & .modal-header {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: flex-end;
+      & img {
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    & .modal-body {
+      flex: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column-reverse;
+
+      @media (min-width: 1200px) {
+        flex-direction: row;
+        overflow: hidden;
+      }
+      & aside {
+        display: flex;
+        flex-direction: column;
+        // gap: 20px;
+        width: 100%;
+        overflow-y: auto;
+
+        // customize scroolbar and thick and track
+        &::-webkit-scrollbar {
+          height: 10px;
+          width: 10px;
+        }
+        &::-webkit-scrollbar-track {
+          border-radius: 5px;
+          background-color: #dfe9eb;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 5px;
+          background-color: #6f6f6f;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          // background-color: #9c9c9c;
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+          background-color: #9c9c9c;
+        }
+        @media (min-width: 1200px) {
+          width: 40%;
+          gap: 20px;
+          padding: 10px;
+        }
+
+        .modal-single-venue-card {
+          display: flex;
+          //   gap: 20px;
+
+          // overflow: hidden;
+          min-height: 150px;
+          // cursor: pointer;
+          border-bottom: 1px solid #d9d9d9;
+          @media (hover: none) {
+            cursor: initial;
+          }
+          @media (min-width: 411px) {
+            min-height: 180px;
+          }
+          @media (min-width: 1200px) {
+            border: none;
+            // border: 1px solid #d9d9d9;
+            // border-radius: 20px;
+          }
+        }
+
+        .modal-single-venue-card__image-wrapper {
+          width: 40%;
+          height: 100%;
+          flex-shrink: 0;
+          overflow: hidden;
+          @media (min-width: 411px) {
+            width: 45%;
+          }
+          @media (min-width: 768px) {
+            width: 30%;
+          }
+          @media (min-width: 1200px) {
+            border: 1px solid #d9d9d9;
+            border-right: none;
+            width: 45%;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            overflow: hidden;
+          }
+          @media (min-width: 1600px) {
+            width: 35%;
+          }
+        }
+
+        .modal-single-venue-card__image {
+          width: 100%;
+          height: 100%;
+          background-color: #d9d9d9;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          flex-shrink: 0;
+          cursor: pointer;
+          @media (hover: none) {
+            cursor: initial;
+          }
+          // transition: all 1s ease;
+          // &:hover {
+          //   transform: scale(1.1);
+          // }
+        }
+
+        .modal-single-venue-card__content {
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+          // background-color: aqua;
+          justify-content: space-between;
+          @media (min-width: 411px) {
+            padding: 20px;
+          }
+          @media (min-width: 1200px) {
+            border: 1px solid #d9d9d9;
+            border-left: none;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            // overflow: hidden;
+          }
+          // @media (min-width: 567px) {
+          //   padding: 20px 30px;
+          // }
+          & img {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+            object-position: center;
+            &.smaller {
+              transform: scale(0.9);
+            }
+            &.small {
+              transform: scale(0.7);
+            }
+          }
+          & span {
+            font-size: 12px;
+            line-height: 1;
+            font-weight: 500;
+            color: #474244;
+            @media (min-width: 411px) {
+              font-size: 15px;
+            }
+            &.lighter {
+              text-transform: uppercase;
+              color: #888888;
+              font-size: 13px;
+              letter-spacing: 1.5px;
+              font-weight: 600;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+            &.orange {
+              color: #e5431f;
+              font-size: 18px;
+              font-weight: 700;
+            }
+          }
+        }
+
+        .modal-single-venue-card__title {
+          font-size: 18px;
+          line-height: 1.1;
+          color: $secondaryColor;
+          cursor: pointer;
+          @media (hover: none) {
+            cursor: none;
+          }
+          @media (min-width: 411px) {
+            font-size: 20px;
+          }
+          &:hover {
+            color: #e5431f;
+          }
+        }
+
+        .location-and-rating {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .modal-single-venue-card-item {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            @media (min-width: 411px) {
+              gap: 10px;
+            }
+          }
+        }
+      }
+      & article {
+        width: 100%;
+        height: 500px;
+        background-color: lightcoral;
+        @media (min-width: 1200px) {
+          width: 60%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.sidebar-venue-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: red;
+  &:hover {
+    background-color: #f9f9f9;
+  }
+  & img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  & .venue-info {
+    & h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    & p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.explore-network-search-favorites-section {
+  // background-color: $lightGray;
+  padding: 4.5rem 0;
+
+  & .wrapper {
+    & .title {
+      & p {
+        font-size: 36px;
+        color: inherit;
+        font-weight: 800;
+      }
+    }
+    & .title-head {
+      margin-bottom: 2rem;
+    }
+  }
+}

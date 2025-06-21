@@ -1,0 +1,145 @@
+// customization for input range slider on homepage
+.MuiSlider-root {
+  margin-bottom: 0;
+}
+
+.MuiSlider-thumb {
+  background-color: $primaryColor;
+}
+
+.MuiSlider-rail {
+  background-color: #142e6f;
+  height: 5px;
+}
+
+.MuiSlider-track {
+  background-color: $primaryColor;
+  height: 5px;
+}
+
+.MuiSlider-valueLabelOpen {
+  background-color: $primaryColor;
+  color: $white;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.MuiSlider-markLabel {
+  transform: translate(-50%, -55px);
+  color: #9fb0d9;
+  font-size: 18px;
+}
+
+.MuiChip-label {
+  overflow: initial !important;
+}
+// customization for input range slider on homepage
+
+// accordions on explore network page
+.explore-network-filters-wrap--desktop,
+.mobile-filters-wrapper {
+  & .MuiAccordion-root {
+    box-shadow: none;
+    border: 1px solid #eaeaea;
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    overflow: hidden;
+    &.Mui-expanded {
+      border: 1px solid $primaryColor;
+    }
+  }
+
+  & .MuiInputBase-root {
+    border-radius: 40px;
+    padding-right: 0 !important;
+
+    & input {
+      font-size: 16px;
+      font-family: $primaryFont;
+    }
+
+    &.Mui-disabled {
+      & fieldset {
+        // border: 2px solid #bcbcbc;
+      }
+    }
+
+    & fieldset {
+      // border: 2px solid #bcbcbc;
+    }
+  }
+
+  & .MuiFormControl-root {
+    margin: 0;
+  }
+
+  & .MuiAccordionSummary-root,
+  .MuiFormControl-root,
+  .MuiAutocomplete-root {
+    background-color: #fff;
+
+    & span {
+      font-size: 16px;
+      font-family: $primaryFont;
+      color: #aaaaaa;
+    }
+  }
+
+  & .MuiPaper-root {
+    margin: 12px 0;
+    & p.accordion-title {
+      color: #aaaaaa;
+    }
+  }
+
+  & .MuiAccordionSummary-root.Mui-expanded {
+    min-height: unset;
+    & p.accordion-title {
+      color: $primaryColor;
+    }
+  }
+
+  & .MuiAccordionDetails-root {
+    padding: 0 16px 16px;
+  }
+}
+// accordions on explore network page
+
+// accordions on faq questions page
+.faq-desktop {
+  // & .MuiAccordion-root {
+  //   box-shadow: none;
+  //   border-bottom: 1px solid #adadad;
+  //   overflow: hidden;
+  //   background-color: transparent;
+  // }
+  // & .MuiAccordionSummary-content.Mui-expanded {
+  //   margin: 12px 0;
+  // }
+
+  // & .MuiAccordionSummary-root.Mui-expanded {
+  //   min-height: unset;
+  //   & p.accordion-title {
+  //     color: $primaryColor;
+  //   }
+  // }
+
+  // & .MuiAccordionDetails-root {
+  //   padding: 0 16px 16px;
+  // }
+  // & .MuiSvgIcon-root {
+  //   width: 2em;
+  //   height: 2em;
+  // }
+  // & .Mui-expanded {
+  //   & .MuiSvgIcon-root {
+  //     fill: $primaryColor;
+  //   }
+  // }
+  // & .MuiPaper-root.MuiAccordion-root.Mui-expanded {
+  //   margin: 0;
+  // }
+}
+// accordions on faq questions page

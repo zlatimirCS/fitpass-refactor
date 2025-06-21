@@ -1,0 +1,135 @@
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  &.active {
+    transform: translateX(0);
+    & .wrapper {
+      height: 100%;
+      & .mobile-nav-wrap {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  &-wrap {
+    padding: 2rem 1rem 14rem 1rem;
+    overflow-y: auto;
+  }
+  &-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 40px;
+    @media (min-width: 768px) {
+      margin-bottom: 60px;
+    }
+  }
+  &-links {
+    font-size: 2.2rem;
+    font-weight: 600;
+    // cursor: pointer;
+    // text-transform: uppercase;
+    padding-left: 10px;
+    & div {
+      cursor: pointer;
+      margin-bottom: 2.5rem;
+      // &:last-child {
+      //   margin-bottom: 0;
+      // }
+    }
+  }
+  & svg {
+    cursor: pointer;
+  }
+  & .mobile-nav-footer {
+    margin-top: 10rem;
+    &__icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 20px;
+      & img {
+        width: 100px;
+        // @media (min-width: 360px) {
+        //   width: 130px;
+        // }
+        // @media (min-width: 411px) {
+        //   width: 140px;
+        // }
+      }
+      &.social-icons {
+        & img {
+          width: 45px;
+        }
+      }
+    }
+    & p {
+      font-weight: 800;
+      margin-bottom: 2rem;
+    }
+    a.social {
+      display: inline-block;
+      background: red;
+      width: 32px;
+      height: 32px;
+      position: relative;
+      border-radius: 50%;
+      transition: all 0.3s;
+      &.fb {
+        background: #3b5998;
+        // &:hover {
+        //   background: $white;
+        //   & i {
+        //     color: #3b5998;
+        //   }
+        // }
+      }
+      &.instagram {
+        background: linear-gradient(
+          165.51deg,
+          #4e60d3,
+          #913baf 14.28%,
+          #d52d88 76.15%,
+          #f26d4f
+        );
+        // &:hover {
+        //   background: $white;
+        //   & i {
+        //     color: $primaryColor;
+        //   }
+        // }
+      }
+      &.linkedin {
+        background: #007bb5;
+        // &:hover {
+        //   background: $white;
+        //   & i {
+        //     color: #007bb5;
+        //   }
+        // }
+      }
+      i {
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        &:before {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

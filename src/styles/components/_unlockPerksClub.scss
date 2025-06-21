@@ -1,0 +1,60 @@
+.unlock-perks-club-section {
+  &__content {
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @media (min-width: 992px) {
+      flex-direction: row;
+    }
+    &__left {
+      // background-image: url("/assets/images/club-phone.webp");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      flex: 1;
+      min-height: 300px;
+    }
+    &__right {
+      flex: 1;
+      & .top {
+        margin-bottom: 50px;
+        & h3 {
+          font-size: 30px;
+          line-height: 26.7px;
+          letter-spacing: 0.1px;
+          font-weight: 900;
+          color: $black;
+        }
+      }
+      & .bottom {
+        & .item {
+          display: flex;
+          gap: 30px;
+          margin-bottom: 30px;
+          &__icon {
+            flex-shrink: 0;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+          & h4 {
+            font-size: 18px;
+            line-height: 1.2;
+            font-weight: 900;
+            color: $black;
+            margin-bottom: 5px;
+          }
+          & p {
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: 400;
+            color: $gray;
+            text-wrap: balance;
+            min-height: 50px;
+          }
+        }
+      }
+    }
+  }
+}

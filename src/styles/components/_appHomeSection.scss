@@ -1,0 +1,90 @@
+.app-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #df5131;
+  padding: 9rem 0 9rem 0;
+  color: $white;
+}
+
+.app-section__content {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    gap: 4rem;
+  }
+  & .app-section-left {
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 6rem;
+    padding-top: 0;
+    flex: 1;
+    @media (min-width: 1024px) {
+      align-items: flex-start;
+      text-align: left;
+      margin-bottom: 0;
+      padding-top: 4rem;
+    }
+  }
+  & .app-section-right {
+    &.desktop {
+      max-width: 90%;
+    }
+  }
+  & h2 {
+    margin-bottom: 0rem;
+    &.desktop {
+      margin-bottom: 9.3rem;
+    }
+    & span {
+      display: block;
+      &.bold {
+        font-weight: 800;
+      }
+    }
+  }
+  & .arrows-container {
+    display: none;
+    gap: 3rem;
+    margin-bottom: 9rem;
+    @media (min-width: 1024px) {
+      display: flex;
+    }
+  }
+  & .app-down-section {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    & p {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 4rem;
+    }
+    & .app-icons-wrap {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      & img {
+        cursor: pointer;
+        transition: all 0.3s;
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+    & .mob-paragraph {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      line-height: 1.1;
+      font-weight: 600;
+      & span {
+        display: block;
+      }
+    }
+  }
+}

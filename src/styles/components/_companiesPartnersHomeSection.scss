@@ -1,0 +1,70 @@
+.companies-partners {
+  background-color: $white;
+  // padding: 9rem 0 9rem 0;
+}
+
+.hp-main .companies-partners {
+  // padding: 9rem 0 0 0;
+}
+
+.companies-partners-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2rem;
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  & .companies-partners-card {
+    position: relative;
+    min-height: 30rem;
+    background-color: #f5f6f7;
+    padding: 2.5rem 2.5rem 2.5rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
+    @media (min-width: 1600px) {
+      padding: 3.5rem 2.5rem 2.5rem 4.5rem;
+    }
+    & h3 {
+      position: relative;
+      color: $primaryColor;
+      font-weight: 800;
+      font-size: 24px;
+      max-width: 65%;
+      @media (min-width: 360px) {
+        font-size: 28px;
+      }
+      @media (min-width: 960px) {
+        font-size: 33px;
+      }
+    }
+    & p {
+      position: relative;
+      font-size: 16px;
+      color: #373737;
+      max-width: 65%;
+      padding: 10px 0 20px 0;
+      @media (min-width: 960px) {
+        font-size: 20px;
+      }
+    }
+    & .card-icon {
+      position: absolute;
+      right: 2.5rem;
+      top: 50%;
+      bottom: 0;
+      width: 120px;
+      height: 120px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+      @media (min-width: 567px) {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}

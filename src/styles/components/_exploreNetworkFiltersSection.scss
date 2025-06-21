@@ -1,0 +1,435 @@
+.explore-network-filters-section {
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  color: #aaaaaa;
+
+  & .explore-network-map--mobile {
+    margin-top: 20px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.explore-network-filters-wrap--desktop {
+  display: flex;
+  flex-direction: column;
+  // background-color: yellow;
+  min-height: 500px;
+  max-height: 800px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+
+  & aside.explore-network-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    // background-color: #fbfbfb;
+    width: 20%;
+    min-width: 100%;
+    padding: 3.5rem 3.5rem 6rem;
+
+    @media (min-width: 1024px) {
+      min-width: 300px;
+    }
+
+    @media (min-width: 1024px) {
+      min-width: 460px;
+    }
+
+    .filters-options {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+
+      & button {
+        margin: 0;
+        padding: 12px;
+        width: auto;
+        overflow: visible;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        font-size: 14px;
+        border-radius: 19px;
+      }
+
+      & .clear-btn {
+        color: #aaaaaa;
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+      }
+
+      & .search-btn {
+        color: #fff;
+        background-color: $primaryColor;
+        border: 1px solid $primaryColor;
+      }
+    }
+  }
+
+  & .explore-network-map {
+    width: 100%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .single-explore-dropdown {
+    & p {
+      font-size: 16px;
+    }
+
+    & .accordion-content-location {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    & .accordion-content-popular,
+    .accordion-content-all {
+      & .popular {
+        padding: 16px 0;
+        border-top: 1px solid #eaeaea;
+        & p {
+          font-size: 12px;
+          text-transform: uppercase;
+        }
+      }
+
+      & .popular-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      & button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid #aaaaaa;
+        color: #aaaaaa;
+        margin: 0;
+        padding: 4px 8px;
+        width: auto;
+        overflow: visible;
+        background: transparent;
+        font-size: 12px;
+        border-radius: 16px;
+
+        &.choosen {
+          border: 1px solid $primaryColor;
+          color: $primaryColor;
+        }
+      }
+    }
+
+    .accordion-content-all {
+      padding-bottom: 16px;
+    }
+
+    .tags-options {
+      padding: 0 16px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-bottom: 16px;
+
+      & button {
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        overflow: visible;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        font-size: 14px;
+      }
+
+      & .apply {
+        color: #fff;
+        background-color: $primaryColor;
+        padding: 4px 16px;
+        border-radius: 14px;
+      }
+    }
+  }
+}
+
+.explore-network-filters-section {
+  & .explore-network-filters-wrap--desktop {
+    max-height: unset;
+  }
+  &.search {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    max-height: unset;
+    & .wrapper {
+      display: flex;
+      gap: 40px;
+      & .explore-network-filters {
+        padding: 0;
+        min-width: unset;
+        width: 100%;
+        gap: 30px;
+        @media (min-width: 1024px) {
+          width: 31%;
+        }
+      }
+      & .explore-network-search-results {
+        flex: 1;
+      }
+    }
+  }
+}
+
+// THIS CSS IS ONLY RELATED TO THE SEARCH PAGE
+.explore-network-filters-section.search {
+  position: relative;
+  & .loading-venues-loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e74410;
+    z-index: 999999;
+  }
+  & .explore-network-filters-wrap--desktop {
+    // background-color: azure;
+    & .wrapper {
+      @media (min-width: 1024px) {
+        flex-direction: row;
+      }
+      flex-direction: column-reverse;
+    }
+    & .search-results-grid {
+      gap: 0;
+      @media (min-width: 1024px) {
+        gap: 30px;
+      }
+    }
+    & .single-venue-card {
+      // background-color: beige;
+      flex-direction: column;
+      height: auto;
+      margin: 0 -3rem;
+      border: none;
+      border-radius: 0;
+      @media (min-width: 768px) {
+        // background-color: blue;
+      }
+      @media (min-width: 1024px) {
+        // background-color: green;
+        flex-direction: row;
+        height: 250px;
+        margin: 0;
+        border: 1px solid #d9d9d9;
+        border-radius: 20px;
+      }
+      &__image-wrapper {
+        position: relative;
+        height: 150px;
+        width: 100%;
+        @media (min-width: 567px) {
+          height: 250px;
+        }
+        @media (min-width: 1024px) {
+          height: 250px;
+          width: 45%;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+        }
+        & .mobile-reviews-view {
+          position: absolute;
+          bottom: 10px;
+          left: 30px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          // background-color: yellow;
+          @media (min-width: 1024px) {
+            display: none;
+          }
+          & .orange {
+            background-color: #e74410;
+            color: #fff;
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 10px;
+            font-weight: 900;
+          }
+        }
+      }
+      &__content {
+        padding: 20px 30px 40px 30px;
+        gap: 20px;
+        @media (min-width: 1024px) {
+          padding: 20px 10px 20px 30px;
+          gap: 10px;
+        }
+      }
+      &__reviews {
+        display: none;
+        @media (min-width: 1024px) {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+      }
+      &__hours {
+        align-items: flex-start;
+        & .inner-flex {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          @media (min-width: 411px) {
+            flex-direction: row;
+            gap: 20px;
+          }
+        }
+        & .inner-open-closed-hours {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          border: 1px solid #bcbcbc;
+          padding: 5px 10px;
+          border-radius: 5px;
+          position: relative;
+          cursor: pointer;
+          // min-width: 220px;
+          // background-color: red;
+          align-items: center;
+          // justify-content: center;
+          @media (hover: none) {
+            cursor: initial;
+          }
+          @media (min-width: 411px) {
+            padding: 0 10px;
+          }
+          @media (min-width: 1024px) {
+            border: none;
+          }
+          & .work-hours-tooltip {
+            display: none;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            width: auto;
+            height: auto;
+            background-color: #dedede;
+            transform: translate(-50%, 100%);
+            padding: 10px 10px 5px 10px;
+            border-radius: 5px;
+            z-index: 999;
+            min-width: 120px;
+            // display: flex;
+            &.active {
+              display: flex;
+              justify-content: center;
+            }
+          }
+          & .work-hours-arrow {
+            transition: all 0.3s;
+            &.active {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+      &__redirect {
+        display: none;
+        @media (min-width: 1024px) {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+// THIS CSS IS ONLY RELATED TO THE SEARCH PAGE
+
+.explore-network-search-results-map {
+  // background-color: #e64410;
+  margin: 0 -3rem;
+  @media (min-width: 1024px) {
+    margin: 0;
+  }
+}
+
+.explore-network-search-results-map__map {
+  width: 100%;
+  aspect-ratio: 1/0.6;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  @media (min-width: 1024px) {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+  }
+}
+
+.explore-network-search-results-map__map__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding-bottom: 30px;
+  & .btn-venue-map {
+    // width: 120px;
+    padding: 10px 4cap;
+    height: 50px;
+    background-color: aliceblue;
+    border: 2px solid #e74410;
+    color: #e74410;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 900;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #e74410;
+      color: white;
+    }
+  }
+}
+
+.single-venue-card__content .work-hours-tooltip span {
+  font-size: 13px;
+  @media (min-width: 411px) {
+    font-size: 15px;
+  }
+}
+
+.clear-btn.filters-options,
+.search-btn.filters-options {
+  font: inherit;
+  font-size: 14px;
+  border-radius: 8px;
+  color: rgb(102, 102, 102);
+  border: 1px solid rgb(102, 102, 102);
+  margin: 0;
+  padding: 8px;
+  width: auto;
+  overflow: visible;
+  background-color: #fff;
+  margin-right: 10px;
+}
+
+.search-btn.filters-options {
+  color: #fff;
+  background-color: #e74410;
+  border: 1px solid #e74410;
+}

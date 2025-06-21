@@ -1,0 +1,19 @@
+.chat-bottom-icon-wrap {
+  position: fixed;
+  bottom: 8rem;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: $primaryColor;
+  z-index: 99;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}

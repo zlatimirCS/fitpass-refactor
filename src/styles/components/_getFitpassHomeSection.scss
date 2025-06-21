@@ -1,0 +1,98 @@
+// GET FITPASS SECTION HOME
+.get-fitpass-home {
+  position: relative;
+  padding: 9rem 0 5rem 0;
+  background-color: $lightGray;
+  overflow: hidden;
+  @media (min-width: 567px) {
+    padding: 9rem 0 5rem 0;
+  }
+  @media (min-width: 1024px) {
+    padding: 9rem 0 9rem 0;
+  }
+  & .fitpass-get-fitpass-ilustration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-48%) scale(1.7);
+    @media (min-width: 1024px) {
+      transform: translateY(-40%) scale(1.4);
+    }
+  }
+}
+
+.get-fitpass-home__head {
+  color: $primaryColor;
+  & h2 {
+    margin-bottom: 6rem;
+    @media (min-width: 1024px) {
+      margin-bottom: 9rem;
+    }
+  }
+  & span {
+    font-weight: 400;
+    display: block;
+    &.bold {
+      font-weight: 800;
+    }
+  }
+}
+
+.get-fitpass-home__main {
+  margin-bottom: 5.5rem;
+  & article {
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+    @media (min-width: 500px) {
+      margin-bottom: 0.5rem;
+    }
+    @media (min-width: 1024px) {
+      gap: 5rem;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    & .get-fitpass-left {
+      width: 9rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      & .elipse {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        border: 2px solid $primaryColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (min-width: 1024px) {
+          width: 9rem;
+          height: 9rem;
+        }
+        & p {
+          font-size: 3rem;
+          line-height: 1;
+          color: $primaryColor;
+          font-weight: 500;
+          @media (min-width: 1024px) {
+            font-size: 5rem;
+          }
+        }
+      }
+    }
+    & .get-fitpass-right {
+      max-width: 85rem;
+      & p {
+        font-weight: 400;
+        &.bold {
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: $mainBlue;
+        }
+      }
+    }
+  }
+}
+// GET FITPASS SECTION HOME

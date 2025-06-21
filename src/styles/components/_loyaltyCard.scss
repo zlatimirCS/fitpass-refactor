@@ -1,0 +1,55 @@
+.loyalty-card {
+  display: flex;
+  flex-direction: column;
+  color: $primaryColor;
+  background-color: #f5f6f7;
+  border-radius: 10px;
+  padding: 2.5rem;
+  // cursor: pointer;
+  align-items: center;
+  min-height: 31rem;
+  padding: 4rem;
+  @media (min-width: 1024px) {
+    // filter: grayscale(100%);
+    transition: all 0.4s;
+    align-items: flex-start;
+    padding: 2.5rem;
+  }
+  // &:hover {
+  //   filter: grayscale(0%);
+  // }
+  & .title {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: $primaryColor;
+    text-align: center;
+    line-height: 1.2;
+    @media (min-width: 960px) {
+      text-align: left;
+      min-height: 60px;
+      font-size: 24px;
+    }
+  }
+  & .subtitle {
+    font-size: 14px;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    color: #595858;
+    text-align: center;
+    @media (min-width: 960px) {
+      text-align: left;
+      font-size: 16px;
+    }
+  }
+  & img {
+    margin-top: auto;
+    width: 90px;
+    height: 70px;
+    object-fit: contain;
+    object-position: bottom left;
+  }
+  // &:active {
+  //   transform: scale(0.98);
+  // }
+}

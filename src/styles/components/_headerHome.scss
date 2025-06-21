@@ -1,0 +1,32 @@
+header {
+  // background-color: $lightGray;
+  // min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 4.5rem;
+  &.no-space {
+    padding-bottom: 0;
+  }
+  &.faq {
+    // background-color: $lightGray;
+  }
+  // @media (min-width: 768px) {
+  //   min-height: 100vh;
+  // }
+  // &.home {
+  //   min-height: unset;
+  // }
+  & .header-ilustration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(-25%) scale(1.7);
+    // for ipad
+    @media (min-width: 768px) {
+      transform: translate(-25%, 25%) scale(1.5);
+    }
+    @media (min-width: 1024px) {
+      transform: translate(4%, 19%) scale(1);
+    }
+  }
+}

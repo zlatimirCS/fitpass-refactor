@@ -1,0 +1,165 @@
+.contact-page {
+  & .intro-text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $black;
+    font-weight: 900;
+    @media (min-width: 567px) {
+      font-size: 18px;
+    }
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+}
+
+.contact-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 4rem 0 9rem 0;
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    gap: 9rem;
+  }
+  & aside {
+    width: 100%;
+    position: relative;
+    color: $mediumGrey;
+    // background-color: red;
+    @media (min-width: 1200px) {
+      width: 27%;
+    }
+  }
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid $black;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    &:checked::after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
+      border: solid $primaryColor;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.contact-content {
+  margin-left: auto;
+  width: 100%;
+  //   max-width: 560px;
+  // padding-top: 20px;
+  @media (min-width: 1200px) {
+    width: 73%;
+  }
+  & .accordion-title {
+    font-weight: 800;
+    font-size: 16px;
+    @media (min-width: 1200px) {
+      font-size: 20px;
+    }
+  }
+  & .form-top {
+    margin-bottom: 0px;
+    // background-color: red;
+    @media (min-width: 1200px) {
+      margin-bottom: 20px;
+    }
+    & input,
+    & textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+      border-radius: 50px;
+      padding: 10px 15px;
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 500;
+      @media (min-width: 567px) {
+        padding: 15px 30px 15px 30px;
+        font-size: 20px;
+      }
+      &::placeholder {
+        color: #666666;
+        font-size: 16px;
+        line-height: 0.9;
+        font-weight: 500;
+        @media (min-width: 567px) {
+          font-size: 20px;
+        }
+      }
+      &.error {
+        border-color: #ff0033;
+        &::placeholder {
+          color: #ff0033;
+        }
+      }
+    }
+    & textarea {
+      padding: 15px 15px;
+      border-radius: 30px;
+      resize: none;
+      height: 200px;
+      @media (min-width: 567px) {
+        height: auto;
+        padding: 30px 30px 15px 30px;
+      }
+      &::placeholder {
+        line-height: 1.4;
+      }
+    }
+  }
+  & .form-bottom {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-direction: column;
+    @media (min-width: 567px) {
+      flex-direction: row;
+      gap: 30px;
+    }
+    & .card-btn {
+      width: 100%;
+      @media (min-width: 567px) {
+        width: 207px;
+      }
+    }
+  }
+}
+
+.contact-page-aside-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-page-aside-checkboxes-wrap {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  & label {
+    color: $black;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 400;
+    margin-top: 3px;
+    @media (min-width: 567px) {
+      margin-top: 0;
+      font-size: 22px;
+      line-height: 26px;
+    }
+  }
+}

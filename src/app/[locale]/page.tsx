@@ -5,14 +5,15 @@ import PageLayout from '@/components/PageLayout';
 import {getHpContent} from '@/lib/fetchData';
 import CompaniesPartnersGrid from '@/components/CompaniesPartnersGrid';
 import {Suspense} from 'react';
+import HomepageContent from '@/components/HomepageContent';
 
 type Props = {
   params: Promise<{locale: Locale}>;
 };
 
-const CompaniesPartners = async ({locale}: {locale: string}) => {
-  const mainHpData = await getHpContent(locale);
-  return <CompaniesPartnersGrid mainHpData={mainHpData} />;
+const Homepage = async ({locale}: {locale: string}) => {
+  const cmsDataHp = await getHpContent(locale);
+  return <HomepageContent cmsDataHp={cmsDataHp} />;
 };
 
 export default function IndexPage({params}: Props) {
@@ -26,7 +27,7 @@ export default function IndexPage({params}: Props) {
   return (
     <>
       <Suspense fallback={<p>Loading</p>}>
-        <CompaniesPartners locale={locale} />
+        <Homepage locale={locale} />
       </Suspense>
     </>
   );

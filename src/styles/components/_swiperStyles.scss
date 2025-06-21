@@ -1,0 +1,28 @@
+.app-section-right {
+  & .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  & .swiper-slide {
+    & img {
+      opacity: 0.5;
+      max-height: 350px;
+      cursor: pointer;
+      @media (min-width: 1024px) {
+        max-height: unset;
+      }
+    }
+    &.swiper-slide-active {
+      & img {
+        opacity: 1;
+      }
+    }
+  }
+
+  & .swiper-3d .swiper-slide-shadow {
+    background: unset !important;
+  }
+}
