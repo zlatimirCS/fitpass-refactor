@@ -6,7 +6,7 @@ import LoyaltyProgramHomeSection from './LoyaltyProgramHomeSection';
 
 const HomepageContent = ({ cmsDataHp }: CmsDataHp) => {
   if (!cmsDataHp) {
-    return <p>There was an error loading data</p>;
+    throw new Error('Something went wrong!');
   }
   return (
     <>

@@ -18,7 +18,6 @@ export async function getHpContent(locale: string) {
   } catch (error) {
     console.error('Error fetching data:', error);
     return null;
-    // navigate to error page
   }
 }
 

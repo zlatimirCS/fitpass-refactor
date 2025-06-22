@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import HomepageContent from '@/components/HomepageContent';
 import { getHpContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
