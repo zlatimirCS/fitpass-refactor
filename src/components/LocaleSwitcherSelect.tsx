@@ -4,7 +4,7 @@ import { usePathname, useRouter } from '@/i18n/navigation';
 import clsx from 'clsx';
 import { Locale } from 'next-intl';
 import { useParams, useSearchParams } from 'next/navigation';
-import { ChangeEvent, ReactNode, useTransition } from 'react';
+import { ChangeEvent, ReactNode, Suspense, useTransition } from 'react';
 
 type Props = {
   children: ReactNode;
@@ -12,11 +12,7 @@ type Props = {
   label: string;
 };
 
-export default function LocaleSwitcherSelect({
-  children,
-  defaultValue,
-  label,
-}: Props) {
+function LocaleSwitcherSelectInner({ children, defaultValue, label }: Props) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
@@ -60,5 +56,19 @@ export default function LocaleSwitcherSelect({
       </select>
       <span className='pointer-events-none absolute right-2 top-[8px]'>⌄</span>
     </label>
+  );
+}
+
+export default function LocaleSwitcherSelect(props: Props) {
+  return (
+    <Suspense
+      fallback={
+        <div className='inline-flex appearance-none bg-transparent py-3 pl-2 pr-6'>
+          ⌄
+        </div>
+      }
+    >
+      <LocaleSwitcherSelectInner {...props} />
+    </Suspense>
   );
 }
