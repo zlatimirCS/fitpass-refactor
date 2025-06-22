@@ -106,3 +106,19 @@ export async function getSearchExploreNetworkContent(searchParams: string) {
     return null;
   }
 }
+
+export async function getSingleVenueData(slug: string) {
+  // Simulate a delay
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-venue-by-slug/${slug}`
+    );
+    const data = response.data;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
