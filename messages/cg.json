@@ -1,10 +1,25 @@
 {
   "ExploreNetworkPage": {
-    "fitpassNetworkPart1": "Istražite",
-    "fitpassNetworkPart2": "Fitpass mrežu",
-    "searchGyms": "Pretražite teretane i klubove u blizini"
+    "fitpassNetworkPart1": "Fitpass",
+    "fitpassNetworkPart2": "network",
+    "searchGyms": "Search gyms & studios near you"
   },
-  "SearchResultsExploreNetworkFiltersSection": {},
+  "SearchResultsExploreNetworkFiltersSection": {
+    "locationName": "Location name",
+    "cityInput": "City",
+    "cityArea": "City area",
+    "clear": "Clear",
+    "apply": "Apply",
+    "disciplines": "Disciplines",
+    "loading": "Loading..."
+  },
+  "SearchResultsVenues": {
+    "openingAt": "Otvara u",
+    "openingHours": "Opening hours",
+    "noWorkTime": "No work time",
+    "noSearchResults": "No search results",
+    "closingAt": "zatvara u"
+  },
   "Error": {
     "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
     "title": "Etwas ist schief gelaufen!"

@@ -30,7 +30,6 @@ export const routing = defineRouting({
           'explore-network/search'
         ),
     },
-
     '/explore-network': {
       en: '/explore-network',
       [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]:
