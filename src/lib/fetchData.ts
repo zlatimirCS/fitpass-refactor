@@ -62,3 +62,47 @@ export async function getExploreNetworkContent(locale: string) {
     return null;
   }
 }
+
+export async function getCities() {
+  // Simulate a delay
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/get-all-cities`,
+      {
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_CC,
+      }
+    );
+    const data = response.data;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
+export async function getSearchExploreNetworkContent(searchParams: string) {
+  // Simulate a delay
+  // const lang = locale === 'en' ? 'secondary' : 'primary';
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/filtered-venues?${searchParams}`,
+      {
+        // countryCode: process.env.NEXT_PUBLIC_PRIMARY_CC,
+      },
+      {
+        params: {
+          countryCode: process.env.NEXT_PUBLIC_PRIMARY_CC,
+        },
+      }
+    );
+    const data = response.data;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
