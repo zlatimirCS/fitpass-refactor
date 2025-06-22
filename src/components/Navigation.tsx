@@ -7,10 +7,10 @@ export default function Navigation() {
 
   return (
     <div className='bg-slate-850'>
-      <nav className='container flex justify-between p-2 text-white'>
-        <div>
+      <nav className='container mx-auto flex justify-between items-center p-2 text-white'>
+        <div className='flex items-center space-x-6'>
           <NavigationLink href='/'>{t('home')}</NavigationLink>
-          <NavigationLink href='/pathnames'>{t('pathnames')}</NavigationLink>
+          <NavigationLink href='/about'>{t('pathnames')}</NavigationLink>
         </div>
         <LocaleSwitcher />
       </nav>

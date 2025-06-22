@@ -13,7 +13,7 @@ const Homepage = async ({ locale }: { locale: string }) => {
   return <HomepageContent cmsDataHp={cmsDataHp} />;
 };
 
-export default function IndexPage({ params }: Props) {
+export default function HomePage({ params }: Props) {
   const { locale } = use(params);
 
   // Enable static rendering

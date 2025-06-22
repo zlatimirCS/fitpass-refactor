@@ -1,7 +1,8 @@
 'use client';
-import React, { useState, memo } from 'react';
 import BtnForm from '@/components/BtnForm';
 import { CmsDataHp } from '@/types/types';
+import Image from 'next/image';
+import { memo, useState } from 'react';
 
 const EveryoneWinsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
   const [activeTab, setActiveTab] = useState('companies');
@@ -46,7 +47,12 @@ const EveryoneWinsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                 {cmsDataHp?.section2List1Item1 &&
                   cmsDataHp?.section2List1Item1 && (
                     <li>
-                      <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                      <Image
+                        src='/assets/icons/znakic.svg'
+                        alt='fitpass icon'
+                        width={32}
+                        height={32}
+                      />
                       {cmsDataHp?.section2List1Item1
                         ? cmsDataHp?.section2List1Item1
                         : ''}
@@ -54,25 +60,45 @@ const EveryoneWinsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                   )}
                 {cmsDataHp && cmsDataHp?.section2List1Item2 && (
                   <li>
-                    <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                    <Image
+                      src='/assets/icons/znakic.svg'
+                      alt='fitpass icon'
+                      width={32}
+                      height={32}
+                    />
                     {cmsDataHp ? cmsDataHp?.section2List1Item2 : ''}
                   </li>
                 )}
                 {cmsDataHp && cmsDataHp?.section2List1Item3 && (
                   <li>
-                    <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                    <Image
+                      src='/assets/icons/znakic.svg'
+                      alt='fitpass icon'
+                      width={32}
+                      height={32}
+                    />
                     {cmsDataHp ? cmsDataHp?.section2List1Item3 : ''}
                   </li>
                 )}
                 {cmsDataHp && cmsDataHp?.section2List1Item4 && (
                   <li>
-                    <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                    <Image
+                      src='/assets/icons/znakic.svg'
+                      alt='fitpass icon'
+                      width={32}
+                      height={32}
+                    />
                     {cmsDataHp ? cmsDataHp?.section2List1Item4 : ''}
                   </li>
                 )}
                 {cmsDataHp && cmsDataHp?.section2List1Item5 && (
                   <li>
-                    <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                    <Image
+                      src='/assets/icons/znakic.svg'
+                      alt='fitpass icon'
+                      width={32}
+                      height={32}
+                    />
                     {cmsDataHp ? cmsDataHp?.section2List1Item5 : ''}
                   </li>
                 )}
@@ -84,13 +110,15 @@ const EveryoneWinsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                 }}
                 className='bg-image-wrap'
               >
-                <img
+                <Image
                   src={
                     cmsDataHp?.section2Image1
                       ? cmsDataHp?.section2Image1
                       : '/assets/images/everyone-wins-img-1.webp'
                   }
                   alt='everyone wins'
+                  width={600}
+                  height={438}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -101,25 +129,45 @@ const EveryoneWinsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
               <ul>
                 {cmsDataHp && cmsDataHp?.section2List2Item1 && (
                   <li>
-                    <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                    <Image
+                      src='/assets/icons/znakic.svg'
+                      alt='fitpass icon'
+                      width={32}
+                      height={32}
+                    />
                     {cmsDataHp ? cmsDataHp?.section2List2Item1 : ''}
                   </li>
                 )}
                 {cmsDataHp && cmsDataHp?.section2List2Item2 && (
                   <li>
-                    <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                    <Image
+                      src='/assets/icons/znakic.svg'
+                      alt='fitpass icon'
+                      width={32}
+                      height={32}
+                    />
                     {cmsDataHp ? cmsDataHp?.section2List2Item2 : ''}
                   </li>
                 )}
                 {cmsDataHp && cmsDataHp?.section2List2Item3 && (
                   <li>
-                    <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                    <Image
+                      src='/assets/icons/znakic.svg'
+                      alt='fitpass icon'
+                      width={32}
+                      height={32}
+                    />
                     {cmsDataHp ? cmsDataHp?.section2List2Item3 : ''}
                   </li>
                 )}
                 {cmsDataHp && cmsDataHp?.section2List2Item4 && (
                   <li>
-                    <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                    <Image
+                      src='/assets/icons/znakic.svg'
+                      alt='fitpass icon'
+                      width={32}
+                      height={32}
+                    />
                     {cmsDataHp ? cmsDataHp?.section2List2Item4 : ''}
                   </li>
                 )}
@@ -131,13 +179,15 @@ const EveryoneWinsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                 }}
                 className='bg-image-wrap'
               >
-                <img
+                <Image
                   src={
                     cmsDataHp?.section2Image2
                       ? cmsDataHp?.section2Image2
                       : '/assets/images/veselodrustvo.jpg'
                   }
                   alt='everyone wins'
+                  width={600}
+                  height={438}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>

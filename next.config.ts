@@ -1,8 +1,7 @@
 import { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-import path from 'path';
+import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,6 +15,15 @@ const withNextIntl = createNextIntlPlugin({
 const config: NextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname:
+          'sharedresourcesstack-fitpassbucket512ab13d-lz12ovpb53jz.s3.eu-central-1.amazonaws.com',
+      },
+    ],
   },
 };
 

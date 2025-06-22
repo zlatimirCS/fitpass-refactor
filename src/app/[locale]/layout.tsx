@@ -1,20 +1,16 @@
-import { notFound } from 'next/navigation';
-import { Locale, hasLocale, NextIntlClientProvider } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { ReactNode } from 'react';
-import { clsx } from 'clsx';
-import { Inter } from 'next/font/google';
-import { routing } from '@/i18n/routing';
 import Navigation from '@/components/Navigation';
-import './styles.css';
+import { routing } from '@/i18n/routing';
+import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { ReactNode } from 'react';
 import '../../styles/main.scss';
+import './styles.css';
 
 type Props = {
   children: ReactNode;
   params: Promise<{ locale: Locale }>;
 };
-
-const inter = Inter({ subsets: ['latin'] });
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
