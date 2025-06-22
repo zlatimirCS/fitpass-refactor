@@ -1,6 +1,8 @@
 {
-  "Routes": {
-    "about-us": "o-nama"
+  "ExploreNetworkPage": {
+    "fitpassNetworkPart1": "Istražite",
+    "fitpassNetworkPart2": "Fitpass mrežu",
+    "searchGyms": "Pretražite teretane i klubove u blizini"
   },
   "Error": {
     "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",

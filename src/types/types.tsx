@@ -77,6 +77,12 @@ export type CmsDataAboutUs = {
   };
 };
 
+export type CmsDataExploreNetwork = {
+  cmsDataExploreNetwork: {
+    test: string;
+  };
+};
+
 export type BtnFormProps = {
   text: string;
   primary?: boolean;

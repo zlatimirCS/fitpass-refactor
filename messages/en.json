@@ -3,6 +3,11 @@
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
     "title": "Something went wrong!"
   },
+  "ExploreNetworkPage": {
+    "fitpassNetworkPart1": "Fitpass",
+    "fitpassNetworkPart2": "network",
+    "searchGyms": "Search gyms & studios near you"
+  },
   "IndexPage": {
     "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes.",
     "title": "next-intl example"
