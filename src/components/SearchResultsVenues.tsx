@@ -29,34 +29,34 @@ const daysOfWeek = [
   'friday',
   'saturday',
 ];
-const openAt: { [key: string]: { en: string; cg: string } } = {
+const openAt: { [key: string]: { en: string; [key: string]: string } } = {
   monday: {
     en: 'Monday at',
-    cg: 'Ponedeljak u',
+    [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]: 'Ponedeljak u',
   },
   tuesday: {
     en: 'Tuesday at',
-    cg: 'Utorak u',
+    [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]: 'Utorak u',
   },
   wednesday: {
     en: 'Wednesday at',
-    cg: 'Srijedu u',
+    [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]: 'Srijedu u',
   },
   thursday: {
     en: 'Thursday at',
-    cg: 'Četvrtak u',
+    [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]: 'Četvrtak u',
   },
   friday: {
     en: 'Friday at',
-    cg: 'Petak u',
+    [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]: 'Petak u',
   },
   saturday: {
     en: 'Saturday at',
-    cg: 'Subotu u',
+    [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]: 'Subotu u',
   },
   sunday: {
     en: 'Sunday at',
-    cg: 'Nedjelju u',
+    [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]: 'Nedjelju u',
   },
 };
 const currentDay = daysOfWeek[new Date().getDay()];
@@ -107,9 +107,9 @@ const SearchResultsVenues = ({ data }: SearchResultsVenuesProps) => {
         } else {
           venueOpenOrClosed = `${t('openingAt')} ${
             openAt[nextAvailableWorkday as keyof typeof openAt][
-              (locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
+              ((locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
                 ? `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                : 'en') as 'en' | 'cg'
+                : 'en') as 'en') || process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
             ]
           } ${workHours[nextAvailableWorkday]?.split('-')[0]?.trim()}`;
         }
@@ -150,9 +150,9 @@ const SearchResultsVenues = ({ data }: SearchResultsVenuesProps) => {
         } else {
           venueOpenOrClosed = `${t('openingAt')} ${
             openAt[nextAvailableWorkday as keyof typeof openAt][
-              (locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
+              ((locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
                 ? `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                : 'en') as 'en' | 'cg'
+                : 'en') as 'en') || process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
             ]
           } ${workHours[nextAvailableWorkday]?.split('-')[0]?.trim()}`;
         }

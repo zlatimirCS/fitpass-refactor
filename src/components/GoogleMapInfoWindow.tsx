@@ -1,5 +1,6 @@
 'use client';
 // import { useRouter } from "next/navigation";
+import { routeTranslations } from '@/lib/routeTranslations';
 import * as NProgress from 'nprogress';
 
 interface Marker {
@@ -29,7 +30,7 @@ const GoogleMapInfoWindow = ({ marker, locale }: GoogleMapInfoWindowProps) => {
       : marker.slug;
     const markerSlug =
       localeParam === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
-        ? `/istrazi-mrezu/${initialMarkerSlug}`
+        ? `/${routeTranslations[locale as keyof typeof routeTranslations]['explore-network']}/${initialMarkerSlug}`
         : `/explore-network/${initialMarkerSlug}`;
     return markerSlug;
   };

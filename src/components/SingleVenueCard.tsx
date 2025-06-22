@@ -1,4 +1,5 @@
 'use client';
+import { routeTranslations } from '@/lib/routeTranslations';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -92,7 +93,9 @@ const SingleVenueCard = ({
     <Link
       href={`/${locale}/${
         locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
-          ? 'istrazi-mrezu'
+          ? routeTranslations[locale as keyof typeof routeTranslations][
+              'explore-network'
+            ]
           : 'explore-network'
       }/${redirectUrl}`}
     >

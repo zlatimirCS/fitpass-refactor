@@ -6,13 +6,13 @@ export const routeTranslations = {
   },
   cg: {
     'about-us': 'o-nama',
-    'explore-network': 'istrazite-mrezu',
-    'explore-network/search': 'istrazite-mrezu/search',
+    'explore-network': 'istrazi-mrezu',
+    'explore-network/search': 'istrazi-mrezu/search',
   },
   sr: {
     'about-us': 'o-nama',
-    'explore-network': 'istrazite-mrezu',
-    'explore-network/search': 'istrazite-mrezu/search',
+    'explore-network': 'istrazi-mrezu',
+    'explore-network/search': 'istrazi-mrezu/search',
   },
   fr: {
     'about-us': 'a-propos',

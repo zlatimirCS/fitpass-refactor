@@ -1,4 +1,5 @@
 'use client';
+import { routeTranslations } from '@/lib/routeTranslations';
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckIcon from '@mui/icons-material/Check';
 import {
@@ -15,6 +16,7 @@ import { styled } from '@mui/material/styles';
 import axios from 'axios';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import GoogleMap from './GoogleMap';
 
 interface City {
   _id: string;
@@ -50,6 +52,19 @@ interface Attribute {
   nameEn: string;
 }
 
+interface Venue {
+  latLng: { lat: number; lng: number };
+  slug: string;
+  name: string;
+  photos: any[];
+  address: any;
+}
+
+interface Center {
+  lat: number;
+  lng: number;
+}
+
 const CustomMenu = styled('div')(({ theme }: { theme: any }) => ({
   padding: theme.spacing(1),
   display: 'flex',
@@ -76,6 +91,8 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
   const [selectedCityPart, setSelectedCityPart] = useState<CityArea[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
 
+  const [initialVenues, setInitialVenues] = useState<Venue[]>([]);
+  const [center, setCenter] = useState<Center | null>(null);
   const [initialDisciplines, setInitialDisciplines] = useState<Discipline[]>(
     []
   );
@@ -277,10 +294,67 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
     setSelectedAttributes([]);
     setSearchTerm('');
   };
+  const fetchInitialVenues = async () => {
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/filtered-venues`,
+        {
+          // countryCode: process.env.NEXT_PUBLIC_PRIMARY_CC,
+        },
+        {
+          params: {
+            countryCode: process.env.NEXT_PUBLIC_PRIMARY_CC,
+          },
+        }
+      );
+      if (response.data) {
+        setInitialVenues(
+          response.data.venues.map((venue: any): Venue => {
+            return {
+              latLng: {
+                lat: venue.lat,
+                lng: venue.lng,
+              },
+              slug: `/explore-network/${venue.slug}`,
+              name: venue.name,
+              photos: venue.photos || [],
+              address: venue.address,
+            };
+          })
+        );
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     fetchInitialDisciplines();
+    fetchInitialVenues();
   }, []);
+
+  const calculateCenter = (coords: Array<{ lat: number; lng: number }>) => {
+    const latitudes = coords.map(
+      (coord: { lat: number; lng: number }) => coord.lat
+    );
+    const longitudes = coords.map(
+      (coord: { lat: number; lng: number }) => coord.lng
+    );
+    const avgLat =
+      latitudes.reduce((a: number, b: number) => a + b, 0) / latitudes.length;
+    const avgLng =
+      longitudes.reduce((a: number, b: number) => a + b, 0) / longitudes.length;
+    return { lat: avgLat, lng: avgLng };
+  };
+
+  useEffect(() => {
+    if (initialVenues.length > 0) {
+      const centerCoords = calculateCenter(
+        initialVenues.map((venue: Venue) => venue.latLng)
+      );
+      setCenter(centerCoords);
+    }
+  }, [initialVenues]);
 
   useEffect(() => {
     if (selectedDisciplines.length === 0) {
@@ -324,7 +398,9 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
     router.push(
       `/${locale}/${
         locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
-          ? 'istrazi-mrezu'
+          ? routeTranslations[locale as keyof typeof routeTranslations][
+              'explore-network'
+            ]
           : 'explore-network'
       }/search${query}`
     );
@@ -766,7 +842,13 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
         </aside>
         <div className='explore-network-map'>
           {/* GoogleMap component would go here */}
-          <div>Map placeholder</div>
+          {/* <div>Map placeholder</div> */}
+          <GoogleMap
+            center={center}
+            zoom={9}
+            initialVenues={initialVenues}
+            locale={locale}
+          />
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 'use client';
+import { routeTranslations } from '@/lib/routeTranslations';
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckIcon from '@mui/icons-material/Check';
 import {
@@ -462,7 +463,11 @@ const SearchResultsExploreNetworkFiltersSection = ({
     // setSelectedStudent(false);
     router.push(
       `/${locale}/${
-        locale === 'cg' ? 'istrazi-mrezu' : 'explore-network'
+        locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
+          ? routeTranslations[locale as keyof typeof routeTranslations][
+              'explore-network'
+            ]
+          : 'explore-network'
       }/search${query}${student ? '&student=true' : ''}`
     );
     setLoading(false);
@@ -573,7 +578,9 @@ const SearchResultsExploreNetworkFiltersSection = ({
                   <Autocomplete
                     options={cities}
                     getOptionLabel={(option: City) =>
-                      option[`${locale === 'cg' ? 'name' : 'nameEn'}`]
+                      option[
+                        `${locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION ? 'name' : 'nameEn'}`
+                      ]
                     }
                     value={selectedCity || null}
                     inputValue={inputValue}
@@ -694,7 +701,7 @@ const SearchResultsExploreNetworkFiltersSection = ({
                                 key={value._id}
                                 label={
                                   value[
-                                    `${locale === 'cg' ? 'name' : 'nameEn'}`
+                                    `${locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION ? 'name' : 'nameEn'}`
                                   ]
                                 }
                                 onDelete={() =>
@@ -731,7 +738,11 @@ const SearchResultsExploreNetworkFiltersSection = ({
                               color: '#666666',
                             }}
                           >
-                            {area[`${locale === 'cg' ? 'name' : 'nameEn'}`]}
+                            {
+                              area[
+                                `${locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION ? 'name' : 'nameEn'}`
+                              ]
+                            }
                             {selectedCityPart.some(
                               (item: CityArea) => item._id === area._id
                             ) ? (
@@ -834,7 +845,7 @@ const SearchResultsExploreNetworkFiltersSection = ({
                                 key={value._id}
                                 label={
                                   value[
-                                    `${locale === 'cg' ? 'name' : 'nameEn'}`
+                                    `${locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION ? 'name' : 'nameEn'}`
                                   ]
                                 }
                                 onDelete={() =>
@@ -870,7 +881,7 @@ const SearchResultsExploreNetworkFiltersSection = ({
                           >
                             {
                               discipline[
-                                `${locale === 'cg' ? 'name' : 'nameEn'}`
+                                `${locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION ? 'name' : 'nameEn'}`
                               ]
                             }
                             {selectedDisciplines.some(
