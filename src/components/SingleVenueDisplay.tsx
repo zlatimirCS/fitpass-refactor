@@ -95,16 +95,32 @@ const SingleVenueDisplay = ({
   };
 
   const formatLinkUrl = (url: string | URL) => {
+    console.log('url example', url);
     if (!url) return '/';
-    try {
-      // Use URL constructor to validate and format the URL
-      const formattedUrl = new URL(url);
-      return formattedUrl.href;
-    } catch (e: any) {
-      console.log('error', e);
-      // If URL constructor fails, prepend http://
-      return `https://${url}`;
+
+    // If it's already a URL object, return its href
+    if (url instanceof URL) {
+      return url.href;
     }
+
+    // If it's a string, check if it already has a protocol
+    if (typeof url === 'string') {
+      // If it already has http:// or https://, use URL constructor
+      if (url.startsWith('http://') || url.startsWith('https://')) {
+        try {
+          const formattedUrl = new URL(url);
+          return formattedUrl.href;
+        } catch (e: any) {
+          console.log('error', e);
+          return url; // Return original if URL constructor fails
+        }
+      } else {
+        // If no protocol, prepend https://
+        return `https://${url}`;
+      }
+    }
+
+    return '/';
   };
 
   const calculateScorePercentage = (score: number) => {

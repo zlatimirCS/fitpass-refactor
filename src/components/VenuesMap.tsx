@@ -36,6 +36,8 @@ const VenuesMap = ({ handleCloseModal, venues, locale }: VenuesMapProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const [venuesForMap, setVenuesForMap] = useState<VenueForMap[]>([]);
   const [center, setCenter] = useState<Center | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [selectedMarker, setSelectedMarker] = useState(null);
 
   const calculateCenter = (
     coords: Array<{ lat: number; lng: number }>
@@ -115,6 +117,7 @@ const VenuesMap = ({ handleCloseModal, venues, locale }: VenuesMapProps) => {
                   key={venue.id}
                   setVenuesForMap={setVenuesForMap}
                   venue={venue}
+                  setSelectedMarker={setSelectedMarker}
                 />
               );
             })}
