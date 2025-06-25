@@ -1,5 +1,29 @@
 import axios from 'axios';
 
+export async function getMainSlideshowData(locale: string) {
+  // Simulate a delay
+  const lang =
+    locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
+      ? 'primary'
+      : 'secondary';
+  try {
+    const responseSlideshow = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/cms-get-sliders-front`,
+      {
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_COUNTRY_CODE,
+        language: lang,
+      }
+    );
+    const data = responseSlideshow.data;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
 export async function getHpContent(locale: string) {
   // Simulate a delay
   const lang = locale === 'en' ? 'secondary' : 'primary';

@@ -1,15 +1,24 @@
-import { CmsDataHp } from '@/types/types'; // Adjust the import path as necessary
+import { useLocale } from 'next-intl';
 import CompaniesPartnersGrid from './CompaniesPartnersGrid';
 import EveryoneWinsHomeSection from './EveryoneWinsHomeSection';
 import GetFitpassStepsHomeSection from './GetFitpassStepsHomeSection';
+import HeaderHome from './HeaderHome';
 import LoyaltyProgramHomeSection from './LoyaltyProgramHomeSection';
 
-const HomepageContent = ({ cmsDataHp }: CmsDataHp) => {
+const HomepageContent = ({
+  cmsDataHp,
+  mainSlideshowData,
+}: {
+  cmsDataHp: any;
+  mainSlideshowData: any;
+}) => {
   if (!cmsDataHp) {
     throw new Error('Something went wrong!');
   }
+  const locale = useLocale();
   return (
     <>
+      <HeaderHome mainSlideshowData={mainSlideshowData} locale={locale} />
       {!cmsDataHp?.section1Hide && (
         <CompaniesPartnersGrid cmsDataHp={cmsDataHp} />
       )}

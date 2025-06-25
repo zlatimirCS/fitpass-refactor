@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" style="enable-background:new 0 0 55.5 480.9;" xml:space="preserve" viewBox="22 23.5 11.6 418.6">
+<style type="text/css">
+	.st0{fill:none;stroke:url(#SVGID_1_);stroke-miterlimit:10;}
+	.st1{fill:#E14633;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-338.3622" y1="395.4249" x2="79.1919" y2="395.4249" gradientTransform="matrix(6.123234e-17 1 1 -6.123234e-17 -367.6749 362.3851)">
+	<stop offset="0" style="stop-color:#E4452B;stop-opacity:0"/>
+	<stop offset="0.1694" style="stop-color:#E4452B"/>
+	<stop offset="0.8311" style="stop-color:#E4452B"/>
+	<stop offset="1" style="stop-color:#E4452B;stop-opacity:0"/>
+</linearGradient>
+<line class="st0" x1="27.8" y1="24" x2="27.8" y2="441.6"/>
+<circle class="st1" cx="27.8" cy="358.7" r="5.8"/>
+<circle class="st1" cx="27.8" cy="243.5" r="5.8"/>
+<circle class="st1" cx="27.8" cy="159.2" r="5.8"/>
+<circle class="st1" cx="27.8" cy="77.5" r="5.8"/>
+</svg>

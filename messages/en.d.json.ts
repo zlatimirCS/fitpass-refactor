@@ -6,6 +6,12 @@ declare const messages: {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
     "title": "Something went wrong!"
   },
+  "Timeline": {
+    "fitpassStartsSerbia": "Fitpass begins its’ journey in Serbia!",
+    "fitpassBosnia": "Fitpass expands to Bosnia!",
+    "bigYearFitpass": "A big year for Fitpass! Launch of the Fitpass app, becoming a part of Up Group, the start of Fitpass Georgia.",
+    "fitpassCg": "New markets alert! Fitpass is coming to Montenegro, Greece and Moldova - SOON!"
+  },
   "ExploreNetworkPage": {
     "fitpassNetworkPart1": "Fitpass",
     "fitpassNetworkPart2": "network",

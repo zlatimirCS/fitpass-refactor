@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic';
 import HomepageContent from '@/components/HomepageContent';
-import { getHpContent } from '@/lib/fetchData';
+import { getHpContent, getMainSlideshowData } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Suspense, use } from 'react';
@@ -11,7 +11,13 @@ type Props = {
 
 const Homepage = async ({ locale }: { locale: string }) => {
   const cmsDataHp = await getHpContent(locale);
-  return <HomepageContent cmsDataHp={cmsDataHp} />;
+  const mainSlideshowData = await getMainSlideshowData(locale);
+  return (
+    <HomepageContent
+      cmsDataHp={cmsDataHp}
+      mainSlideshowData={mainSlideshowData}
+    />
+  );
 };
 
 export default function HomePage({ params }: Props) {

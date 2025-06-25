@@ -1,5 +1,6 @@
 import { CmsDataAboutUs } from '../types/types';
 import OurStory from './OurStory';
+import Timeline from './Timeline';
 
 const AboutUsContent = ({ cmsDataAboutUs }: CmsDataAboutUs) => {
   if (!cmsDataAboutUs) {
@@ -10,6 +11,7 @@ const AboutUsContent = ({ cmsDataAboutUs }: CmsDataAboutUs) => {
       {!cmsDataAboutUs.section1Hide && (
         <OurStory cmsDataAboutUs={cmsDataAboutUs} />
       )}
+      <Timeline />
       {/* <EveryoneWinsHomeSection mainHpData={mainHpData} /> */}
     </>
   );

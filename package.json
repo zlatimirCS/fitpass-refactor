@@ -29,6 +29,7 @@
     "next-intl": "^4.0.0",
     "nprogress": "^0.2.0",
     "react": "^19.0.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^19.0.0",
     "react-star-ratings": "^2.3.0",
     "sass": "^1.77.4",
