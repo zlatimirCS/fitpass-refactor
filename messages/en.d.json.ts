@@ -4,7 +4,18 @@
 declare const messages: {
   "Header": {
     "topBarText": "Keep me posted",
-    "topBarLink": "Keep me posted"
+    "topBarLink": "Keep me posted",
+    "aboutUs": "About us",
+    "forCompanies": "For companies",
+    "forPartners": "For partners",
+    "exploreNetwork": "Explore network",
+    "club": "Club",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "faqNav": "FAQ",
+    "followUs": "Follow us",
+    "resources": "Resources",
+    "comingSoon": "Coming soon"
   },
   "Error": {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",

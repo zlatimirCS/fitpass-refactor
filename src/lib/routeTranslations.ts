@@ -5,6 +5,9 @@ export const routeTranslations = {
     'explore-network/search': 'explore-network/search',
     'for-companies': 'for-companies',
     'for-partners': 'for-partners',
+    club: 'club',
+    faq: 'faq',
+    contact: 'contact',
   },
   cg: {
     'about-us': 'o-nama',
@@ -12,6 +15,9 @@ export const routeTranslations = {
     'explore-network/search': 'istrazi-mrezu/search',
     'for-companies': 'za-kompanije',
     'for-partners': 'za-partnere',
+    club: 'klub',
+    faq: 'faq',
+    contact: 'kontakt',
   },
   sr: {
     'about-us': 'o-nama',
@@ -19,6 +25,9 @@ export const routeTranslations = {
     'explore-network/search': 'istrazi-mrezu/search',
     'for-companies': 'za-kompanije',
     'for-partners': 'za-partnere',
+    club: 'klub',
+    faq: 'faq',
+    contact: 'kontakt',
   },
   fr: {
     'about-us': 'a-propos',
@@ -26,5 +35,8 @@ export const routeTranslations = {
     'explore-network/search': 'explorer-réseau/search',
     'for-companies': 'pour-les-entreprises',
     'for-partners': 'pour-les-partenaires',
+    club: 'club',
+    faq: 'faq',
+    contact: 'contact',
   },
 };

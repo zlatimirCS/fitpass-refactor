@@ -1,6 +1,15 @@
+import NavBar from '@/components/common/NavBar';
 import TopBar from '@/components/common/TopBar';
 import { AppProvider } from '@/context/AppProvider';
 import { routing } from '@/i18n/routing';
+import {
+  cmsGetIsAboutUsHidden,
+  cmsGetIsContactHidden,
+  cmsGetIsExploreNetworkHidden,
+  cmsGetIsFitpassClubHidden,
+  cmsGetIsForCompaniesHidden,
+  cmsGetIsForPartnersHidden,
+} from '@/lib/fetchData';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -30,6 +39,12 @@ export async function generateMetadata(props: Omit<Props, 'children'>) {
 export default async function LocaleLayout({ children, params }: Props) {
   // Ensure that the incoming `locale` is valid
   const { locale } = await params;
+  const auHide = await cmsGetIsAboutUsHidden();
+  const fpHide = await cmsGetIsForPartnersHidden();
+  const fcHide = await cmsGetIsForCompaniesHidden();
+  const enHide = await cmsGetIsExploreNetworkHidden();
+  const clHide = await cmsGetIsFitpassClubHidden();
+  const ctHide = await cmsGetIsContactHidden();
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -44,7 +59,14 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider>
           <AppProvider>
             <TopBar />
-            {/* <Navigation /> */}
+            <NavBar
+              auHide={auHide}
+              fpHide={fpHide}
+              fcHide={fcHide}
+              enHide={enHide}
+              clHide={clHide}
+              ctHide={ctHide}
+            />
             <main>{children}</main>
           </AppProvider>
         </NextIntlClientProvider>

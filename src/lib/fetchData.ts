@@ -188,3 +188,111 @@ export async function getSingleVenueData(slug: string) {
     return null;
   }
 }
+
+export async function cmsGetIsAboutUsHidden() {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/getcmsaboutusfronthidden`,
+      {
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_COUNTRY_CODE,
+      }
+    );
+    const data = response.data.auHide;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
+export async function cmsGetIsForPartnersHidden() {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/getcmsforpartnersfronthidden`,
+      {
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_COUNTRY_CODE,
+      }
+    );
+    const data = response.data.fpHide;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
+export async function cmsGetIsForCompaniesHidden() {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/getcmsforcompaniesfronthidden`,
+      {
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_COUNTRY_CODE,
+      }
+    );
+    const data = response.data.fcHide;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
+export async function cmsGetIsFitpassClubHidden() {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/getcmsclubfronthidden`,
+      {
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_COUNTRY_CODE,
+      }
+    );
+    const data = response.data.clHide;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
+export async function cmsGetIsContactHidden() {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/getcmscontactfronthidden`,
+      {
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_COUNTRY_CODE,
+      }
+    );
+    const data = response.data.ctHide;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
+export async function cmsGetIsExploreNetworkHidden() {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/getcmsexplorenetworkfronthidden`,
+      {
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_COUNTRY_CODE,
+      }
+    );
+    const data = response.data.enHide;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}

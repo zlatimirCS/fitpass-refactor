@@ -1,7 +1,18 @@
 {
   "Header": {
     "topBarText": "Keep me posted",
-    "topBarLink": "Keep me posted"
+    "topBarLink": "Keep me posted",
+    "aboutUs": "About us",
+    "forCompanies": "For companies",
+    "forPartners": "For partners",
+    "exploreNetwork": "Explore network",
+    "club": "Club",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "faqNav": "FAQ",
+    "followUs": "Follow us",
+    "resources": "Resources",
+    "comingSoon": "Coming soon"
   },
   "ExploreNetworkPage": {
     "fitpassNetworkPart1": "Fitpass",
