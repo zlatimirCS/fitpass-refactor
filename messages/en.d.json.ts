@@ -17,6 +17,9 @@ declare const messages: {
     "fitpassNetworkPart2": "network",
     "searchGyms": "Search gyms & studios near you"
   },
+  "ForCompanies": {
+    "source": "*Resource:"
+  },
   "SearchResultsExploreNetworkFiltersSection": {
     "locationName": "Location name",
     "cityInput": "City",

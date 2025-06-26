@@ -66,6 +66,48 @@ export async function getAboutUsContent(locale: string) {
   }
 }
 
+export async function getForCompaniesContent(locale: string) {
+  // Simulate a delay
+  const lang = locale === 'en' ? 'secondary' : 'primary';
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/getcmsforcompaniesfrontcontent`,
+      {
+        language: lang,
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_COUNTRY_CODE,
+      }
+    );
+    const data = response.data;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
+export async function getForPartnersContent(locale: string) {
+  // Simulate a delay
+  const lang = locale === 'en' ? 'secondary' : 'primary';
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/getcmsforpartnersfrontcontent`,
+      {
+        language: lang,
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_COUNTRY_CODE,
+      }
+    );
+    const data = response.data;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
 export async function getExploreNetworkContent(locale: string) {
   // Simulate a delay
   const lang = locale === 'en' ? 'secondary' : 'primary';

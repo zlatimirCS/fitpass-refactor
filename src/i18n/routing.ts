@@ -22,6 +22,22 @@ export const routing = defineRouting({
           'about-us'
         ),
     },
+    '/for-companies': {
+      en: '/for-companies',
+      [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]:
+        getLocalizedPath(
+          process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string,
+          'for-companies'
+        ),
+    },
+    '/for-partners': {
+      en: '/for-partners',
+      [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]:
+        getLocalizedPath(
+          process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string,
+          'for-partners'
+        ),
+    },
     '/explore-network/search': {
       en: '/explore-network/search',
       [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]:

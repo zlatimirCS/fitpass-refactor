@@ -77,6 +77,79 @@ export type CmsDataAboutUs = {
   };
 };
 
+export type CmsDataForCompanies = {
+  cmsDataForCompanies: {
+    section1Hide?: boolean;
+    section2Hide?: boolean;
+    section3Hide?: boolean;
+    section1MainHeadingPart1?: string;
+    section1MainHeadingPart2?: string;
+    section1Image1?: string;
+    section1Benefit1Text?: string;
+    section1Benefit1Resource?: string;
+    section1Benefit2Text?: string;
+    section1Benefit2Resource?: string;
+    section1Image2?: string;
+    section1Image3?: string;
+    section1Benefit3Text?: string;
+    section1Benefit3Resource?: string;
+    section2MainHeadingPart1?: string;
+    section2MainHeadingPart2?: string;
+    section2Advantage1Title?: string;
+    section2Advantage1Text?: string;
+    section2Advantage2Title?: string;
+    section2Advantage2Text?: string;
+    section2Advantage3Title?: string;
+    section2Advantage3Text?: string;
+    section2Advantage4Title?: string;
+    section2Advantage4Text?: string;
+    section2Image?: string;
+    section3Card1Title?: string;
+    section3Card1Text?: string;
+    section3Image1?: string;
+    section3Card2Title?: string;
+    section3Card2Text?: string;
+    section3Image2?: string;
+    section3Card3Title?: string;
+    section3Card3Text?: string;
+    section3Image3?: string;
+    section3Card4Title?: string;
+    section3Card4Text?: string;
+    section3Image4?: string;
+    section3MainHeading?: string;
+  };
+};
+
+export type CmsDataForPartners = {
+  cmsDataForPartners: {
+    section1Hide?: boolean;
+    section2Hide?: boolean;
+    section3Hide?: boolean;
+    section1Image?: string;
+    section1MainHeadingPart1?: string;
+    section1MainHeadingPart2?: string;
+    section1MainHeadingPart3?: string;
+    section1Advantage1Title?: string;
+    section1Advantage1Text?: string;
+    section1Advantage2Title?: string;
+    section1Advantage2Text?: string;
+    section1Advantage3Title?: string;
+    section1Advantage3Text?: string;
+    section2MainHeadingPart1?: string;
+    section2MainHeadingPart2?: string;
+    section2MainHeadingPart3?: string;
+    section2Step1Title?: string;
+    section2Step1Text?: string;
+    section2Step2Title?: string;
+    section2Step2Text?: string;
+    section2Step3Title?: string;
+    section2Step3Text?: string;
+    section2ButtonText?: string;
+    section2Image?: string;
+    section2LogoText?: string;
+  };
+};
+
 export type CmsDataExploreNetwork = {
   cmsDataExploreNetwork: {
     test: string;
