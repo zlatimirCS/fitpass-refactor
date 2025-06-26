@@ -147,6 +147,15 @@ export type CmsDataForPartners = {
     section2ButtonText?: string;
     section2Image?: string;
     section2LogoText?: string;
+    section3Info1Title?: string;
+    section3Info1Text?: string;
+    section3Info2Title?: string;
+    section3Info2Text?: string;
+    section3Info3Title?: string;
+    section3Info3Text?: string;
+    section3Info4Title?: string;
+    section3Info4Text?: string;
+    section3MainHeading?: string;
   };
 };
 

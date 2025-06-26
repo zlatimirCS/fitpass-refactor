@@ -1,4 +1,5 @@
-import Navigation from '@/components/Navigation';
+import TopBar from '@/components/common/TopBar';
+import { AppProvider } from '@/context/AppProvider';
 import { routing } from '@/i18n/routing';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -41,8 +42,11 @@ export default async function LocaleLayout({ children, params }: Props) {
       {/* <body className={clsx(inter.className, 'flex h-full flex-col')}> */}
       <body>
         <NextIntlClientProvider>
-          <Navigation />
-          <main>{children}</main>
+          <AppProvider>
+            <TopBar />
+            {/* <Navigation /> */}
+            <main>{children}</main>
+          </AppProvider>
         </NextIntlClientProvider>
       </body>
     </html>

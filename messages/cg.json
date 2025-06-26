@@ -1,4 +1,8 @@
 {
+  "Header": {
+    "topBarText": "Keep me posted",
+    "topBarLink": "Keep me posted"
+  },
   "ExploreNetworkPage": {
     "fitpassNetworkPart1": "Fitpass",
     "fitpassNetworkPart2": "network",
