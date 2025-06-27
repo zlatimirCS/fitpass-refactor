@@ -62,6 +62,18 @@ declare const messages: {
     "recaptchaValidationError": "Please verify that you are human",
     "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
   },
+  "Faq": {
+    "faqHeaderLine1": "Frequently",
+    "faqHeaderLine2": "Asked Questions",
+    "faqHeaderText": "Find answers to the most common questions about Fitpass.",
+    "content": "Content",
+    "whatIsFitpass": "What is Fitpass?",
+    "facilities": "Facilities",
+    "howToGetFitpass": "How to get Fitpass?",
+    "fitpassCompany": "Fitpass Company",
+    "buyingFitpass": "Buying Fitpass",
+    "club": "Club"
+  },
   "SearchResultsExploreNetworkFiltersSection": {
     "locationName": "Location name",
     "cityInput": "City",
