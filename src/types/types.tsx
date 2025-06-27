@@ -74,6 +74,12 @@ export type CmsDataAboutUs = {
     section1Image1?: string;
     section1Row3Text?: string;
     section1Image2?: string;
+    sectionHeaderImageDesktop?: string;
+    sectionHeaderImageTablet?: string;
+    sectionHeaderImageMobile?: string;
+    sectionHeaderMainHeadingPart1?: string;
+    sectionHeaderMainHeadingPart2?: string;
+    sectionHeroHeaderImage?: string;
   };
 };
 

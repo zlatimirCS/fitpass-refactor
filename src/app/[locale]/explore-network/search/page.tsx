@@ -1,4 +1,4 @@
-import SearchExploreNetworkContent from '@/components/SearchExploreNetworkContent';
+import SearchExploreNetworkContent from '@/components/explore-network/SearchExploreNetworkContent';
 import { getCities, getSearchExploreNetworkContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';

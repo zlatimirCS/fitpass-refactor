@@ -1,5 +1,5 @@
 'use client';
-import BtnForm from '@/components/BtnForm';
+import BtnForm from '@/components/common/BtnForm';
 import { CmsDataForPartners } from '@/types/types';
 import { memo } from 'react';
 

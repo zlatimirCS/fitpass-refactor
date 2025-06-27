@@ -1,4 +1,4 @@
-import ExploreNetworkContent from '@/components/ExploreNetworkContent';
+import ExploreNetworkContent from '@/components/explore-network/ExploreNetworkContent';
 import { getCities, getExploreNetworkContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';

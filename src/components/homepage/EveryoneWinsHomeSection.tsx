@@ -1,5 +1,5 @@
 'use client';
-import BtnForm from '@/components/BtnForm';
+import BtnForm from '@/components/common/BtnForm';
 import { CmsDataHp } from '@/types/types';
 import Image from 'next/image';
 import { memo, useState } from 'react';

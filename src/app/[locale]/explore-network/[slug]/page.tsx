@@ -1,4 +1,4 @@
-import SingleVenueContent from '@/components/SingleVenueContent';
+import SingleVenueContent from '@/components/explore-network/SingleVenueContent';
 import { getSingleVenueData } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
