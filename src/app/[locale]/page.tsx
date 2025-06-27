@@ -28,7 +28,7 @@ export default function HomePage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p>Loading</p>}>
+      <Suspense fallback={<p></p>}>
         <Homepage locale={locale} />
       </Suspense>
     </>

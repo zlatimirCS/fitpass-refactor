@@ -43,7 +43,7 @@ export default function SearchExploreNetworkPage({
 
   return (
     <>
-      <Suspense fallback={<p>Loading</p>}>
+      <Suspense fallback={<p></p>}>
         <SearchExploreNetwork searchParams={querySearchParams} />
       </Suspense>
     </>

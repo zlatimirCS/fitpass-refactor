@@ -27,7 +27,7 @@ export default function ExploreNetworkPage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p>Loading</p>}>
+      <Suspense fallback={<p></p>}>
         <ExploreNetwork locale={locale} />
       </Suspense>
     </>

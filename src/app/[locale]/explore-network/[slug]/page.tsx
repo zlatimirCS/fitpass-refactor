@@ -38,7 +38,7 @@ export default function SingleVenuePage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p>Loading</p>}>
+      <Suspense fallback={<p></p>}>
         <SingleVenue slug={slug} locale={locale} />
       </Suspense>
     </>

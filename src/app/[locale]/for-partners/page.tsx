@@ -21,7 +21,7 @@ export default function ForPartnersPage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p>Loading</p>}>
+      <Suspense fallback={<p></p>}>
         <ForPartners locale={locale} />
       </Suspense>
     </>

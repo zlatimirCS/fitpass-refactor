@@ -21,7 +21,7 @@ export default function AboutUsPage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p>Loading</p>}>
+      <Suspense fallback={<p></p>}>
         <About locale={locale} />
       </Suspense>
     </>
