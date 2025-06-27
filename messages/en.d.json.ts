@@ -3,18 +3,16 @@
 
 declare const messages: {
   "Header": {
-    "topBarText": "Keep me posted",
-    "topBarLink": "Keep me posted",
+    "topBarText": "Want to stay up to date?",
+    "topBarLink": "Subscribe to newsletter",
     "aboutUs": "About us",
     "forCompanies": "For companies",
     "forPartners": "For partners",
     "exploreNetwork": "Explore network",
     "club": "Club",
-    "faq": "FAQ",
     "contact": "Contact",
     "faqNav": "FAQ",
     "followUs": "Follow us",
-    "resources": "Resources",
     "comingSoon": "Coming soon"
   },
   "Footer": {
@@ -38,7 +36,7 @@ declare const messages: {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
     "title": "Something went wrong!"
   },
-  "Timeline": {
+  "AboutUs": {
     "fitpassStartsSerbia": "Fitpass begins its’ journey in Serbia!",
     "fitpassBosnia": "Fitpass expands to Bosnia!",
     "bigYearFitpass": "A big year for Fitpass! Launch of the Fitpass app, becoming a part of Up Group, the start of Fitpass Georgia.",

@@ -1,11 +1,11 @@
 const LangSwitchArrow = ({
   fill,
   langDropdownOpen,
-  onClick,
+  // onClick,
 }: {
   fill: string;
   langDropdownOpen: boolean;
-  onClick: () => void;
+  // onClick: () => void;
 }) => {
   return (
     <svg
@@ -17,7 +17,7 @@ const LangSwitchArrow = ({
       width='15px'
       height='15px'
       className={`lang-switch-arrow ${langDropdownOpen ? 'active' : ''}`}
-      onClick={onClick}
+      // onClick={onClick}
     >
       <polyline
         fill='none'

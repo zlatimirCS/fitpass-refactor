@@ -31,7 +31,6 @@ const HomepageContent = ({
       {!cmsDataHp?.section4Hide && (
         <GetFitpassStepsHomeSection cmsDataHp={cmsDataHp} />
       )}
-      {/* <EveryoneWinsHomeSection mainHpData={mainHpData} /> */}
     </>
   );
 };

@@ -113,7 +113,7 @@ const NavBar = ({
               <Link
                 href={`${locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}` ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['faq']}` : '/en/faq'}`}
               >
-                <li>{t('faq')}</li>
+                <li>{t('faqNav')}</li>
               </Link>
               {!ctHide && (
                 <Link

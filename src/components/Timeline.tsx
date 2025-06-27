@@ -7,7 +7,7 @@ import { memo } from 'react';
 const Timeline = () => {
   const screenWidth = useDimensions() || 0;
   const locale = useLocale();
-  const t = useTranslations('Timeline');
+  const t = useTranslations('AboutUs');
   return (
     <section className='our-story-timeline'>
       {screenWidth < 1024 && (

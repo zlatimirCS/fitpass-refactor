@@ -1,35 +1,40 @@
 {
   "Header": {
-    "topBarText": "Keep me posted",
-    "topBarLink": "Keep me posted",
-    "aboutUs": "About us",
-    "forCompanies": "For companies",
-    "forPartners": "For partners",
-    "exploreNetwork": "Explore network",
-    "club": "Club",
-    "faq": "FAQ",
-    "contact": "Contact",
+    "topBarText": "Želiš da imaš najnovije informacije?",
+    "topBarLink": "Prijavi se na newsletter",
+    "aboutUs": "O nama",
+    "forCompanies": "Za kompanije",
+    "forPartners": "Za partnere",
+    "exploreNetwork": "Istražite mrežu",
+    "club": "Klub",
+    "contact": "Kontakt",
     "faqNav": "FAQ",
-    "followUs": "Follow us",
-    "resources": "Resources",
-    "comingSoon": "Coming soon"
+    "followUs": "Prati nas",
+    "resources": "Resursi",
+    "comingSoon": "Uskoro"
   },
   "Footer": {
-    "aboutUs": "About us",
-    "forCompanies": "For companies",
-    "forPartners": "For partners",
-    "exploreNetwork": "Explore network",
-    "club": "Club",
+    "aboutUs": "O nama",
+    "forCompanies": "Za kompanije",
+    "forPartners": "Za partnere",
+    "exploreNetwork": "Istražite mrežu",
+    "club": "Klub",
     "faq": "FAQ",
-    "contact": "Contact",
+    "contact": "Kontakt",
     "faqNav": "FAQ",
-    "followUs": "Follow us",
-    "resources": "Resources",
-    "comingSoon": "Coming soon",
-    "termsConditions": "Terms and conditions",
-    "privacyPolicy": "Privacy policy",
-    "contactUs": "Contact us",
-    "rights": "All rights reserved"
+    "followUs": "Zaprati nas",
+    "resources": "Resursi",
+    "comingSoon": "Uskoro",
+    "termsConditions": "Uslovi korišćenja",
+    "privacyPolicy": "Politika privatnosti",
+    "contactUs": "Kontaktirajte nas",
+    "rights": "Sva prava zadržana"
+  },
+  "AboutUs": {
+    "fitpassStartsSerbia": "Početak Fitpass priče u Srbiji!",
+    "fitpassBosnia": "Fitpass raste i u Bosni!",
+    "bigYearFitpass": "Zlatna godina za Fitpass! Lansiranje Fitpass aplikacije, brend postaje dio Up grupe, začetak Fitpass-a u Gruziji.",
+    "fitpassCg": "Uskoro nova tržišta! Fitpass stiže u Crnu Goru, Grčku i Moldaviju!"
   },
   "ForCompanies": {
     "source": "*Resource:",
@@ -46,12 +51,6 @@
     "fitpassNetworkPart1": "Fitpass",
     "fitpassNetworkPart2": "network",
     "searchGyms": "Search gyms & studios near you"
-  },
-  "Timeline": {
-    "fitpassStartsSerbia": "Fitpass begins its’ journey in Serbia!",
-    "fitpassBosnia": "Fitpass expands to Bosnia!",
-    "bigYearFitpass": "A big year for Fitpass! Launch of the Fitpass app, becoming a part of Up Group, the start of Fitpass Georgia.",
-    "fitpassCg": "New markets alert! Fitpass is coming to Montenegro, Greece and Moldova - SOON!"
   },
   "SearchResultsExploreNetworkFiltersSection": {
     "locationName": "Location name",

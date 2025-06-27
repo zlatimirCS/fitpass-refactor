@@ -1,5 +1,5 @@
 export const dynamic = 'force-dynamic';
-import HomepageContent from '@/components/HomepageContent';
+import HomepageContent from '@/components/homepage/HomepageContent';
 import { getHpContent, getMainSlideshowData } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';

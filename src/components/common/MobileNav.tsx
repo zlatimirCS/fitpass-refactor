@@ -146,9 +146,9 @@ const MobileNav = ({
                   <LangSwitchArrow
                     fill='#000000'
                     langDropdownOpen={langDropdownOpen}
-                    onClick={function (): void {
-                      throw new Error('Function not implemented.');
-                    }}
+                    // onClick={function (): void {
+                    //   throw new Error('Function not implemented.');
+                    // }}
                   />
                 </div>
                 <ul

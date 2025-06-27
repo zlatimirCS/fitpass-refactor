@@ -43,7 +43,7 @@ const Header = ({
         ...mainSlideshowData,
       ];
     }
-    if (locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`) {
+    if (locale === `cg`) {
       return [
         {
           _id: '6752e34892ae4945b8c02ad5',

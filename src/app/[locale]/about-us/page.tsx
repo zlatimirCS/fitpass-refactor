@@ -1,4 +1,4 @@
-import AboutUsContent from '@/components/AboutUsContent';
+import AboutUsContent from '@/components/about-us/AboutUsContent';
 import { getAboutUsContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
