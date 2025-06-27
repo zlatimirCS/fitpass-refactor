@@ -1,23 +1,10 @@
 'use client';
-
-declare global {
-  interface Window {
-    grecaptcha?: {
-      reset: () => void;
-      // add other methods if needed
-    };
-  }
-}
-
-import { CmsDataForCompanies } from '@/types/types';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import { InputAdornment } from '@mui/material';
+import { CmsDataForPartners } from '@/types/types';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
-import Tooltip from '@mui/material/Tooltip';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { notification } from 'antd';
 import axios from 'axios';
@@ -25,20 +12,49 @@ import { useLocale, useTranslations } from 'next-intl';
 import { memo, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
-  const t = useTranslations('ForCompanies');
+declare global {
+  interface Window {
+    grecaptcha?: {
+      reset: () => void;
+    };
+  }
+}
+
+type FormType = {
+  [key: string]: string | boolean;
+  venueName: string;
+  venueType: string;
+  address: string;
+  nameSurname: string;
+  email: string;
+  phoneNumber: string;
+  terms: boolean;
+  newsUpdates: boolean;
+  recaptchaToken: string;
+};
+type FormErrorType = {
+  [key: string]: boolean;
+  venueName: boolean;
+  venueType: boolean;
+  address: boolean;
+  nameSurname: boolean;
+  email: boolean;
+  phoneNumber: boolean;
+  terms: boolean;
+  newsUpdates: boolean;
+};
+
+const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
+  const t = useTranslations('ForPartners');
   const locale = useLocale();
   const recaptchaRef = useRef<any>(null);
   const desktop = useMediaQuery('(min-width:1024px)');
   const mobile = useMediaQuery('(max-width:768px)');
   const tablet = useMediaQuery('(min-width:768px) and (max-width:1023px)');
   const [recaptchaError, setRecaptchaError] = useState<string | null>(null);
-
-  const [form, setForm] = useState({
-    companyName: '',
-    role: '',
-    teamSize: '',
-    companyID: '',
+  const [form, setForm] = useState<FormType>({
+    venueName: '',
+    venueType: '',
     address: '',
     nameSurname: '',
     email: '',
@@ -47,12 +63,9 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
     newsUpdates: false,
     recaptchaToken: '',
   });
-
-  const [formError, setFormError] = useState({
-    companyName: false,
-    role: false,
-    teamSize: false,
-    companyID: false,
+  const [formError, setFormError] = useState<FormErrorType>({
+    venueName: false,
+    venueType: false,
     address: false,
     nameSurname: false,
     email: false,
@@ -96,10 +109,8 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
   };
 
   const handleFormChange = (e: {
-    target: { value: any; name: any; checked?: any };
+    target: { value: any; name: string; checked?: boolean };
   }) => {
-    const { name, value } = e.target;
-
     if (e.target.value !== '') {
       setFormError(prev => ({
         ...prev,
@@ -111,80 +122,59 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
         [e.target.name]: true,
       }));
     }
-
-    if (name === 'phoneNumber') {
-      if (isNaN(Number(value))) {
+    if (e.target.name === 'phoneNumber') {
+      if (isNaN(Number(e.target.value))) {
         setFormError(prev => ({
           ...prev,
           phoneNumber: true,
         }));
       }
     }
-
-    if (name === 'companyID') {
-      if (isNaN(Number(value))) {
-        setFormError(prev => ({
-          ...prev,
-          companyID: true,
-        }));
-      }
-    }
-
     if (e.target.name === 'terms' || e.target.name === 'newsUpdates') {
-      setForm({
-        ...form,
-        [e.target.name]: e.target.checked,
-      });
+      setForm(prevForm => ({
+        ...prevForm,
+        [e.target.name]: !!e.target.checked,
+      }));
       return;
     }
-    setForm({
-      ...form,
-      [name]: value,
-    });
+    setForm(prevForm => ({
+      ...prevForm,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   const handleFormSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const {
-      companyName,
-      role,
-      teamSize,
+      venueName,
+      venueType,
       address,
       nameSurname,
       email,
       phoneNumber,
       terms,
-      companyID,
     } = form;
     const fieldsToValidate = [
-      'companyName',
-      'companyID',
+      'venueName',
+      'venueType',
       'address',
       'nameSurname',
       'email',
       'phoneNumber',
-      'role',
-      'teamSize',
       'terms',
     ];
     fieldsToValidate.forEach(field => {
-      if (field === 'phoneNumber') {
-        setFormError(prev => ({
-          ...prev,
-          phoneNumber: !form.phoneNumber || isNaN(Number(form.phoneNumber)),
-        }));
-      } else if (field === 'companyID') {
-        setFormError(prev => ({
-          ...prev,
-          companyID: !form.companyID || isNaN(Number(form.companyID)),
-        }));
-      } else {
-        setFormError(prev => ({
-          ...prev,
-          [field]: !form[field as keyof typeof form],
-        }));
-      }
+      setFormError(prev => ({
+        ...prev,
+        [field]: !form[field],
+      }));
     });
+    if (isNaN(Number(phoneNumber))) {
+      setFormError(prev => ({
+        ...prev,
+        phoneNumber: true,
+      }));
+    }
     const emailPatternVal = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailPatternVal.test(email)) {
       setFormError(prev => ({
@@ -192,81 +182,49 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
         email: true,
       }));
     }
-    if (isNaN(Number(phoneNumber))) {
-      setFormError(prev => ({
-        ...prev,
-        phoneNumber: true,
-      }));
-    }
-    if (isNaN(Number(companyID))) {
-      setFormError(prev => ({
-        ...prev,
-        companyID: true,
-      }));
-    }
-    if (!companyName) {
+    if (!venueName || !venueType || !address || !nameSurname || !email) {
       notification.error({
-        message: t('requiredFieldsMessage'),
-      });
-      return;
-    }
-    if (isNaN(Number(companyID))) {
-      notification.error({
-        message: t('companyNumberValid'),
-      });
-      return;
-    }
-    if (!address || !nameSurname || !email) {
-      notification.error({
-        message: t('requiredFieldsMessage'),
+        message: 'Please fill out all required fields.',
       });
       return;
     }
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailPattern.test(email)) {
       notification.error({
-        message: t('validEmail'),
+        message: 'Please enter a valid email address.',
       });
       return;
     }
     if (!phoneNumber) {
       notification.error({
-        message: t('requiredFieldsMessage'),
+        message: 'Please fill out all required fields.',
       });
       return;
     }
     if (isNaN(Number(phoneNumber))) {
       notification.error({
-        message: t('phoneNumberValid'),
-      });
-      return;
-    }
-    if (!role || !teamSize) {
-      notification.error({
-        message: t('requiredFieldsMessage'),
+        message: 'Please enter a valid phone number.',
       });
       return;
     }
     if (!terms) {
       notification.error({
-        message: t('acceptTerms'),
+        message: 'Please accept the Terms and conditions and Privacy policy.',
       });
       return;
     }
     if (!form.recaptchaToken) {
-      setRecaptchaError(t('recaptchaValidationError'));
+      setRecaptchaError('Please verify that you are human');
       return;
     }
-    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/contact-companies`, {
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/contact-partners`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        companyName: form.companyName,
-        role: form.role,
-        teamSize: form.teamSize,
-        companyID: form.companyID,
+        venueName: form.venueName,
+        venueType: form.venueType,
         address: form.address,
         nameSurname: form.nameSurname,
         email: form.email,
@@ -278,17 +236,15 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
       .then(() => {})
       .catch(() =>
         notification.error({
-          message: t('formErrorMessage'),
+          message: 'Something went wrong. Please try again later.',
         })
       );
     notification.success({
       message: 'Form submitted successfully!',
     });
     setForm({
-      companyName: '',
-      role: '',
-      teamSize: '',
-      companyID: '',
+      venueName: '',
+      venueType: '',
       address: '',
       nameSurname: '',
       email: '',
@@ -304,46 +260,46 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
   };
 
   return (
-    <div className='hero-companies'>
+    <div className='hero-partners'>
       <div
         style={{
           backgroundImage: `url(${
             desktop
-              ? cmsDataForCompanies?.section1Image1
+              ? cmsDataForPartners?.section1Image
               : tablet
-                ? cmsDataForCompanies?.section1Image1
+                ? cmsDataForPartners?.section1Image
                 : mobile
-                  ? cmsDataForCompanies?.section1Image1
+                  ? cmsDataForPartners?.section1Image
                   : ''
           })`,
         }}
-        className='hero-companies-hero-img-wrap'
+        className='hero-partners-hero-img-wrap'
       >
         <div className='gray-overlay'></div>
       </div>
-      {/* <div className="gray-overlay"></div> */}
       <div className='wrapper'>
-        <div className='hero-companies__content'>
+        <div className='hero-partners__content'>
           <h1>
-            <span>{cmsDataForCompanies?.section1MainHeadingPart1 || ''}</span>
+            <span>{cmsDataForPartners?.section1MainHeadingPart1 || ''}</span>
+            <span>{cmsDataForPartners?.section1MainHeadingPart2 || ''}</span>
             <span className='bold'>
-              {cmsDataForCompanies?.section1MainHeadingPart2 || ''}
+              {cmsDataForPartners?.section1MainHeadingPart3 || ''}
             </span>
           </h1>
-          <div className='hero-companies__content__form'>
+          <div className='hero-partners__content__form'>
             <form onSubmit={handleFormSubmit} id='submitForm'>
-              {/*Company name*/}
+              {/*Venue name*/}
               <TextField
                 id='outlined-basic'
-                label={'Company name'}
+                label={'Venue name'}
                 variant='filled'
-                value={form.companyName}
-                name='companyName'
+                value={form.venueName as string}
+                name='venueName'
                 onChange={handleFormChange}
                 InputProps={{
                   sx: {
                     fontFamily: 'inherit',
-                    color: formError.companyName ? '#ff0033' : '#686868',
+                    color: formError.venueName ? '#ff0033' : '#686868',
                     fontSize: '16px',
                   },
                 }}
@@ -351,7 +307,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                   width: '100%',
                   '& .MuiInputBase-root': {
                     borderBottom: `1px solid ${
-                      formError.companyName ? '#ff0033' : '#686868'
+                      formError.venueName ? '#ff0033' : '#686868'
                     }`,
                     '&:before': {
                       borderBottom: 'none',
@@ -359,14 +315,10 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                   },
                   '& .MuiFilledInput-underline': {
                     '&:before': {
-                      borderColor: formError.companyName
-                        ? '#ff0033'
-                        : '#373737',
+                      borderColor: formError.venueName ? '#ff0033' : '#373737',
                     },
                     '&:after': {
-                      borderColor: formError.companyName
-                        ? '#ff0033'
-                        : '#373737',
+                      borderColor: formError.venueName ? '#ff0033' : '#373737',
                     },
                   },
                   '& .MuiFilledInput-input': {
@@ -374,18 +326,16 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                   },
                   '&:hover .MuiFilledInput-underline': {
                     '&:before': {
-                      borderColor: formError.companyName
-                        ? '#ff0033'
-                        : '#373737',
+                      borderColor: formError.venueName ? '#ff0033' : '#373737',
                       borderWidth: '1px',
                     },
                   },
                   '& .MuiInputLabel-root': {
                     fontSize: '16px',
                     fontFamily: 'inherit',
-                    color: formError.companyName ? '#ff0033' : '#373737',
+                    color: formError.venueName ? '#ff0033' : '#373737',
                     '&.Mui-focused': {
-                      color: formError.companyName ? '#ff0033' : '#373737',
+                      color: formError.venueName ? '#ff0033' : '#373737',
                     },
                   },
                   '& .MuiInputLabel-shrink': {
@@ -402,106 +352,96 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                   },
                 }}
               />
-              {/*Company name*/}
-
-              {/*PIB*/}
-              <TextField
-                id='outlined-basic'
-                label={'Company number'}
+              {/*Venue name*/}
+              {/*Venue type*/}
+              <FormControl
                 variant='filled'
-                value={form.companyID}
-                name='companyID'
-                onChange={handleFormChange}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment
-                      sx={{ '& > svg': { color: '#000' } }}
-                      position='end'
-                      title={'Enter the company number (TIN)'}
-                    >
-                      <Tooltip
-                        enterTouchDelay={0}
-                        title={'Enter the company number (TIN)'}
-                        componentsProps={{
-                          tooltip: {
-                            sx: {
-                              fontSize: '1.5rem',
-                            },
-                          },
-                        }}
-                      >
-                        <HelpOutlineIcon
-                          sx={{
-                            fontSize: '2rem',
-                            cursor: 'pointer',
-                          }}
-                        />
-                      </Tooltip>
-                    </InputAdornment>
-                  ),
-                  sx: {
-                    fontFamily: 'inherit',
-                    color: formError.companyID ? '#ff0033' : '#686868',
-                    fontSize: '16px',
+                sx={{
+                  '&.MuiFormControl-root': {
+                    width: '100%',
                   },
                 }}
-                sx={{
-                  width: '100%',
-                  '& .MuiInputBase-root': {
-                    borderBottom: `1px solid ${
-                      formError.companyID ? '#ff0033' : '#686868'
-                    }`,
-                    '&:before': {
-                      borderBottom: 'none',
+                style={{ minWidth: '100%' }}
+                fullWidth={true}
+              >
+                <InputLabel
+                  id='demo-simple-select-filled-label'
+                  sx={{
+                    color: formError.venueType ? '#ff0033' : '#373737',
+                    fontFamily: 'inherit',
+                    fontSize: '16px',
+                    '&.Mui-focused': {
+                      color: formError.venueType ? '#ff0033' : '#373737',
+                      top: '-5px',
+                      fontSize: '18px',
                     },
-                  },
-                  '& .MuiFilledInput-underline': {
+                    '&:not(.Mui-focused).MuiInputLabel-shrink': {
+                      color: formError.venueType ? '#ff0033' : '#373737',
+                      top: '-5px',
+                      fontSize: '18px',
+                    },
+                  }}
+                >
+                  {'Venue type'}
+                </InputLabel>
+                <Select
+                  labelId='demo-simple-select-filled-label'
+                  id='demo-simple-select-filled'
+                  value={form.venueType as string}
+                  name='venueType'
+                  onChange={handleFormChange}
+                  sx={{
+                    '& .MuiFilledInput-input': {
+                      paddingBottom: '7px',
+                    },
                     '&:before': {
-                      borderColor: formError.companyID ? '#ff0033' : '#373737',
+                      borderColor: formError.venueType ? '#ff0033' : '#686868',
+                    },
+                    '&:not(.Mui-disabled):hover::before': {
+                      borderColor: formError.venueType ? '#ff0033' : '#686868',
                     },
                     '&:after': {
-                      borderColor: formError.companyID ? '#ff0033' : '#373737',
+                      borderColor: formError.venueType ? '#ff0033' : '#686868',
                     },
-                  },
-                  '& .MuiFilledInput-input': {
-                    paddingTop: '20px',
-                  },
-                  '&:hover .MuiFilledInput-underline': {
-                    '&:before': {
-                      borderColor: formError.companyID ? '#ff0033' : '#373737',
-                      borderWidth: '1px',
+                    '& .MuiInputBase-input': {
+                      fontSize: '16px',
+                      color: formError.venueType ? '#ff0033' : '#686868',
                     },
-                  },
-                  '& .MuiInputLabel-root': {
-                    fontSize: '16px',
-                    fontFamily: 'inherit',
-                    color: formError.companyID ? '#ff0033' : '#373737',
-                    '&.Mui-focused': {
-                      color: formError.companyID ? '#ff0033' : '#373737',
+                    '& .MuiSelect-select': {
+                      minHeight: '2rem !important',
                     },
-                  },
-                  '& .MuiInputLabel-shrink': {
-                    fontSize: '18px',
-                    top: '-5px',
-                    color: formError.companyID ? '#ff0033' : '#373737',
-                    fontFamily: 'inherit',
-                  },
-                  '& .MuiInputLabel-focused': {
-                    fontSize: '18px',
-                    top: '-5px',
-                    color: '#373737',
-                    fontFamily: 'inherit',
-                  },
-                }}
-              />
-              {/*PIB*/}
-
+                  }}
+                >
+                  <MenuItem value='gym' sx={{ fontSize: '14px' }}>
+                    {'Gym'}
+                  </MenuItem>
+                  <MenuItem value='pool' sx={{ fontSize: '14px' }}>
+                    {'Pool'}
+                  </MenuItem>
+                  <MenuItem value='spaSauna' sx={{ fontSize: '14px' }}>
+                    {'Spa/Sauna'}
+                  </MenuItem>
+                  <MenuItem value='sportComplex' sx={{ fontSize: '14px' }}>
+                    {'Sport Complex'}
+                  </MenuItem>
+                  <MenuItem value='kidsActivities' sx={{ fontSize: '14px' }}>
+                    {'Kids Activities'}
+                  </MenuItem>
+                  <MenuItem value='groupClasses' sx={{ fontSize: '14px' }}>
+                    {'Group Classes'}
+                  </MenuItem>
+                  <MenuItem value='other' sx={{ fontSize: '14px' }}>
+                    {'Other'}
+                  </MenuItem>
+                </Select>
+              </FormControl>
+              {/*Venue type*/}
               {/*Address*/}
               <TextField
                 id='outlined-basic'
                 label={'Address'}
                 variant='filled'
-                value={form.address}
+                value={form.address as string}
                 name='address'
                 onChange={handleFormChange}
                 InputProps={{
@@ -561,13 +501,12 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                 }}
               />
               {/*Address*/}
-
               {/*Name surname*/}
               <TextField
                 id='outlined-basic'
                 label={'Name and surname'}
                 variant='filled'
-                value={form.nameSurname}
+                value={form.nameSurname as string}
                 name='nameSurname'
                 onChange={handleFormChange}
                 InputProps={{
@@ -633,13 +572,12 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                 }}
               />
               {/*Name surname*/}
-
               {/*Email*/}
               <TextField
                 id='outlined-basic'
                 label={'Email*'}
                 variant='filled'
-                value={form.email}
+                value={form.email as string}
                 name='email'
                 onChange={handleFormChange}
                 InputProps={{
@@ -687,7 +625,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                   '& .MuiInputLabel-shrink': {
                     fontSize: '18px',
                     top: '-5px',
-                    color: formError.email ? '#ff0033' : '#373737',
+                    color: '#373737',
                     fontFamily: 'inherit',
                   },
                   '& .MuiInputLabel-focused': {
@@ -699,13 +637,12 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                 }}
               />
               {/*Email*/}
-
-              {/*Phone Number*/}
+              {/*Phone number*/}
               <TextField
                 id='outlined-basic'
                 label={'Phone number'}
                 variant='filled'
-                value={form.phoneNumber}
+                value={form.phoneNumber as string}
                 name='phoneNumber'
                 onChange={handleFormChange}
                 InputProps={{
@@ -759,7 +696,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                   '& .MuiInputLabel-shrink': {
                     fontSize: '18px',
                     top: '-5px',
-                    color: formError.phoneNumber ? '#ff0033' : '#373737',
+                    color: '#373737',
                     fontFamily: 'inherit',
                   },
                   '& .MuiInputLabel-focused': {
@@ -770,168 +707,6 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                   },
                 }}
               />
-              {/*Phone Number*/}
-
-              {/*Role*/}
-              <FormControl
-                variant='filled'
-                sx={{
-                  '&.MuiFormControl-root': {
-                    width: '100%',
-                  },
-                }}
-                style={{ minWidth: '100%' }}
-                fullWidth={true}
-              >
-                <InputLabel
-                  id='demo-simple-select-filled-label'
-                  sx={{
-                    color: formError.role ? '#ff0033' : '#373737',
-                    fontFamily: 'inherit',
-                    fontSize: '16px',
-                    '&.Mui-focused': {
-                      color: formError.role ? '#ff0033' : '#373737',
-                      top: '-5px',
-                      fontSize: '18px',
-                    },
-                    '&:not(.Mui-focused).MuiInputLabel-shrink': {
-                      color: formError.role ? '#ff0033' : '#373737',
-                      top: '-5px',
-                      fontSize: '18px',
-                    },
-                  }}
-                >
-                  {'Your position'}
-                </InputLabel>
-                <Select
-                  labelId='demo-simple-select-filled-label'
-                  id='demo-simple-select-filled'
-                  value={form.role}
-                  name='role'
-                  onChange={handleFormChange}
-                  sx={{
-                    '& .MuiFilledInput-input': {
-                      paddingBottom: '7px',
-                    },
-                    '&:before': {
-                      borderColor: formError.role ? '#ff0033' : '#686868',
-                    },
-                    '&:not(.Mui-disabled):hover::before': {
-                      borderColor: formError.role ? '#ff0033' : '#686868',
-                    },
-                    '&:after': {
-                      borderColor: formError.role ? '#ff0033' : '#686868',
-                    },
-                    '& .MuiInputBase-input': {
-                      fontSize: '16px',
-                      color: formError.role ? '#ff0033' : '#686868',
-                    },
-                    '& .MuiSelect-select': {
-                      minHeight: '2rem !important',
-                    },
-                  }}
-                >
-                  <MenuItem value='cto' sx={{ fontSize: '14px' }}>
-                    {'CEO'}
-                  </MenuItem>
-                  <MenuItem value='ceo' sx={{ fontSize: '14px' }}>
-                    {'Founder/Owner'}
-                  </MenuItem>
-                  <MenuItem value='hrManager' sx={{ fontSize: '14px' }}>
-                    {'HR Manager'}
-                  </MenuItem>
-                  <MenuItem value='teamLead' sx={{ fontSize: '14px' }}>
-                    {'Team Lead'}
-                  </MenuItem>
-                  <MenuItem value='employee' sx={{ fontSize: '14px' }}>
-                    {'Employee'}
-                  </MenuItem>
-                  <MenuItem value='other' sx={{ fontSize: '14px' }}>
-                    {'Group classes'}
-                  </MenuItem>
-                  <MenuItem value='other' sx={{ fontSize: '14px' }}>
-                    {'Other'}
-                  </MenuItem>
-                </Select>
-              </FormControl>
-              {/*Role*/}
-
-              {/*Team size*/}
-              <FormControl
-                variant='filled'
-                sx={{
-                  '&.MuiFormControl-root': {
-                    width: '100%',
-                  },
-                }}
-                style={{ minWidth: '100%' }}
-                fullWidth={true}
-              >
-                <InputLabel
-                  id='demo-simple-select-filled-label'
-                  sx={{
-                    color: formError.role ? '#ff0033' : '#373737',
-                    fontFamily: 'inherit',
-                    fontSize: '16px',
-                    '&.Mui-focused': {
-                      color: formError.role ? '#ff0033' : '#373737',
-                      top: '-5px',
-                      fontSize: '18px',
-                    },
-                    '&:not(.Mui-focused).MuiInputLabel-shrink': {
-                      color: formError.role ? '#ff0033' : '#373737',
-                      top: '-5px',
-                      fontSize: '18px',
-                    },
-                  }}
-                >
-                  {'Your team size'}
-                </InputLabel>
-                <Select
-                  labelId='demo-simple-select-filled-label'
-                  id='demo-simple-select-filled'
-                  value={form.teamSize}
-                  name='teamSize'
-                  onChange={handleFormChange}
-                  sx={{
-                    '& .MuiFilledInput-input': {
-                      paddingBottom: '7px',
-                    },
-                    '&:before': {
-                      borderColor: formError.teamSize ? '#ff0033' : '#686868',
-                    },
-                    '&:not(.Mui-disabled):hover::before': {
-                      borderColor: formError.teamSize ? '#ff0033' : '#686868',
-                    },
-                    '&:after': {
-                      borderColor: formError.teamSize ? '#ff0033' : '#686868',
-                    },
-                    '& .MuiInputBase-input': {
-                      fontSize: '16px',
-                      color: formError.teamSize ? '#ff0033' : '#686868',
-                    },
-                    '& .MuiSelect-select': {
-                      minHeight: '2rem !important',
-                    },
-                  }}
-                >
-                  <MenuItem value='<15' sx={{ fontSize: '14px' }}>
-                    {'<15'}
-                  </MenuItem>
-                  <MenuItem value='15-50' sx={{ fontSize: '14px' }}>
-                    {'15-50'}
-                  </MenuItem>
-                  <MenuItem value='50-100' sx={{ fontSize: '14px' }}>
-                    {'50-100'}
-                  </MenuItem>
-                  <MenuItem value='100-300' sx={{ fontSize: '14px' }}>
-                    {'100-300'}
-                  </MenuItem>
-                  <MenuItem value='300>' sx={{ fontSize: '14px' }}>
-                    {'>300'}
-                  </MenuItem>
-                </Select>
-              </FormControl>
               <ReCAPTCHA
                 ref={recaptchaRef}
                 sitekey={
@@ -945,17 +720,15 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                   {recaptchaError}
                 </p>
               )}
-              {/*Team size*/}
-
               <div className='form-bottom'>
                 <div className='form-bottom-flex'>
                   <input
                     type='checkbox'
                     name='terms'
                     onChange={handleFormChange}
-                    checked={form.terms}
+                    checked={form.terms as boolean}
                   />
-                  <p className={`links-form`}>
+                  <p className='links-form'>
                     <span>
                       {locale === 'en' ? (
                         <span
@@ -965,9 +738,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                           <a
                             href='/assets/terms-of-service.pdf'
                             target='_blank'
-                            className={`${
-                              formError.terms ? 'terms-error' : ''
-                            }`}
+                            className={`$${formError.terms ? 'terms-error' : ''}`}
                           >
                             Terms and conditions
                           </a>{' '}
@@ -975,9 +746,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                           <a
                             href='/assets/privacy-policy.pdf'
                             target='_blank'
-                            className={`${
-                              formError.terms ? 'terms-error' : ''
-                            }`}
+                            className={`$${formError.terms ? 'terms-error' : ''}`}
                           >
                             Privacy&nbsp;policy
                           </a>
@@ -991,9 +760,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                           <a
                             href='/assets/terms-of-service.pdf'
                             target='_blank'
-                            className={`${
-                              formError.terms ? 'terms-error' : ''
-                            }`}
+                            className={`$${formError.terms ? 'terms-error' : ''}`}
                           >
                             Uslove korišćenja
                           </a>{' '}
@@ -1001,9 +768,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                           <a
                             href='/assets/privacy-policy.pdf'
                             target='_blank'
-                            className={`${
-                              formError.terms ? 'terms-error' : ''
-                            }`}
+                            className={`$${formError.terms ? 'terms-error' : ''}`}
                           >
                             Politiku&nbsp;privatnosti
                           </a>
@@ -1018,7 +783,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                     type='checkbox'
                     name='newsUpdates'
                     onChange={handleFormChange}
-                    checked={form.newsUpdates}
+                    checked={form.newsUpdates as boolean}
                   />
                   <p>
                     <span>
@@ -1055,4 +820,4 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
     </div>
   );
 };
-export default memo(HeroForCompanies);
+export default memo(HeroForPartners);

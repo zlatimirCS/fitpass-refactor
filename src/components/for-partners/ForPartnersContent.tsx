@@ -1,4 +1,5 @@
 import { CmsDataForPartners } from '@/types/types';
+import HeaderForPartners from './HeaderForPartners';
 import LocalPartnerForPartnersSection from './LocalPartnerForPartnersSection';
 import MoreInfoForPartnersSection from './MoreInfoForPartnersSection';
 import RevenueForPartnersSection from './RevenueForPartnersSection';
@@ -9,6 +10,7 @@ const ForPartnersContent = ({ cmsDataForPartners }: CmsDataForPartners) => {
   }
   return (
     <>
+      <HeaderForPartners cmsDataForPartners={cmsDataForPartners} />
       {!cmsDataForPartners.section1Hide && (
         <RevenueForPartnersSection cmsDataForPartners={cmsDataForPartners} />
       )}

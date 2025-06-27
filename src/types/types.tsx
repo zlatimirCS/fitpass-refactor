@@ -117,6 +117,11 @@ export type CmsDataForCompanies = {
     section3Card4Text?: string;
     section3Image4?: string;
     section3MainHeading?: string;
+    sectionHeaderImageDesktop?: string;
+    sectionHeaderImageTablet?: string;
+    sectionHeaderImageMobile?: string;
+    sectionHeaderMainHeadingPart1?: string;
+    sectionHeaderMainHeadingPart2?: string;
   };
 };
 
@@ -156,6 +161,11 @@ export type CmsDataForPartners = {
     section3Info4Title?: string;
     section3Info4Text?: string;
     section3MainHeading?: string;
+    sectionHeaderImageDesktop?: string;
+    sectionHeaderImageTablet?: string;
+    sectionHeaderImageMobile?: string;
+    sectionHeaderMainHeadingPart1?: string;
+    sectionHeaderMainHeadingPart2?: string;
   };
 };
 

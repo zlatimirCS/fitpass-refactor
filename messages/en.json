@@ -40,6 +40,10 @@
     "formErrorMessage": "Something went wrong. Please try again later.",
     "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
   },
+  "ForPartners": {
+    "recaptchaValidationError": "Please verify that you are human",
+    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
+  },
   "SearchResultsExploreNetworkFiltersSection": {
     "locationName": "Location name",
     "cityInput": "City",
