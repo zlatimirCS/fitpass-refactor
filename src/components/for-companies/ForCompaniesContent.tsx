@@ -1,6 +1,7 @@
 import { CmsDataForCompanies } from '@/types/types';
 import BenefitsForCompaniesSection from './BenefitsForCompaniesSection';
 import ClientSupportForCompanies from './ClientSupportForCompanies';
+import HeaderForCompanies from './HeaderForCompanies';
 import TeamBenefits from './TeamBenefits';
 
 const ForCompaniesContent = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
@@ -9,6 +10,7 @@ const ForCompaniesContent = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
   }
   return (
     <>
+      <HeaderForCompanies cmsDataForCompanies={cmsDataForCompanies} />
       {!cmsDataForCompanies.section1Hide && (
         <BenefitsForCompaniesSection
           cmsDataForCompanies={cmsDataForCompanies}

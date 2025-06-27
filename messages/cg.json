@@ -14,6 +14,17 @@
     "resources": "Resources",
     "comingSoon": "Coming soon"
   },
+  "ForCompanies": {
+    "source": "*Resource:",
+    "recaptchaValidationError": "Please verify that you are human",
+    "companyNumberValid": "Please enter a valid TIN.",
+    "requiredFieldsMessage": "Please fill out all required fields.",
+    "validEmail": "Please enter a valid email address.",
+    "phoneNumberValid": "Please enter a valid phone number.",
+    "acceptTerms": "Please accept the Terms and conditions and Privacy policy.",
+    "formErrorMessage": "Something went wrong. Please try again later.",
+    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
+  },
   "ExploreNetworkPage": {
     "fitpassNetworkPart1": "Fitpass",
     "fitpassNetworkPart2": "network",
