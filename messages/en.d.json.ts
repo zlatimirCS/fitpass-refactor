@@ -17,6 +17,23 @@ declare const messages: {
     "resources": "Resources",
     "comingSoon": "Coming soon"
   },
+  "Footer": {
+    "aboutUs": "About us",
+    "forCompanies": "For companies",
+    "forPartners": "For partners",
+    "exploreNetwork": "Explore network",
+    "club": "Club",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "faqNav": "FAQ",
+    "followUs": "Follow us",
+    "resources": "Resources",
+    "comingSoon": "Coming soon",
+    "termsConditions": "Terms and conditions",
+    "privacyPolicy": "Privacy policy",
+    "contactUs": "Contact us",
+    "rights": "All rights reserved"
+  },
   "Error": {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
     "title": "Something went wrong!"

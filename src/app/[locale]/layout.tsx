@@ -1,3 +1,4 @@
+import Footer from '@/components/common/Footer';
 import NavBar from '@/components/common/NavBar';
 import TopBar from '@/components/common/TopBar';
 import { AppProvider } from '@/context/AppProvider';
@@ -16,7 +17,6 @@ import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 import '../../styles/main.scss';
 import './styles.css';
-
 type Props = {
   children: ReactNode;
   params: Promise<{ locale: Locale }>;
@@ -68,6 +68,14 @@ export default async function LocaleLayout({ children, params }: Props) {
               ctHide={ctHide}
             />
             <main>{children}</main>
+            <Footer
+              fpHide={fpHide}
+              auHide={auHide}
+              fcHide={fcHide}
+              enHide={enHide}
+              clHide={clHide}
+              ctHide={ctHide}
+            />
           </AppProvider>
         </NextIntlClientProvider>
       </body>
