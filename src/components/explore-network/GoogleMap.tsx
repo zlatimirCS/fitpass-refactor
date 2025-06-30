@@ -116,7 +116,7 @@ const GoogleMap = ({
         },
       });
     });
-  }, [center, initialVenues]);
+  }, [center, initialVenues, readOnly, zoom]);
 
   return (
     <div

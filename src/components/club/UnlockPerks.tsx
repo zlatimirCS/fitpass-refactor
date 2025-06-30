@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { CmsDataClub } from '../../types/types';
 
 const UnlockPerks = ({ cmsDataClub }: CmsDataClub) => {
@@ -26,7 +27,12 @@ const UnlockPerks = ({ cmsDataClub }: CmsDataClub) => {
             <div className='bottom'>
               <div className='item'>
                 <div className='item__icon'>
-                  <img src='/assets/icons/club-icon-1.svg' alt='icon' />
+                  <Image
+                    src='/assets/icons/club-icon-1.svg'
+                    alt='icon'
+                    width={40}
+                    height={40}
+                  />
                 </div>
                 <div className='item__text'>
                   <h4>
@@ -43,7 +49,12 @@ const UnlockPerks = ({ cmsDataClub }: CmsDataClub) => {
               </div>
               <div className='item'>
                 <div className='item__icon'>
-                  <img src='/assets/icons/club-icon-2.svg' alt='icon' />
+                  <Image
+                    src='/assets/icons/club-icon-2.svg'
+                    alt='icon'
+                    width={40}
+                    height={40}
+                  />
                 </div>
                 <div className='item__text'>
                   <h4>
@@ -60,7 +71,12 @@ const UnlockPerks = ({ cmsDataClub }: CmsDataClub) => {
               </div>
               <div className='item'>
                 <div className='item__icon'>
-                  <img src='/assets/icons/club-icon-3.svg' alt='icon' />
+                  <Image
+                    src='/assets/icons/club-icon-3.svg'
+                    alt='icon'
+                    width={40}
+                    height={40}
+                  />
                 </div>
                 <div className='item__text'>
                   <h4>
@@ -77,7 +93,12 @@ const UnlockPerks = ({ cmsDataClub }: CmsDataClub) => {
               </div>
               <div className='item'>
                 <div className='item__icon'>
-                  <img src='/assets/icons/club-icon-4.svg' alt='icon' />
+                  <Image
+                    src='/assets/icons/club-icon-4.svg'
+                    alt='icon'
+                    width={40}
+                    height={40}
+                  />
                 </div>
                 <div className='item__text'>
                   <h4>

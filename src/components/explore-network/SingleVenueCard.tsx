@@ -1,6 +1,7 @@
 'use client';
 import { routeTranslations } from '@/lib/routeTranslations';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import * as NProgress from 'nprogress';
@@ -153,9 +154,11 @@ const SingleVenueCard = ({
             </span>
           </div>
           <div className='single-venue-card-item single-venue-card__location'>
-            <img
+            <Image
               src='/assets/icons/venue-location-icon.svg'
               alt='location icon'
+              width={20}
+              height={20}
               className='large'
             />
             <span style={{ letterSpacing: '1px' }}>
@@ -164,9 +167,11 @@ const SingleVenueCard = ({
             </span>
           </div>
           <div className='single-venue-card-item single-venue-card__hours'>
-            <img
+            <Image
               src='/assets/icons/venue-working-hours-icon.svg'
               alt='hours icon'
+              width={16}
+              height={16}
               className='smaller'
             />
             <div className='inner-flex'>
@@ -185,13 +190,15 @@ const SingleVenueCard = ({
                 }}
               >
                 <span>{openClosed}</span>
-                <img
+                <Image
                   ref={arrowRef}
                   className={`work-hours-arrow ${
                     workHoursTooltipVisible ? 'active' : ''
                   }`}
                   src='/assets/icons/switch-arrow-gray.svg'
                   alt='chevron down'
+                  width={16}
+                  height={16}
                 />
                 <div
                   className={`work-hours-tooltip ${

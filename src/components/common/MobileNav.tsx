@@ -8,7 +8,7 @@ import {
   useRouter,
   useSearchParams,
 } from 'next/navigation';
-import { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useMemo, useState } from 'react';
 import LangSwitchArrow from './icons/LangSwitchArrow';
 import XIcon from './icons/XIcon';
 
@@ -82,7 +82,10 @@ const MobileNav = ({
   const routeMainPath = generateRouteMainPath(pathname);
   const router = useRouter();
 
-  const allOptions = ['en', `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`];
+  const allOptions = useMemo(
+    () => ['en', `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`],
+    []
+  );
   const [secondaryLanguage, setSecondaryLanguage] = useState(
     allOptions.filter(option => option !== locale)[0]
   );
@@ -93,7 +96,7 @@ const MobileNav = ({
 
   useEffect(() => {
     setSecondaryLanguage(allOptions.filter(option => option !== locale)[0]);
-  }, [locale]);
+  }, [locale, allOptions]);
 
   const handleOpenLinkAndCloseNav = (link: string) => {
     router.push(link);
@@ -310,21 +313,33 @@ const MobileNav = ({
                   href='https://apps.apple.com/us/app/fitpass-sport-and-recreation/id1444181297'
                   target='_blank'
                 >
-                  <img src='/assets/icons/app-store.png' alt='App Store' />
+                  <Image
+                    src='/assets/icons/app-store.png'
+                    alt='App Store'
+                    width={1200}
+                    height={1200}
+                  />
                 </a>
                 <a
                   href='https://play.google.com/store/apps/details?id=rs.abstract.fitpass&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1'
                   target='_blank'
                 >
-                  <img src='/assets/icons/google-play.png' alt='Google Play' />
+                  <Image
+                    src='/assets/icons/google-play.png'
+                    alt='Google Play'
+                    width={1200}
+                    height={1200}
+                  />
                 </a>
                 <a
                   href='https://appgallery.huawei.com/#/app/C102996943?channelId=EURSMKT20201007FP&detailType=0'
                   target='_blank'
                 >
-                  <img
+                  <Image
                     src='/assets/icons/huawei-croped.png'
                     alt='App Gallery'
+                    width={1200}
+                    height={1200}
                   />
                 </a>
               </div>

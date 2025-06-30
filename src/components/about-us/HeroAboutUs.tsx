@@ -1,6 +1,7 @@
 'use client';
 import useDimensions from '@/hooks/useDimensions';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Image from 'next/image';
 import { memo } from 'react';
 import { CmsDataAboutUs } from '../../types/types';
 
@@ -29,10 +30,12 @@ const HeroAboutUs = ({ cmsDataAboutUs }: CmsDataAboutUs) => {
         <div className='gray-overlay'></div>
 
         {(screenWidth ?? 0) < 1200 && (
-          <img
-            src={cmsDataAboutUs?.sectionHeroHeaderImage}
+          <Image
+            src={cmsDataAboutUs?.sectionHeroHeaderImage ?? ''}
             alt='mobile phone screen'
             className='hero-about-us-hero-img'
+            width={1200}
+            height={1200}
           />
         )}
       </div>
@@ -53,10 +56,12 @@ const HeroAboutUs = ({ cmsDataAboutUs }: CmsDataAboutUs) => {
         </div>
 
         {(screenWidth ?? 0) >= 1200 && (
-          <img
-            src={cmsDataAboutUs?.sectionHeroHeaderImage}
+          <Image
+            src={cmsDataAboutUs?.sectionHeroHeaderImage ?? ''}
             alt='mobile phone screen'
             className='hero-about-us-hero-img'
+            width={1200}
+            height={1200}
           />
         )}
       </div>

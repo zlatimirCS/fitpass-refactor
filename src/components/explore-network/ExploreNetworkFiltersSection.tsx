@@ -15,7 +15,7 @@ import {
 import { styled } from '@mui/material/styles';
 import axios from 'axios';
 import { useParams, useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import GoogleMap from './GoogleMap';
 
 interface City {
@@ -81,7 +81,6 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
   const router = useRouter();
   const params = useParams();
   const locale = params.locale as string;
-  console.log('locale', locale);
 
   const [loading, setLoading] = useState(false);
   const [cities, setCities] = useState<City[]>(allCities);
@@ -169,55 +168,58 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
     setSelectedDisciplines(newSelectedDisciplines);
   };
 
-  const constructUrlQuery = (
-    selectedCity: City | null,
-    selectedCityPart: CityArea[],
-    selectedDisciplines: Discipline[],
-    selectedAttributes: Attribute[],
-    searchTerm: string
-  ) => {
-    const queryParams = [];
+  const constructUrlQuery = useCallback(
+    (
+      selectedCity: City | null,
+      selectedCityPart: CityArea[],
+      selectedDisciplines: Discipline[],
+      selectedAttributes: Attribute[],
+      searchTerm: string
+    ) => {
+      const queryParams = [];
 
-    if (searchTerm) {
-      queryParams.push(`searchTerm=${searchTerm}`);
-    }
+      if (searchTerm) {
+        queryParams.push(`searchTerm=${searchTerm}`);
+      }
 
-    if (selectedCity) {
-      queryParams.push(`city=${selectedCity._id}`);
-    }
+      if (selectedCity) {
+        queryParams.push(`city=${selectedCity._id}`);
+      }
 
-    if (selectedCityPart && selectedCityPart.length > 0) {
-      queryParams.push(
-        `cityAreas=${selectedCityPart.map((area: CityArea) => area.slug).join(',')}`
-      );
-    }
+      if (selectedCityPart && selectedCityPart.length > 0) {
+        queryParams.push(
+          `cityAreas=${selectedCityPart.map((area: CityArea) => area.slug).join(',')}`
+        );
+      }
 
-    if (selectedDisciplines && selectedDisciplines.length > 0) {
-      queryParams.push(
-        `disciplines=${selectedDisciplines
-          .map((discipline: Discipline) => discipline._id)
-          .join(',')}`
-      );
-    }
+      if (selectedDisciplines && selectedDisciplines.length > 0) {
+        queryParams.push(
+          `disciplines=${selectedDisciplines
+            .map((discipline: Discipline) => discipline._id)
+            .join(',')}`
+        );
+      }
 
-    if (selectedActivities && selectedActivities.length > 0) {
-      queryParams.push(
-        `activities=${selectedActivities
-          .map((activity: Activity) => activity._id)
-          .join(',')}`
-      );
-    }
+      if (selectedActivities && selectedActivities.length > 0) {
+        queryParams.push(
+          `activities=${selectedActivities
+            .map((activity: Activity) => activity._id)
+            .join(',')}`
+        );
+      }
 
-    if (selectedAttributes && selectedAttributes.length > 0) {
-      queryParams.push(
-        `attributes=${selectedAttributes
-          .map((attribute: Attribute) => attribute._id)
-          .join(',')}`
-      );
-    }
+      if (selectedAttributes && selectedAttributes.length > 0) {
+        queryParams.push(
+          `attributes=${selectedAttributes
+            .map((attribute: Attribute) => attribute._id)
+            .join(',')}`
+        );
+      }
 
-    return queryParams.length > 0 ? `?${queryParams.join('&')}` : '';
-  };
+      return queryParams.length > 0 ? `?${queryParams.join('&')}` : '';
+    },
+    [selectedActivities]
+  );
 
   const fetchInitialDisciplines = async () => {
     try {
@@ -385,6 +387,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
     selectedActivities,
     selectedAttributes,
     searchTerm,
+    constructUrlQuery,
   ]);
 
   const handleApplyFilters = async (e: React.FormEvent) => {
@@ -447,35 +450,6 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-
-  const formatLinkUrl = (url: string | URL) => {
-    console.log('url example', url);
-    if (!url) return '/';
-
-    // If it's already a URL object, return its href
-    if (url instanceof URL) {
-      return url.href;
-    }
-
-    // If it's a string, check if it already has a protocol
-    if (typeof url === 'string') {
-      // If it already has http:// or https://, use URL constructor
-      if (url.startsWith('http://') || url.startsWith('https://')) {
-        try {
-          const formattedUrl = new URL(url);
-          return formattedUrl.href;
-        } catch (e: any) {
-          console.log('error', e);
-          return url; // Return original if URL constructor fails
-        }
-      } else {
-        // If no protocol, prepend https://
-        return `https://${url}`;
-      }
-    }
-
-    return '/';
-  };
 
   return (
     <section className='explore-network-filters-section'>

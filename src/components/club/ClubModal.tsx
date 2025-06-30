@@ -1,5 +1,6 @@
 'use client';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 import { useClickAway } from 'react-use';
@@ -16,24 +17,27 @@ const ClubModal = ({
   useClickAway(divRef, () => {
     setCurrentActiveCard(null);
   });
-  console.log('Current Active Card:', currentActiveCard);
   return (
     <div className='current-active-card-modal' ref={divRef}>
       <div className='modal-inner'>
-        <img
+        <Image
           src='/assets/icons/close-circle-fill.svg'
           alt='close'
           className='modal-close-icon'
           onClick={() => setCurrentActiveCard(null)}
+          width={1200}
+          height={1200}
         />
         <div className='img-overlay'>
-          <img
+          <Image
             src={
               currentActiveCard?.imageUrl?.large
                 ? currentActiveCard?.imageUrl?.large
                 : ''
             }
             alt='card'
+            width={1200}
+            height={1200}
           />
         </div>
         <div className='modal-inner-content'>

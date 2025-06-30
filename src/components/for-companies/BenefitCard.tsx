@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const BenefitCard = ({
   title,
   subtitle,
@@ -14,7 +16,7 @@ const BenefitCard = ({
         <p className='subtitle'>{subtitle}</p>
       </div>
 
-      <img src={icon} alt={title} />
+      <Image src={icon} alt={title} width={64} height={64} />
     </article>
   );
 };

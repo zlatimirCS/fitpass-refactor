@@ -1,4 +1,5 @@
 import { CmsDataForCompanies } from '@/types/types';
+import Image from 'next/image';
 import { memo } from 'react';
 
 const ClientSupportForCompanies = ({
@@ -76,13 +77,15 @@ const ClientSupportForCompanies = ({
             }}
             className='revenue-left'
           >
-            <img
+            <Image
               src={
                 cmsDataForCompanies?.section2Image
                   ? cmsDataForCompanies?.section2Image
                   : ''
               }
               alt='Fitpass'
+              width={400}
+              height={300}
             />
           </div>
         </div>

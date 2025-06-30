@@ -42,7 +42,12 @@ const Timeline = () => {
           </div>
 
           <div className='map-image-wrapper'>
-            <img src='/assets/images/about-us/belamapa.jpg' alt='map picture' />
+            <Image
+              src='/assets/images/about-us/belamapa.jpg'
+              alt='map picture'
+              width={400}
+              height={300}
+            />
           </div>
         </div>
       )}
@@ -51,13 +56,20 @@ const Timeline = () => {
         <div className='timeline-dekstop'>
           <div className='wrapper'>
             {locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION && (
-              <img
+              <Image
                 src='/assets/images/about-us/desktop-map-timeline.jpg'
                 alt='map picture'
+                width={800}
+                height={600}
               />
             )}
             {locale === 'en' && (
-              <img src='/assets/images/timeline-eng.jpg' alt='map picture' />
+              <Image
+                src='/assets/images/timeline-eng.jpg'
+                alt='map picture'
+                width={800}
+                height={600}
+              />
             )}
           </div>
         </div>

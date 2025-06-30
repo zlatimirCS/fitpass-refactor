@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 const StarRatings = dynamic(() => import('react-star-ratings'), {
   ssr: false,
@@ -72,9 +73,11 @@ const SidebarVenueCard = ({
 
         <div className='location-and-rating'>
           <div className='modal-single-venue-card-item modal-single-venue-card__location'>
-            <img
+            <Image
               src='/assets/icons/venue-location-icon.svg'
               alt='location icon'
+              width={20}
+              height={20}
               className='large'
             />
             <span style={{ letterSpacing: '1px' }}>

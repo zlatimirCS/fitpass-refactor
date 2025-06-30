@@ -12,7 +12,6 @@ const SingleVenueContent = ({
   // if (!cmsDataAboutUs) {
   //   return <p>There was an error loading data</p>;
   // }
-  console.log('single venue data', data?.socialNetworks);
   return (
     <>
       <SingleVenueDisplay data={data} comments={comments} aboutUs={aboutUs} />

@@ -22,7 +22,6 @@ const ReadyToExplore = ({
   const t = useTranslations('Club');
   const locale = useLocale();
   const [currentActiveCard, setCurrentActiveCard] = useState(null);
-  console.log('categories:', categories);
   return (
     <section className='explore-club-section topBottomSpacing'>
       {/* {currentActiveCard && (
@@ -52,7 +51,6 @@ const ReadyToExplore = ({
                   locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
                     ? category?.name
                     : category?.nameEn;
-                console.log('joinedString:', joinedString);
                 return (
                   <div
                     key={index}

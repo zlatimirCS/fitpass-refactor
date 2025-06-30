@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import GoogleMap from './GoogleMap';
 import SidebarVenueCard from './SidebarVenueCard';
@@ -100,9 +101,11 @@ const VenuesMap = ({ handleCloseModal, venues, locale }: VenuesMapProps) => {
     <div className='search-venues-map-display'>
       <div className='modal' ref={modalRef}>
         <div className='modal-header'>
-          <img
+          <Image
             src='/assets/icons/modal-close-icon-2.png'
             alt='close'
+            width={24}
+            height={24}
             onClick={handleCloseModal}
             style={{ cursor: 'pointer' }}
           />

@@ -241,57 +241,60 @@ const SearchResultsExploreNetworkFiltersSection = ({
   // };
   // GOOGLE MAPS RELATED
 
-  const constructUrlQuery = (
-    selectedCity: City | null,
-    selectedCityPart: CityArea[],
-    selectedDisciplines: Discipline[],
-    selectedAttributes: Attribute[],
-    searchTerm: string
-  ): string => {
-    const queryParams: string[] = [];
+  const constructUrlQuery = useCallback(
+    (
+      selectedCity: City | null,
+      selectedCityPart: CityArea[],
+      selectedDisciplines: Discipline[],
+      selectedAttributes: Attribute[],
+      searchTerm: string
+    ): string => {
+      const queryParams: string[] = [];
 
-    if (searchTerm) {
-      queryParams.push(`searchTerm=${searchTerm}`);
-    }
+      if (searchTerm) {
+        queryParams.push(`searchTerm=${searchTerm}`);
+      }
 
-    // how to check if the object is not empty
+      // how to check if the object is not empty
 
-    if (selectedCity && Object.keys(selectedCity).length > 0) {
-      queryParams.push(`city=${selectedCity._id}`);
-    }
+      if (selectedCity && Object.keys(selectedCity).length > 0) {
+        queryParams.push(`city=${selectedCity._id}`);
+      }
 
-    if (selectedCityPart && selectedCityPart.length > 0) {
-      queryParams.push(
-        `cityAreas=${selectedCityPart.map((area: CityArea) => area.slug).join(',')}`
-      );
-    }
+      if (selectedCityPart && selectedCityPart.length > 0) {
+        queryParams.push(
+          `cityAreas=${selectedCityPart.map((area: CityArea) => area.slug).join(',')}`
+        );
+      }
 
-    if (selectedDisciplines && selectedDisciplines.length > 0) {
-      queryParams.push(
-        `disciplines=${selectedDisciplines
-          .map((discipline: Discipline) => discipline._id)
-          .join(',')}`
-      );
-    }
+      if (selectedDisciplines && selectedDisciplines.length > 0) {
+        queryParams.push(
+          `disciplines=${selectedDisciplines
+            .map((discipline: Discipline) => discipline._id)
+            .join(',')}`
+        );
+      }
 
-    if (selectedActivities && selectedActivities.length > 0) {
-      queryParams.push(
-        `activities=${selectedActivities
-          .map((activity: Activity) => activity._id)
-          .join(',')}`
-      );
-    }
+      if (selectedActivities && selectedActivities.length > 0) {
+        queryParams.push(
+          `activities=${selectedActivities
+            .map((activity: Activity) => activity._id)
+            .join(',')}`
+        );
+      }
 
-    if (selectedAttributes && selectedAttributes.length > 0) {
-      queryParams.push(
-        `attributes=${selectedAttributes
-          .map((attribute: Attribute) => attribute._id)
-          .join(',')}`
-      );
-    }
+      if (selectedAttributes && selectedAttributes.length > 0) {
+        queryParams.push(
+          `attributes=${selectedAttributes
+            .map((attribute: Attribute) => attribute._id)
+            .join(',')}`
+        );
+      }
 
-    return queryParams.length > 0 ? `?${queryParams.join('&')}` : '';
-  };
+      return queryParams.length > 0 ? `?${queryParams.join('&')}` : '';
+    },
+    [selectedActivities]
+  );
 
   // fetch initial venues, disciplines
   // const fetchInitialVenues = async () => {
@@ -445,6 +448,7 @@ const SearchResultsExploreNetworkFiltersSection = ({
     selectedActivities,
     selectedAttributes,
     searchTerm,
+    constructUrlQuery,
   ]);
 
   const handleApplyFilters = async (e: React.FormEvent) => {

@@ -14,7 +14,7 @@ import {
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import '../../styles/main.scss';
 import './styles.css';
 type Props = {
@@ -58,15 +58,19 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body>
         <NextIntlClientProvider>
           <AppProvider>
-            <TopBar />
-            <NavBar
-              auHide={auHide}
-              fpHide={fpHide}
-              fcHide={fcHide}
-              enHide={enHide}
-              clHide={clHide}
-              ctHide={ctHide}
-            />
+            <Suspense fallback={<div></div>}>
+              <TopBar />
+            </Suspense>
+            <Suspense fallback={<div></div>}>
+              <NavBar
+                auHide={auHide}
+                fpHide={fpHide}
+                fcHide={fcHide}
+                enHide={enHide}
+                clHide={clHide}
+                ctHide={ctHide}
+              />
+            </Suspense>
             <main>{children}</main>
             <Footer
               fpHide={fpHide}

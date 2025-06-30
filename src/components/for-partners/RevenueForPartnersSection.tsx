@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { memo } from 'react';
 import { CmsDataForPartners } from '../../types/types';
 
@@ -19,20 +20,24 @@ const RevenueForPartnersSection = ({
             }}
             className='revenue-left'
           >
-            <img
+            <Image
               src={
                 cmsDataForPartners?.section1Image
                   ? cmsDataForPartners?.section1Image
                   : ''
               }
               alt='Fitpass'
+              width={400}
+              height={300}
             />
           </div>
           <div className='revenue-right'>
             <h2 style={{ position: 'relative' }}>
-              <img
+              <Image
                 src='/assets/icons/eclipse-circles.png'
                 alt='Fitpass logo'
+                width={100}
+                height={100}
                 style={{
                   position: 'absolute',
                   bottom: 0,

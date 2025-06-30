@@ -95,7 +95,6 @@ const SingleVenueDisplay = ({
   };
 
   const formatLinkUrl = (url: string | URL) => {
-    console.log('url example', url);
     if (!url) return '/';
 
     // If it's already a URL object, return its href

@@ -46,9 +46,6 @@ const ClubContent = ({
     );
   };
 
-  console.log('data', data);
-  console.log('Categories:', categories);
-
   if (!cmsDataClub) {
     return <p>There was an error loading data</p>;
   }

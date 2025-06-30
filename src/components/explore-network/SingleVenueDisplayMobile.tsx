@@ -2,6 +2,7 @@
 import { useState } from 'react';
 // import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import Tooltip from '@mui/material/Tooltip';
+import Image from 'next/image';
 import StarRatings from 'react-star-ratings';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -87,41 +88,6 @@ const SingleVenueDisplayMobile = ({
         <div className='content'>
           {/*main venue image*/}
           <VenueCarousel imagesForCarousel={imagesForCarousel} />
-          {/* <div
-            className="main-venue-image"
-            style={{
-              backgroundImage: `${
-                imagesForCarousel.length > 0
-                  ? "none"
-                  : 'url("/assets/images/gym-91849_1920.jpg")'
-              }`,
-            }}
-          >
-            <Swiper
-              breakpoints={{
-                600: { slidesPerView: 1 },
-              }}
-              loop={true}
-              modules={[Navigation, Autoplay]}
-              style={{ height: "100%" }}
-              autoplay={{ delay: 3000 }}
-              onSlideChange={handleSlideChange}
-            >
-              {imagesForCarousel.map((img, index) => {
-                return (
-                  <SwiperSlide key={index} style={{ height: "100%" }}>
-                    <div
-                      className="single-venue-carousel-image"
-                      style={{ backgroundImage: `url(${img})` }}
-                    ></div>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-            <div className="swiper-counter">
-              {currentSlide} / {imagesForCarousel.length}
-            </div>
-          </div> */}
           {/*main venue image*/}
           {/*venue content*/}
           <div className='venue-content'>
@@ -131,10 +97,6 @@ const SingleVenueDisplayMobile = ({
                 {/*intro header*/}
                 <div className='intro-header'>
                   <div className='intro-header-left'>
-                    {/* <img
-                        src="/assets/images/venue-logo.png"
-                        className="intro-header-venue-logo"
-                      /> */}
                     <div className='intro-header-main'>
                       <p>{data?.name}</p>
                       <div
@@ -172,7 +134,12 @@ const SingleVenueDisplayMobile = ({
                 {data?.total_comments > 0 && (
                   <div className='intro-comments-anchor'>
                     <a href='#comments-section-anchor'>
-                      <img src='/assets/icons/comments-icon.svg' />
+                      <Image
+                        src='/assets/icons/comments-icon.svg'
+                        width={24}
+                        height={24}
+                        alt='comments icon'
+                      />
                     </a>
                     <a href='#comments-section-anchor'>
                       <p>
@@ -226,25 +193,6 @@ const SingleVenueDisplayMobile = ({
                   readOnly={true}
                 />
               )}
-              {/* {isLoaded && coordinates ? (
-                <GoogleMap
-                  mapContainerStyle={containerStyle}
-                  center={coordinates}
-                  zoom={12}
-                >
-                  <Marker
-                    position={coordinates}
-                    icon={{
-                      url: "/assets/icons/pin-g-map-white.svg",
-                      scaledSize: { width: 50, height: 50 },
-                      origin: { x: 0, y: 0 },
-                      anchor: { x: 25, y: 50 },
-                    }}
-                  />
-                </GoogleMap>
-              ) : (
-                <div>{t?.loading}</div>
-              )} */}
             </div>
             {/*venue map*/}
 
@@ -252,9 +200,11 @@ const SingleVenueDisplayMobile = ({
               <div className='wrapper'>
                 {data?.name && (
                   <article>
-                    <img
+                    <Image
                       src='/assets/icons/venue-location-icon.svg'
                       alt='venue-info-address'
+                      width={20}
+                      height={20}
                     />
                     <div className='venue-info-detail'>{data?.name || ''}</div>
                   </article>
@@ -263,9 +213,11 @@ const SingleVenueDisplayMobile = ({
                   data?.phones?.length > 0 &&
                   !data?.phones?.every((phone: any) => phone === null) && (
                     <article>
-                      <img
+                      <Image
                         src='/assets/icons/venue-phone-icon.svg'
                         alt='venue-info-address'
+                        width={20}
+                        height={20}
                       />
                       <div className='venue-info-detail column'>
                         {data?.phones?.map((phone: any, index: number) => {
@@ -278,9 +230,11 @@ const SingleVenueDisplayMobile = ({
                   )}
                 {data?.website && (
                   <article>
-                    <img
+                    <Image
                       src='/assets/icons/venue-website-icon.svg'
                       alt='venue-info-address'
+                      width={20}
+                      height={20}
                     />
                     <div
                       style={{
@@ -297,13 +251,16 @@ const SingleVenueDisplayMobile = ({
                           target='_blank'
                         >
                           <span style={{ display: 'inline-block' }}>
-                            <img
+                            <Image
                               src='/assets/icons/link-url-redirect-icon.svg'
+                              width={10}
+                              height={10}
                               style={{
                                 width: '10px',
                                 height: '10px',
                                 cursor: 'pointer',
                               }}
+                              alt='link url redirect icon'
                             />
                           </span>
                         </a>
@@ -313,9 +270,11 @@ const SingleVenueDisplayMobile = ({
                 )}
                 {data?.socialNetworks[0]?.instagram && (
                   <article>
-                    <img
+                    <Image
                       src='/assets/icons/venue-instagram-icon.svg'
                       alt='venue-info-instagram'
+                      width={20}
+                      height={20}
                     />
                     <a
                       href={formatLinkUrl(data?.socialNetworks[0]?.instagram)}
@@ -324,13 +283,16 @@ const SingleVenueDisplayMobile = ({
                       <div className='venue-info-detail flex'>
                         <span>{truncatedInstagram}</span>
                         <span style={{ display: 'inline-block' }}>
-                          <img
+                          <Image
                             src='/assets/icons/link-url-redirect-icon.svg'
+                            width={10}
+                            height={10}
                             style={{
                               width: '10px',
                               height: '10px',
                               cursor: 'pointer',
                             }}
+                            alt='link url redirect icon'
                           />
                         </span>
                       </div>
@@ -339,9 +301,11 @@ const SingleVenueDisplayMobile = ({
                 )}
                 {data?.socialNetworks[0]?.facebook && (
                   <article>
-                    <img
+                    <Image
                       src='/assets/icons/facebook-icon.svg'
                       alt='venue-info-facebook'
+                      width={20}
+                      height={20}
                     />
                     <a
                       href={formatLinkUrl(data?.socialNetworks[0]?.facebook)}
@@ -350,13 +314,16 @@ const SingleVenueDisplayMobile = ({
                       <div className='venue-info-detail flex'>
                         <span>{truncatedFacebook}</span>
                         <span style={{ display: 'inline-block' }}>
-                          <img
+                          <Image
                             src='/assets/icons/link-url-redirect-icon.svg'
+                            width={10}
+                            height={10}
                             style={{
                               width: '10px',
                               height: '10px',
                               cursor: 'pointer',
                             }}
+                            alt='link url redirect icon'
                           />
                         </span>
                       </div>
@@ -365,9 +332,11 @@ const SingleVenueDisplayMobile = ({
                 )}
                 {data?.socialNetworks[0]?.twitter && (
                   <article>
-                    <img
+                    <Image
                       src='/assets/icons/twitter-icon.svg'
                       alt='venue-info-twitter'
+                      width={20}
+                      height={20}
                     />
                     <a
                       href={formatLinkUrl(data?.socialNetworks[0]?.twitter)}
@@ -376,13 +345,16 @@ const SingleVenueDisplayMobile = ({
                       <div className='venue-info-detail flex'>
                         <span>{truncatedTwitter}</span>
                         <span style={{ display: 'inline-block' }}>
-                          <img
+                          <Image
                             src='/assets/icons/link-url-redirect-icon.svg'
+                            width={10}
+                            height={10}
                             style={{
                               width: '10px',
                               height: '10px',
                               cursor: 'pointer',
                             }}
+                            alt='link url redirect icon'
                           />
                         </span>
                       </div>
@@ -391,9 +363,11 @@ const SingleVenueDisplayMobile = ({
                 )}
                 {data?.socialNetworks[0]?.youtube && (
                   <article>
-                    <img
+                    <Image
                       src='/assets/icons/youtube-icon.svg'
                       alt='venue-info-youtube'
+                      width={20}
+                      height={20}
                     />
                     <a
                       href={formatLinkUrl(data?.socialNetworks[0]?.youtube)}
@@ -402,13 +376,16 @@ const SingleVenueDisplayMobile = ({
                       <div className='venue-info-detail flex'>
                         <span>{truncatedYoutube}</span>
                         <span style={{ display: 'inline-block' }}>
-                          <img
+                          <Image
                             src='/assets/icons/link-url-redirect-icon.svg'
+                            width={10}
+                            height={10}
                             style={{
                               width: '10px',
                               height: '10px',
                               cursor: 'pointer',
                             }}
+                            alt='link url redirect icon'
                           />
                         </span>
                       </div>
@@ -421,21 +398,26 @@ const SingleVenueDisplayMobile = ({
                   <div className='wrapper'>
                     <div className='work-hours-head'>
                       <div className='work-hours-head--left'>
-                        <img
+                        <Image
                           src='/assets/icons/venue-working-hours-icon.svg'
                           alt='venue-info-address'
+                          width={20}
+                          height={20}
                         />
                         <div className='work-hours-title'>{t?.workHours}</div>
                       </div>
                       <div className='work-hours-head--right'>
-                        <img
+                        <Image
                           src='/assets/icons/arrow-icon.svg'
+                          width={16}
+                          height={16}
                           className={
                             isWorksHoursOpen
                               ? 'arrow-icon'
                               : 'arrow-icon rotate'
                           }
                           onClick={() => setIsWorksHoursOpen(prev => !prev)}
+                          alt='arrow icon'
                         />
                       </div>
                     </div>
@@ -501,19 +483,24 @@ const SingleVenueDisplayMobile = ({
                 <div className='wrapper'>
                   <div className='schedule-head'>
                     <div className='schedule-head--left'>
-                      <img
+                      <Image
                         src='/assets/icons/schedule-icon.svg'
                         alt='schedule icon'
+                        width={20}
+                        height={20}
                       />
                       <div className='schedule-title'>{t?.schedule}:</div>
                     </div>
                     <div className='schedule-head--right'>
-                      <img
+                      <Image
                         src='/assets/icons/arrow-icon.svg'
+                        width={16}
+                        height={16}
                         className={
                           isScheduleOpen ? 'arrow-icon' : 'arrow-icon rotate'
                         }
                         onClick={() => setIsScheduleOpen(prev => !prev)}
+                        alt='arrow icon'
                       />
                     </div>
                   </div>
@@ -530,9 +517,11 @@ const SingleVenueDisplayMobile = ({
                         // onClick={() => handleSchedule(-1)}
                         onClick={handlePreviousDay}
                       >
-                        <img
+                        <Image
                           src='/assets/icons/switch-arrow-gray.svg'
                           alt='Previous'
+                          width={20}
+                          height={20}
                         />
                       </div>
 
@@ -555,9 +544,11 @@ const SingleVenueDisplayMobile = ({
                         onClick={handleNextDay}
                       >
                         {/* <span>{t?.nextDay}</span> */}
-                        <img
+                        <Image
                           src='/assets/icons/switch-arrow-gray.svg'
                           alt='Next'
+                          width={20}
+                          height={20}
                         />
                       </div>
                     </div>
@@ -671,19 +662,24 @@ const SingleVenueDisplayMobile = ({
                 <div className='wrapper'>
                   <div className='schedule-head'>
                     <div className='schedule-head--left'>
-                      <img
+                      <Image
                         src='/assets/icons/schedule-icon.svg'
                         alt='schedule icon'
+                        width={20}
+                        height={20}
                       />
                       <div className='schedule-title'>{t?.schedule}:</div>
                     </div>
                     <div className='schedule-head--right'>
-                      <img
+                      <Image
                         src='/assets/icons/arrow-icon.svg'
+                        width={16}
+                        height={16}
                         className={
                           isScheduleOpen ? 'arrow-icon' : 'arrow-icon rotate'
                         }
                         onClick={() => setIsScheduleOpen(prev => !prev)}
+                        alt='arrow icon'
                       />
                     </div>
                   </div>
@@ -811,7 +807,12 @@ const SingleVenueDisplayMobile = ({
                   <article>
                     <div className='grades-top-head'>
                       <span>
-                        <img src='/assets/icons/star-icon-venue.svg' />
+                        <Image
+                          src='/assets/icons/star-icon-venue.svg'
+                          width={24}
+                          height={24}
+                          alt='star icon'
+                        />
                       </span>
                       <span>{data?.rating}</span>
                     </div>

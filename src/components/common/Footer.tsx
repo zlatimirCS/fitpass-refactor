@@ -161,30 +161,36 @@ const Footer = ({
                     href='https://apps.apple.com/us/app/fitpass-sport-and-recreation/id1444181297'
                     target='_blank'
                   >
-                    <img
+                    <Image
                       src='/assets/icons/app-store.png'
                       alt='App Store'
                       className='store-icon'
+                      width={1200}
+                      height={1200}
                     />
                   </a>
                   <a
                     href='https://play.google.com/store/apps/details?id=rs.abstract.fitpass&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1'
                     target='_blank'
                   >
-                    <img
+                    <Image
                       src='/assets/icons/google-play.png'
                       alt='Google Play'
                       className='store-icon'
+                      width={1200}
+                      height={1200}
                     />
                   </a>
                   <a
                     href='https://appgallery.huawei.com/#/app/C102996943?channelId=EURSMKT20201007FP&detailType=0'
                     target='_blank'
                   >
-                    <img
+                    <Image
                       src='/assets/icons/huawei-croped.png'
                       alt='App Gallery'
                       className='store-icon'
+                      width={1200}
+                      height={1200}
                     />
                   </a>
                 </div>

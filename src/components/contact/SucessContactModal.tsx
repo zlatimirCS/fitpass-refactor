@@ -10,9 +10,11 @@ const SucessContactModal = ({
   return (
     <div className='sucess-contact-modal'>
       <div className='sucess-contact-modal-head'>
-        <img
+        <Image
           src='/assets/icons/modal-close-icon.svg'
           alt='Close modal icon'
+          width={24}
+          height={24}
           style={{ cursor: 'pointer' }}
           onClick={handleModalClose}
         />

@@ -1,6 +1,7 @@
 'use client';
 // import { useRouter } from "next/navigation";
 import { routeTranslations } from '@/lib/routeTranslations';
+import Image from 'next/image';
 import * as NProgress from 'nprogress';
 
 interface Marker {
@@ -63,9 +64,11 @@ const GoogleMapInfoWindow = ({ marker, locale }: GoogleMapInfoWindowProps) => {
             color: '#474244',
           }}
         >
-          <img
+          <Image
             src='/assets/icons/venue-location-icon.svg'
             alt='location icon'
+            width={20}
+            height={30}
             className='large'
             style={{
               width: '20px',

@@ -1,5 +1,6 @@
 import { CmsDataForCompanies } from '@/types/types';
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { memo } from 'react';
 
 const BenefitsForCompaniesSection = ({
@@ -31,23 +32,27 @@ const BenefitsForCompaniesSection = ({
             <div className='statistics'>
               {' '}
               {locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION && (
-                <img
+                <Image
                   src={
                     cmsDataForCompanies?.section1Image1
                       ? cmsDataForCompanies?.section1Image1
                       : ''
                   }
                   alt='25% higher perfomance'
+                  width={400}
+                  height={300}
                 />
               )}
               {locale === 'en' && (
-                <img
+                <Image
                   src={
                     cmsDataForCompanies?.section1Image1
                       ? cmsDataForCompanies?.section1Image1
                       : ''
                   }
                   alt='25% higher perfomance'
+                  width={400}
+                  height={300}
                 />
               )}
             </div>
@@ -90,7 +95,7 @@ const BenefitsForCompaniesSection = ({
                 alt="25% higher perfomance"
               /> */}
               {locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION && (
-                <img
+                <Image
                   src={
                     cmsDataForCompanies?.section1Image2
                       ? cmsDataForCompanies?.section1Image2
@@ -98,10 +103,12 @@ const BenefitsForCompaniesSection = ({
                   }
                   alt='10% increase retention rates'
                   className='left higher'
+                  width={400}
+                  height={300}
                 />
               )}
               {locale === 'en' && (
-                <img
+                <Image
                   src={
                     cmsDataForCompanies?.section1Image2
                       ? cmsDataForCompanies?.section1Image2
@@ -109,6 +116,8 @@ const BenefitsForCompaniesSection = ({
                   }
                   alt='10% increase retention rates'
                   className='left'
+                  width={400}
+                  height={300}
                 />
               )}
             </div>
@@ -121,23 +130,27 @@ const BenefitsForCompaniesSection = ({
                 alt="25% higher perfomance"
               /> */}
               {locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION && (
-                <img
+                <Image
                   src={
                     cmsDataForCompanies?.section1Image3
                       ? cmsDataForCompanies?.section1Image3
                       : ''
                   }
                   alt='70% company recommend'
+                  width={400}
+                  height={300}
                 />
               )}
               {locale === 'en' && (
-                <img
+                <Image
                   src={
                     cmsDataForCompanies?.section1Image3
                       ? cmsDataForCompanies?.section1Image3
                       : ''
                   }
                   alt='70% company recommend'
+                  width={400}
+                  height={300}
                 />
               )}
             </div>

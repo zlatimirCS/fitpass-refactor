@@ -1,6 +1,7 @@
 'use client';
 import BtnForm from '@/components/common/BtnForm';
 import { CmsDataForPartners } from '@/types/types';
+import Image from 'next/image';
 import { memo } from 'react';
 
 const LocalPartnerForCompaniesSection = ({
@@ -37,7 +38,12 @@ const LocalPartnerForCompaniesSection = ({
             </h2>
             <div className='simple-steps-container'>
               <div className='simple-step'>
-                <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                <Image
+                  src='/assets/icons/znakic.svg'
+                  alt='fitpass icon'
+                  width={24}
+                  height={24}
+                />
                 <div className='simple-step-content'>
                   <h3>
                     {cmsDataForPartners?.section2Step1Title
@@ -52,7 +58,12 @@ const LocalPartnerForCompaniesSection = ({
                 </div>
               </div>
               <div className='simple-step'>
-                <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                <Image
+                  src='/assets/icons/znakic.svg'
+                  alt='fitpass icon'
+                  width={24}
+                  height={24}
+                />
                 <div className='simple-step-content'>
                   <h3>
                     {cmsDataForPartners?.section2Step2Title
@@ -67,7 +78,12 @@ const LocalPartnerForCompaniesSection = ({
                 </div>
               </div>
               <div className='simple-step'>
-                <img src='/assets/icons/znakic.svg' alt='fitpass icon' />
+                <Image
+                  src='/assets/icons/znakic.svg'
+                  alt='fitpass icon'
+                  width={24}
+                  height={24}
+                />
                 <div className='simple-step-content'>
                   <h3>
                     {cmsDataForPartners?.section2Step3Title
@@ -94,13 +110,15 @@ const LocalPartnerForCompaniesSection = ({
           </article>
           <article className='flex-article'>
             <div className='inner-flex-article'>
-              <img
+              <Image
                 src={
                   cmsDataForPartners?.section2Image
                     ? cmsDataForPartners?.section2Image
                     : ''
                 }
                 alt='Fitpass logo'
+                width={200}
+                height={100}
               />
               <p>
                 {cmsDataForPartners?.section2LogoText

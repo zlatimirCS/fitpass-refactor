@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const Card = ({
   data,
   setCurrentActiveCard,
@@ -13,18 +15,9 @@ const Card = ({
       onClick={() => setCurrentActiveCard(data)}
     >
       <div className='card-inner'>
-        <img src={logo} alt='card' />
+        <Image src={logo} alt='card' width={1200} height={1200} />
         <div className='card-inner-content'>
           <p>{title}</p>
-          {/* <Link href={url} target="_blank" style={{ width: "100%" }}>
-            <button
-              type="button"
-              className="card-btn card-btn-form"
-              style={{ width: "100%" }}
-            >
-              {t?.learnMore}
-            </button>
-          </Link> */}
         </div>
       </div>
     </div>

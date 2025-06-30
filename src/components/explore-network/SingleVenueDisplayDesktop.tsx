@@ -1,6 +1,7 @@
 'use client';
 // import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import Tooltip from '@mui/material/Tooltip';
+import Image from 'next/image';
 import StarRatings from 'react-star-ratings';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -123,9 +124,11 @@ const SingleVenueDisplayDesktop = ({
             <div className='sidebar-bottom'>
               {data?.name && (
                 <article>
-                  <img
+                  <Image
                     src='/assets/icons/venue-location-icon.svg'
                     alt='venue-info-address'
+                    width={20}
+                    height={20}
                   />
                   <div className='venue-info-detail'>{data?.name || ''}</div>
                 </article>
@@ -134,9 +137,11 @@ const SingleVenueDisplayDesktop = ({
                 data?.phones.length > 0 &&
                 !data?.phones.every((phone: null) => phone === null) && (
                   <article>
-                    <img
+                    <Image
                       src='/assets/icons/venue-phone-icon.svg'
                       alt='venue-info-address'
+                      width={20}
+                      height={20}
                     />
                     <div className='venue-info-detail column'>
                       {data?.phones.map((phone: any, index: any) => {
@@ -149,9 +154,11 @@ const SingleVenueDisplayDesktop = ({
                 )}
               {data?.website && (
                 <article>
-                  <img
+                  <Image
                     src='/assets/icons/venue-website-icon.svg'
                     alt='venue-info-address'
+                    width={20}
+                    height={20}
                   />
                   <div
                     style={{
@@ -168,8 +175,11 @@ const SingleVenueDisplayDesktop = ({
                         target='_blank'
                       >
                         <span style={{ display: 'inline-block' }}>
-                          <img
+                          <Image
                             src='/assets/icons/link-url-redirect-icon.svg'
+                            width={10}
+                            height={10}
+                            alt='redirect icon'
                             style={{
                               width: '10px',
                               height: '10px',
@@ -184,9 +194,11 @@ const SingleVenueDisplayDesktop = ({
               )}
               {data?.socialNetworks[0]?.instagram && (
                 <article>
-                  <img
+                  <Image
                     src='/assets/icons/venue-instagram-icon.svg'
                     alt='venue-info-instagram'
+                    width={20}
+                    height={20}
                   />
                   <a
                     href={formatLinkUrl(data?.socialNetworks[0]?.instagram)}
@@ -195,8 +207,11 @@ const SingleVenueDisplayDesktop = ({
                     <div className='venue-info-detail flex'>
                       <span>{truncatedInstagram}</span>
                       <span style={{ display: 'inline-block' }}>
-                        <img
+                        <Image
                           src='/assets/icons/link-url-redirect-icon.svg'
+                          width={10}
+                          height={10}
+                          alt='redirect icon'
                           style={{
                             width: '10px',
                             height: '10px',
@@ -210,9 +225,11 @@ const SingleVenueDisplayDesktop = ({
               )}
               {data?.socialNetworks[0]?.facebook && (
                 <article>
-                  <img
+                  <Image
                     src='/assets/icons/facebook-icon.svg'
                     alt='venue-info-facebook'
+                    width={20}
+                    height={20}
                   />
                   <a
                     href={formatLinkUrl(data?.socialNetworks[0]?.facebook)}
@@ -221,8 +238,11 @@ const SingleVenueDisplayDesktop = ({
                     <div className='venue-info-detail flex'>
                       <span>{truncatedFacebook}</span>
                       <span style={{ display: 'inline-block' }}>
-                        <img
+                        <Image
                           src='/assets/icons/link-url-redirect-icon.svg'
+                          width={10}
+                          height={10}
+                          alt='redirect icon'
                           style={{
                             width: '10px',
                             height: '10px',
@@ -236,9 +256,11 @@ const SingleVenueDisplayDesktop = ({
               )}
               {data?.socialNetworks[0]?.twitter && (
                 <article>
-                  <img
+                  <Image
                     src='/assets/icons/twitter-icon.svg'
                     alt='venue-info-twitter'
+                    width={20}
+                    height={20}
                   />
                   <a
                     href={formatLinkUrl(data?.socialNetworks[0]?.twitter)}
@@ -247,8 +269,11 @@ const SingleVenueDisplayDesktop = ({
                     <div className='venue-info-detail flex'>
                       <span>{truncatedTwitter}</span>
                       <span style={{ display: 'inline-block' }}>
-                        <img
+                        <Image
                           src='/assets/icons/link-url-redirect-icon.svg'
+                          width={10}
+                          height={10}
+                          alt='redirect icon'
                           style={{
                             width: '10px',
                             height: '10px',
@@ -262,9 +287,11 @@ const SingleVenueDisplayDesktop = ({
               )}
               {data?.socialNetworks[0]?.youtube && (
                 <article>
-                  <img
+                  <Image
                     src='/assets/icons/youtube-icon.svg'
                     alt='venue-info-youtube'
+                    width={20}
+                    height={20}
                   />
                   <a
                     href={formatLinkUrl(data?.socialNetworks[0]?.youtube)}
@@ -273,8 +300,11 @@ const SingleVenueDisplayDesktop = ({
                     <div className='venue-info-detail flex'>
                       <span>{truncatedYoutube}</span>
                       <span style={{ display: 'inline-block' }}>
-                        <img
+                        <Image
                           src='/assets/icons/link-url-redirect-icon.svg'
+                          width={10}
+                          height={10}
+                          alt='redirect icon'
                           style={{
                             width: '10px',
                             height: '10px',
@@ -288,9 +318,11 @@ const SingleVenueDisplayDesktop = ({
               )}
               {data?.workHours && (
                 <article className='work-hours'>
-                  <img
+                  <Image
                     src='/assets/icons/venue-working-hours-icon.svg'
                     alt='venue-info-address'
+                    width={20}
+                    height={20}
                   />
                   <div className='venue-info-detail'>
                     <div className='work-hours-title'>{t?.workHours}</div>
@@ -436,7 +468,12 @@ const SingleVenueDisplayDesktop = ({
                 {data?.total_comments > 0 && (
                   <div className='intro-comments-anchor'>
                     <a href='#comments-section-anchor'>
-                      <img src='/assets/icons/comments-icon.svg' />
+                      <Image
+                        src='/assets/icons/comments-icon.svg'
+                        alt='comments icon'
+                        width={20}
+                        height={20}
+                      />
                     </a>
                     <a href='#comments-section-anchor'>
                       <p>
@@ -496,9 +533,11 @@ const SingleVenueDisplayDesktop = ({
                         // onClick={() => handleSchedule(-1)}
                         onClick={handlePreviousDay}
                       >
-                        <img
+                        <Image
                           src='/assets/icons/switch-arrow-gray.svg'
                           alt='Previous'
+                          width={20}
+                          height={20}
                         />
                         <span>{t?.prevDay}</span>
                       </div>
@@ -527,9 +566,11 @@ const SingleVenueDisplayDesktop = ({
                         onClick={handleNextDay}
                       >
                         <span>{t?.nextDay}</span>
-                        <img
+                        <Image
                           src='/assets/icons/switch-arrow-gray.svg'
                           alt='Next'
+                          width={20}
+                          height={20}
                         />
                       </div>
                     </div>
@@ -722,7 +763,12 @@ const SingleVenueDisplayDesktop = ({
                   <article>
                     <div className='grades-top-head'>
                       <span>
-                        <img src='/assets/icons/star-icon-venue.svg' />
+                        <Image
+                          src='/assets/icons/star-icon-venue.svg'
+                          width={24}
+                          height={24}
+                          alt='star icon'
+                        />
                       </span>
                       <span>{data?.rating}</span>
                     </div>
@@ -791,7 +837,12 @@ const SingleVenueDisplayDesktop = ({
                 {/*venue grades top*/}
                 {/*venue grades bottom*/}
                 <div className='grades-bottom'>
-                  <img src='/assets/icons/exlamation-mark.svg' />
+                  <Image
+                    src='/assets/icons/exlamation-mark.svg'
+                    width={24}
+                    height={24}
+                    alt='exclamation mark'
+                  />
                   <div className='grades-bottom-content'>
                     <h4>{t?.howToGrade}</h4>
                     <p>{t?.howToGradeAnswer}</p>
