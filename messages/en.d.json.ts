@@ -32,10 +32,6 @@ declare const messages: {
     "contactUs": "Contact us",
     "rights": "All rights reserved"
   },
-  "Error": {
-    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
-    "title": "Something went wrong!"
-  },
   "AboutUs": {
     "fitpassStartsSerbia": "Fitpass begins its’ journey in Serbia!",
     "fitpassBosnia": "Fitpass expands to Bosnia!",
@@ -118,6 +114,10 @@ declare const messages: {
     "noSearchResults": "No search results",
     "closingAt": "Closing at"
   },
+  "Error": {
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+    "title": "Something went wrong!"
+  },
   "IndexPage": {
     "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes.",
     "title": "next-intl example"
@@ -132,31 +132,9 @@ declare const messages: {
   "Manifest": {
     "name": "next-intl example"
   },
-  "Navigation": {
-    "home": "Home",
-    "pathnames": "Pathnames"
-  },
   "NotFoundPage": {
     "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
     "title": "Page not found"
-  },
-  "PageLayout": {
-    "links": {
-      "docs": {
-        "description": "Learn more about next-intl in the official docs.",
-        "href": "https://next-intl.dev",
-        "title": "Docs"
-      },
-      "source": {
-        "description": "Browse the source code of this example on GitHub.",
-        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
-        "title": "Source code"
-      }
-    }
-  },
-  "PathnamesPage": {
-    "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
-    "title": "Pathnames"
   }
 };
 export default messages;

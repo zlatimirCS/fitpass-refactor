@@ -1,7 +1,33 @@
 {
   "Header": {
-    "topBarText": "Keep me posted",
-    "topBarLink": "Keep me posted"
+    "topBarText": "Want to stay up to date?",
+    "topBarLink": "Subscribe to newsletter",
+    "aboutUs": "About us",
+    "forCompanies": "For companies",
+    "forPartners": "For partners",
+    "exploreNetwork": "Explore network",
+    "club": "Club",
+    "contact": "Contact",
+    "faqNav": "FAQ",
+    "followUs": "Follow us",
+    "comingSoon": "Coming soon"
+  },
+  "Footer": {
+    "aboutUs": "About us",
+    "forCompanies": "For companies",
+    "forPartners": "For partners",
+    "exploreNetwork": "Explore network",
+    "club": "Club",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "faqNav": "FAQ",
+    "followUs": "Follow us",
+    "resources": "Resources",
+    "comingSoon": "Coming soon",
+    "termsConditions": "Terms and conditions",
+    "privacyPolicy": "Privacy policy",
+    "contactUs": "Contact us",
+    "rights": "All rights reserved"
   },
   "Error": {
     "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
