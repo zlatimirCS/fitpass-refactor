@@ -71,6 +71,28 @@
     "buyingFitpass": "Buying Fitpass",
     "club": "Club"
   },
+  "Contact": {
+    "weGotYourMessage": "We got your message",
+    "thanksForReachingOut": "Thanks for reaching out!",
+    "stayTuned": "Stay tuned!",
+    "recaptchaValidationError": "Please verify that you are human",
+    "recaptchaError": "Something went wrong. Please try again later.",
+    "requiredFieldsMessage": "Please fill out all required fields.",
+    "validEmail": "Please enter a valid email address.",
+    "selectDepartment": "Please select at least one department.",
+    "formErrorMessage": "Something went wrong. Please try again later.",
+    "fitpassForIndividuals": "Fitpass for individuals",
+    "employeeBenefits": "Employee benefits",
+    "businessCollaborations": "Business collaborations",
+    "otherInquires": "Other inquires",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "reset": "Reset",
+    "send": "Send"
+  },
   "SearchResultsExploreNetworkFiltersSection": {
     "locationName": "Location name",
     "cityInput": "City",

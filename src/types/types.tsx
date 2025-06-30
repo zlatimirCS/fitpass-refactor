@@ -181,6 +181,16 @@ export type CmsDataExploreNetwork = {
   };
 };
 
+export type CmsDataContact = {
+  cmsDataContact: {
+    sectionHeaderImageDesktop?: string;
+    sectionHeaderImageTablet?: string;
+    sectionHeaderImageMobile?: string;
+    sectionHeaderMainHeadingPart1?: string;
+    sectionHeaderText?: string;
+  };
+};
+
 export type BtnFormProps = {
   text: string;
   primary?: boolean;
