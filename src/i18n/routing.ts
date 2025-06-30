@@ -38,6 +38,14 @@ export const routing = defineRouting({
           'for-partners'
         ),
     },
+    '/club': {
+      en: '/club',
+      [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]:
+        getLocalizedPath(
+          process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string,
+          'club'
+        ),
+    },
     '/explore-network/search': {
       en: '/explore-network/search',
       [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]:

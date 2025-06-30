@@ -150,6 +150,52 @@ export async function getContactContent(locale: string) {
   }
 }
 
+export async function getClubContent(locale: string) {
+  // Simulate a delay
+  const lang = locale === 'en' ? 'secondary' : 'primary';
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/getcmsclubfrontcontent`,
+      {
+        language: lang,
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_COUNTRY_CODE,
+      }
+    );
+    const data = response.data;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
+export async function getClubCards() {
+  // const lang = locale === 'en' ? 'secondary' : 'primary';
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/club-data`,
+      {
+        countryCode: process.env.NEXT_PUBLIC_PRIMARY_CC,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      }
+    );
+    const data = response.data;
+    if (data) {
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
 export async function getCities() {
   // Simulate a delay
   try {

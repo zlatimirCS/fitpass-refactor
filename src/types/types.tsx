@@ -191,6 +191,32 @@ export type CmsDataContact = {
   };
 };
 
+export type CmsDataClub = {
+  cmsDataClub: {
+    sectionHeaderImageDesktop?: string;
+    sectionHeaderImageTablet?: string;
+    sectionHeaderImageMobile?: string;
+    sectionHeaderMainHeadingPart1?: string;
+    sectionHeaderMainHeadingPart2?: string;
+    sectionHeaderText?: string;
+    section1Hide?: boolean;
+    section1Image?: string;
+    section1MainHeading?: string;
+    sec1ListItem1Title?: string;
+    sec1ListItem1Text?: string;
+    sec1ListItem2Title?: string;
+    sec1ListItem2Text?: string;
+    sec1ListItem3Title?: string;
+    sec1ListItem3Text?: string;
+    sec1ListItem4Title?: string;
+    sec1ListItem4Text?: string;
+    clubComponent?: {
+      discounts: any[];
+      categories: any[];
+    };
+  };
+};
+
 export type BtnFormProps = {
   text: string;
   primary?: boolean;

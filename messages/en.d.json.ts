@@ -96,6 +96,12 @@ declare const messages: {
     "reset": "Reset",
     "send": "Send"
   },
+  "Club": {
+    "readyToExploreDiscounts": "Ready to explore discounts",
+    "allDiscounts": "All discounts",
+    "checkOurMore": "Check our more",
+    "learnMore": "Learn more"
+  },
   "SearchResultsExploreNetworkFiltersSection": {
     "locationName": "Location name",
     "cityInput": "City",
