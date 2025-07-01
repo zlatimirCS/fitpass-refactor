@@ -26,6 +26,15 @@ const SocialIcons = () => {
       >
         <i className='fab fa-linkedin-in'></i>
       </a>
+      {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION === 'fr' && (
+        <a
+          href='https://www.youtube.com/@Fitpassmorocco'
+          target='_blank'
+          className='youtube'
+        >
+          <i className='fab fa-youtube'></i>
+        </a>
+      )}
     </div>
   );
 };

@@ -1,83 +1,130 @@
 {
+  "MetaDataGeneric": {
+    "siteName": "Fitpass",
+    "title": "Fitpass | Un seul pass, pour tous !",
+    "description": "Fitpass est une marque reconnue dans le secteur du sport et des loisirs, fondée en 2014 en Serbie. Le concept Fitpass a révolutionné le fitness en offrant aux utilisateurs un accès à un large réseau d’installations sportives via un seul abonnement. Notre objectif est d’encourager un mode de vie actif et sain en permettant une flexibilité dans le choix des disciplines sportives."
+  },
   "Header": {
-    "topBarText": "Want to stay up to date?",
-    "topBarLink": "Subscribe to newsletter",
-    "aboutUs": "About us",
-    "forCompanies": "For companies",
-    "forPartners": "For partners",
-    "exploreNetwork": "Explore network",
+    "topBarText": "Vous voulez rester informé ?",
+    "topBarLink": "Abonnez-vous à la newsletter",
+    "aboutUs": "À propos de nous",
+    "forCompanies": "Pour les entreprises",
+    "forPartners": "Pour les partenaires",
+    "exploreNetwork": "Explorer le réseau",
     "club": "Club",
-    "contact": "Contact",
+    "contact": "Contactez-nous",
     "faqNav": "FAQ",
-    "followUs": "Follow us",
-    "comingSoon": "Coming soon"
+    "followUs": "Suivez-nous",
+    "comingSoon": "Bientôt disponible"
   },
   "Footer": {
-    "aboutUs": "About us",
-    "forCompanies": "For companies",
-    "forPartners": "For partners",
-    "exploreNetwork": "Explore network",
+    "aboutUs": "À propos de nous",
+    "forCompanies": "Pour les entreprises",
+    "forPartners": "Pour les partenaires",
+    "exploreNetwork": "Explorer le réseau",
     "club": "Club",
     "faq": "FAQ",
-    "contact": "Contact",
+    "contact": "Contactez-nous",
     "faqNav": "FAQ",
-    "followUs": "Follow us",
-    "resources": "Resources",
-    "comingSoon": "Coming soon",
-    "termsConditions": "Terms and conditions",
-    "privacyPolicy": "Privacy policy",
-    "contactUs": "Contact us",
-    "rights": "All rights reserved"
+    "followUs": "Suivez-nous",
+    "resources": "Ressources",
+    "comingSoon": "Bientôt disponible",
+    "termsConditions": "Conditions d’utilisation",
+    "privacyPolicy": "Politique de confidentialité",
+    "contactUs": "Contactez-nous",
+    "rights": "Tous droits réservés."
   },
-  "Error": {
-    "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
-    "title": "Etwas ist schief gelaufen!"
-  },
-  "Timeline": {
+  "AboutUs": {
     "fitpassStartsSerbia": "Fitpass begins its’ journey in Serbia!",
     "fitpassBosnia": "Fitpass expands to Bosnia!",
     "bigYearFitpass": "A big year for Fitpass! Launch of the Fitpass app, becoming a part of Up Group, the start of Fitpass Georgia.",
     "fitpassCg": "New markets alert! Fitpass is coming to Montenegro, Greece and Moldova - SOON!"
   },
-  "SearchResultsExploreNetworkFiltersSection": {},
-  "IndexPage": {
-    "description": "Dies ist ein Beispiel, das die Verwendung von <code>next-intl</code> mit dem Next.js App Router demonstriert. Bei Ändern der Sprache rechts oben ändert sich der Inhalt dieser Seite.",
-    "title": "next-intl Beispiel"
+  "ExploreNetworkPage": {
+    "fitpassNetworkPart1": "Fitpass",
+    "fitpassNetworkPart2": "network",
+    "searchGyms": "Search gyms & studios near you"
   },
-  "LocaleLayout": {
-    "title": "next-intl Beispiel"
+  "ForCompanies": {
+    "source": "*Resource:",
+    "recaptchaValidationError": "Please verify that you are human",
+    "companyNumberValid": "Please enter a valid TIN.",
+    "requiredFieldsMessage": "Please fill out all required fields.",
+    "validEmail": "Please enter a valid email address.",
+    "phoneNumberValid": "Please enter a valid phone number.",
+    "acceptTerms": "Please accept the Terms and conditions and Privacy policy.",
+    "formErrorMessage": "Something went wrong. Please try again later.",
+    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
   },
-  "LocaleSwitcher": {
-    "label": "CG",
-    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unbekannt}}"
+  "ForPartners": {
+    "recaptchaValidationError": "Please verify that you are human",
+    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
+  },
+  "Faq": {
+    "faqHeaderLine1": "Frequently",
+    "faqHeaderLine2": "Asked Questions",
+    "faqHeaderText": "Find answers to the most common questions about Fitpass.",
+    "content": "Content",
+    "whatIsFitpass": "What is Fitpass?",
+    "facilities": "Facilities",
+    "howToGetFitpass": "How to get Fitpass?",
+    "fitpassCompany": "Fitpass Company",
+    "buyingFitpass": "Buying Fitpass",
+    "club": "Club"
+  },
+  "Contact": {
+    "weGotYourMessage": "We got your message",
+    "thanksForReachingOut": "Thanks for reaching out!",
+    "stayTuned": "Stay tuned!",
+    "recaptchaValidationError": "Please verify that you are human",
+    "recaptchaError": "Something went wrong. Please try again later.",
+    "requiredFieldsMessage": "Please fill out all required fields.",
+    "validEmail": "Please enter a valid email address.",
+    "selectDepartment": "Please select at least one department.",
+    "formErrorMessage": "Something went wrong. Please try again later.",
+    "fitpassForIndividuals": "Fitpass for individuals",
+    "employeeBenefits": "Employee benefits",
+    "businessCollaborations": "Business collaborations",
+    "otherInquires": "Other inquires",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "reset": "Reset",
+    "send": "Send"
+  },
+  "Club": {
+    "readyToExploreDiscounts": "Ready to explore discounts",
+    "allDiscounts": "All discounts",
+    "checkOurMore": "Check our more",
+    "learnMore": "Learn more"
+  },
+  "SearchResultsExploreNetworkFiltersSection": {
+    "locationName": "Location name",
+    "cityInput": "City",
+    "cityArea": "City area",
+    "clear": "Clear",
+    "apply": "Apply",
+    "disciplines": "Disciplines",
+    "loading": "Loading..."
+  },
+  "SearchResultsVenues": {
+    "openingAt": "Opening at",
+    "openingHours": "Opening hours",
+    "noWorkTime": "No work time",
+    "noSearchResults": "No search results",
+    "closingAt": "Closing at"
   },
   "Manifest": {
     "name": ""
-  },
-  "Navigation": {
-    "home": "Start",
-    "pathnames": "Pfadnamen"
   },
   "NotFoundPage": {
     "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln.",
     "title": "Seite nicht gefunden"
   },
-  "PageLayout": {
-    "links": {
-      "docs": {
-        "description": "Erfahre mehr über next-intl in der offiziellen Dokumentation.",
-        "href": "https://next-intl.dev",
-        "title": "Dokumentation"
-      },
-      "source": {
-        "description": "Sieh dir den Quellcode dieses Beispiels auf GitHub an.",
-        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
-        "title": "Quellcode"
-      }
-    }
-  },
-  "PathnamesPage": {
-    "description": "<p>Auch die Pfadnamen sind internationalisiert.</p><p>Wenn du die Standardsprache Englisch verwendest, siehst du <code>/en/pathnames</code> in der Adressleiste des Browsers auf dieser Seite.</p><p>Wenn du die Sprache auf Deutsch änderst, wird die URL entsprechend lokalisiert (<code>/de/pfadnamen</code>).</p>",
-    "title": "Pfadnamen"
+  "Error": {
+    "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
+    "title": "Etwas ist schief gelaufen!"
   }
 }

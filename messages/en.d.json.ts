@@ -2,6 +2,11 @@
 // See: https://next-intl.dev/docs/workflows/typescript#messages-arguments
 
 declare const messages: {
+  "MetaDataGeneric": {
+    "siteName": "Fitpass",
+    "title": "Fitpass | One pass fits all",
+    "description": "Fitpass is a prominent brand in the field of sports and recreation, founded in 2014 in Serbia. The Fitpass concept brought a revolution to fitness by allowing users to access a wide range of sports facilities and activities across the country with a single membership."
+  },
   "Header": {
     "topBarText": "Want to stay up to date?",
     "topBarLink": "Subscribe to newsletter",
@@ -114,27 +119,16 @@ declare const messages: {
     "noSearchResults": "No search results",
     "closingAt": "Closing at"
   },
-  "Error": {
-    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
-    "title": "Something went wrong!"
-  },
-  "IndexPage": {
-    "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes.",
-    "title": "next-intl example"
-  },
-  "LocaleLayout": {
-    "title": "next-intl example"
-  },
-  "LocaleSwitcher": {
-    "label": "Change language",
-    "locale": "{locale, select, cg {CG} en {EN} sr {SR} fr {FR} other {Unknown}}"
-  },
   "Manifest": {
     "name": "next-intl example"
   },
   "NotFoundPage": {
     "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
     "title": "Page not found"
+  },
+  "Error": {
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+    "title": "Something went wrong!"
   }
 };
 export default messages;

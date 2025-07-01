@@ -1,4 +1,9 @@
 {
+  "MetaDataGeneric": {
+    "siteName": "Fitpass",
+    "title": "Fitpass | One pass fits all",
+    "description": "Fitpass je istaknuti brend u oblasti sporta i rekreacije, osnovan 2014. godine u Srbiji. Fitpass koncept donio je revoluciju u fitness, omogućavajući korisnicima da sa jednom članarinom pristupe širokom spektru sportskih objekata i aktivnosti širom zemlje."
+  },
   "Header": {
     "topBarText": "Želiš da imaš najnovije informacije?",
     "topBarLink": "Prijavi se na newsletter",
@@ -36,9 +41,10 @@
     "bigYearFitpass": "Zlatna godina za Fitpass! Lansiranje Fitpass aplikacije, brend postaje dio Up grupe, začetak Fitpass-a u Gruziji.",
     "fitpassCg": "Uskoro nova tržišta! Fitpass stiže u Crnu Goru, Grčku i Moldaviju!"
   },
-  "ForPartners": {
-    "recaptchaValidationError": "Please verify that you are human",
-    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
+  "ExploreNetworkPage": {
+    "fitpassNetworkPart1": "Fitpass",
+    "fitpassNetworkPart2": "network",
+    "searchGyms": "Search gyms & studios near you"
   },
   "ForCompanies": {
     "source": "*Resource:",
@@ -49,6 +55,10 @@
     "phoneNumberValid": "Please enter a valid phone number.",
     "acceptTerms": "Please accept the Terms and conditions and Privacy policy.",
     "formErrorMessage": "Something went wrong. Please try again later.",
+    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
+  },
+  "ForPartners": {
+    "recaptchaValidationError": "Please verify that you are human",
     "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
   },
   "Faq": {
@@ -91,56 +101,31 @@
     "checkOurMore": "Check our more",
     "learnMore": "Learn more"
   },
-  "ExploreNetworkPage": {
-    "fitpassNetworkPart1": "Istražite",
-    "fitpassNetworkPart2": "Fitpass mrežu",
-    "searchGyms": "Pretražite teretane i klubove u blizini"
-  },
   "SearchResultsExploreNetworkFiltersSection": {
-    "locationName": "Location name"
+    "locationName": "Location name",
+    "cityInput": "City",
+    "cityArea": "City area",
+    "clear": "Clear",
+    "apply": "Apply",
+    "disciplines": "Disciplines",
+    "loading": "Loading..."
   },
-  "Error": {
-    "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
-    "title": "Etwas ist schief gelaufen!"
-  },
-  "IndexPage": {
-    "description": "Dies ist ein Beispiel, das die Verwendung von <code>next-intl</code> mit dem Next.js App Router demonstriert. Bei Ändern der Sprache rechts oben ändert sich der Inhalt dieser Seite.",
-    "title": "next-intl Beispiel"
-  },
-  "LocaleLayout": {
-    "title": "next-intl Beispiel"
-  },
-  "LocaleSwitcher": {
-    "label": "CG",
-    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unbekannt}}"
+  "SearchResultsVenues": {
+    "openingAt": "Opening at",
+    "openingHours": "Opening hours",
+    "noWorkTime": "No work time",
+    "noSearchResults": "No search results",
+    "closingAt": "Closing at"
   },
   "Manifest": {
-    "name": ""
-  },
-  "Navigation": {
-    "home": "Start",
-    "pathnames": "Pfadnamen"
+    "name": "next-intl example"
   },
   "NotFoundPage": {
     "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln.",
     "title": "Seite nicht gefunden"
   },
-  "PageLayout": {
-    "links": {
-      "docs": {
-        "description": "Erfahre mehr über next-intl in der offiziellen Dokumentation.",
-        "href": "https://next-intl.dev",
-        "title": "Dokumentation"
-      },
-      "source": {
-        "description": "Sieh dir den Quellcode dieses Beispiels auf GitHub an.",
-        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
-        "title": "Quellcode"
-      }
-    }
-  },
-  "PathnamesPage": {
-    "description": "<p>Auch die Pfadnamen sind internationalisiert.</p><p>Wenn du die Standardsprache Englisch verwendest, siehst du <code>/en/pathnames</code> in der Adressleiste des Browsers auf dieser Seite.</p><p>Wenn du die Sprache auf Deutsch änderst, wird die URL entsprechend lokalisiert (<code>/de/pfadnamen</code>).</p>",
-    "title": "Pfadnamen"
+  "Error": {
+    "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
+    "title": "Etwas ist schief gelaufen!"
   }
 }

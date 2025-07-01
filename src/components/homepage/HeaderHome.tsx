@@ -43,7 +43,7 @@ const Header = ({
         ...mainSlideshowData,
       ];
     }
-    if (locale === `cg`) {
+    if (locale === `cg` || locale === `sr`) {
       return [
         {
           _id: '6752e34892ae4945b8c02ad5',
@@ -54,6 +54,25 @@ const Header = ({
           sliderSubTitleLine1: 'sportske',
           sliderSubTitleLine2: 'aktivnosti.',
           sliderBtnUrlRedirect: `${process.env.NEXT_PUBLIC_SITE_URL}/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/istrazi-mrezu`,
+          url: '/assets/dummyImages/hero-custom-slider.jpg',
+          positionIndex: 0,
+          hideImage: false,
+          firstImage: true,
+        },
+        ...mainSlideshowData,
+      ];
+    }
+    if (locale === `fr`) {
+      return [
+        {
+          _id: '6752e34892ae4945b8c02ad5',
+          sliderBtnText: 'Explorer le réseau',
+          sliderTitleLine1: 'UN',
+          sliderTitleLine2: 'pass pour',
+          sliderTitleLine3: 'TOUS',
+          sliderSubTitleLine1: 'sports',
+          sliderSubTitleLine2: 'activités.',
+          sliderBtnUrlRedirect: `${process.env.NEXT_PUBLIC_SITE_URL}/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/explorer-le-reseau`,
           url: '/assets/dummyImages/hero-custom-slider.jpg',
           positionIndex: 0,
           hideImage: false,

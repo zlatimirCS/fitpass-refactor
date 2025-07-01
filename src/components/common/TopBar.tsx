@@ -146,13 +146,17 @@ const TopBar = () => {
       <div className='wrapper'>
         <div className='top-bar-flex'>
           <p className='hero-small'>
-            {t('topBarText')}&nbsp;&nbsp;
-            <span
-              style={{ textDecoration: 'underline', cursor: 'pointer' }}
-              onClick={() => setIsNewsletterModalOpen(true)}
-            >
-              {t('topBarLink')}
-            </span>
+            {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
+              <>
+                {t('topBarText')}&nbsp;&nbsp;
+                <span
+                  style={{ textDecoration: 'underline', cursor: 'pointer' }}
+                  onClick={() => setIsNewsletterModalOpen(true)}
+                >
+                  {t('topBarLink')}
+                </span>
+              </>
+            )}
           </p>
           {locale && (
             <div className='top-bar-logo-lang-wrap'>

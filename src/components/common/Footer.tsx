@@ -62,7 +62,8 @@ const Footer = ({
                 {!enHide && (
                   <Link
                     href={`${
-                      locale === 'cg'
+                      locale ===
+                      `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
                         ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['explore-network']}`
                         : '/en/explore-network'
                     }`}
@@ -82,52 +83,62 @@ const Footer = ({
                     <li>{t('club')}</li>
                   </Link>
                 )}
-                <Link
-                  href={`${
-                    locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                      ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['faq']}`
-                      : '/en/faq'
-                  }`}
-                >
-                  <li>{t('faqNav')}</li>
-                </Link>
-                {!ctHide && (
+                {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
                   <Link
                     href={`${
                       locale ===
                       `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                        ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['contact']}`
-                        : '/en/contact'
+                        ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['faq']}`
+                        : '/en/faq'
                     }`}
                   >
-                    <li>{t('contact')}</li>
+                    <li>{t('faqNav')}</li>
                   </Link>
                 )}
+                {!ctHide &&
+                  process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
+                    <Link
+                      href={`${
+                        locale ===
+                        `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
+                          ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['contact']}`
+                          : '/en/contact'
+                      }`}
+                    >
+                      <li>{t('contact')}</li>
+                    </Link>
+                  )}
               </ul>
             </article>
             <article>
-              <ul className='links'>
-                <a
-                  href={`${
-                    locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                      ? `/assets/Terms_of_Service-CNR.pdf`
-                      : '/assets/Terms_of_Service-ENG.pdf'
-                  }`}
-                  target='_blank'
-                >
-                  <li>{t('termsConditions')}</li>
-                </a>
-                <a
-                  href={`${
-                    locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                      ? `/assets/Privacy_Policy-CNR.pdf`
-                      : '/assets/Privacy_Policy-ENG.pdf'
-                  }`}
-                  target='_blank'
-                >
-                  <li>{t('privacyPolicy')}</li>
-                </a>
-              </ul>
+              {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
+                <>
+                  <ul className='links'>
+                    <a
+                      href={`${
+                        locale ===
+                        `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
+                          ? `/assets/Terms_of_Service-CNR.pdf`
+                          : '/assets/Terms_of_Service-ENG.pdf'
+                      }`}
+                      target='_blank'
+                    >
+                      <li>{t('termsConditions')}</li>
+                    </a>
+                    <a
+                      href={`${
+                        locale ===
+                        `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
+                          ? `/assets/Privacy_Policy-CNR.pdf`
+                          : '/assets/Privacy_Policy-ENG.pdf'
+                      }`}
+                      target='_blank'
+                    >
+                      <li>{t('privacyPolicy')}</li>
+                    </a>
+                  </ul>
+                </>
+              )}
             </article>
             <article>
               <ul className='links contact'>
@@ -138,10 +149,24 @@ const Footer = ({
                     <li>
                       E-mail:{' '}
                       <a
-                        href='mailto:kontakt@fitpass.me'
+                        href={`mailto:${
+                          locale === 'cg'
+                            ? 'kontakt@fitpass.me'
+                            : locale === 'sr'
+                              ? 'kontakt@fitpass.me'
+                              : locale === 'fr'
+                                ? 'contact@fitpass.ma'
+                                : ''
+                        }`}
                         className='email-link'
                       >
-                        kontakt@fitpass.me
+                        {locale === 'cg'
+                          ? 'kontakt@fitpass.me'
+                          : locale === 'sr'
+                            ? 'kontakt@fitpass.me'
+                            : locale === 'fr'
+                              ? 'contact@fitpass.ma'
+                              : ''}
                       </a>
                     </li>
                   </ul>
@@ -154,47 +179,48 @@ const Footer = ({
               <p>{t('followUs')}</p>
               <SocialIcons />
 
-              <div className='download-app-section'>
-                {/* <p>{t?.coomingSoon}</p> */}
-                <div className='stores-icons-wrap'>
-                  <a
-                    href='https://apps.apple.com/us/app/fitpass-sport-and-recreation/id1444181297'
-                    target='_blank'
-                  >
-                    <Image
-                      src='/assets/icons/app-store.png'
-                      alt='App Store'
-                      className='store-icon'
-                      width={1200}
-                      height={1200}
-                    />
-                  </a>
-                  <a
-                    href='https://play.google.com/store/apps/details?id=rs.abstract.fitpass&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1'
-                    target='_blank'
-                  >
-                    <Image
-                      src='/assets/icons/google-play.png'
-                      alt='Google Play'
-                      className='store-icon'
-                      width={1200}
-                      height={1200}
-                    />
-                  </a>
-                  <a
-                    href='https://appgallery.huawei.com/#/app/C102996943?channelId=EURSMKT20201007FP&detailType=0'
-                    target='_blank'
-                  >
-                    <Image
-                      src='/assets/icons/huawei-croped.png'
-                      alt='App Gallery'
-                      className='store-icon'
-                      width={1200}
-                      height={1200}
-                    />
-                  </a>
+              {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
+                <div className='download-app-section'>
+                  <div className='stores-icons-wrap'>
+                    <a
+                      href='https://apps.apple.com/us/app/fitpass-sport-and-recreation/id1444181297'
+                      target='_blank'
+                    >
+                      <Image
+                        src='/assets/icons/app-store.png'
+                        alt='App Store'
+                        className='store-icon'
+                        width={1200}
+                        height={1200}
+                      />
+                    </a>
+                    <a
+                      href='https://play.google.com/store/apps/details?id=rs.abstract.fitpass&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1'
+                      target='_blank'
+                    >
+                      <Image
+                        src='/assets/icons/google-play.png'
+                        alt='Google Play'
+                        className='store-icon'
+                        width={1200}
+                        height={1200}
+                      />
+                    </a>
+                    <a
+                      href='https://appgallery.huawei.com/#/app/C102996943?channelId=EURSMKT20201007FP&detailType=0'
+                      target='_blank'
+                    >
+                      <Image
+                        src='/assets/icons/huawei-croped.png'
+                        alt='App Gallery'
+                        className='store-icon'
+                        width={1200}
+                        height={1200}
+                      />
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
             </article>
           </div>
         </div>

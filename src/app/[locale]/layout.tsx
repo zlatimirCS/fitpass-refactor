@@ -29,15 +29,38 @@ export function generateStaticParams() {
 export async function generateMetadata(props: Omit<Props, 'children'>) {
   const { locale } = await props.params;
 
-  const t = await getTranslations({ locale, namespace: 'LocaleLayout' });
+  const t = await getTranslations({ locale, namespace: 'MetaDataGeneric' });
 
   return {
     title: t('title'),
+    description: t('description'),
+    icons: {
+      icon: [
+        {
+          url: '/assets/icons/favicon.png',
+          href: '/assets/icons/favicon.png',
+        },
+      ],
+    },
+    openGraph: {
+      type: 'website',
+      url: process.env.NEXT_PUBLIC_SITE_URL,
+      site_name: t('siteName'),
+      title: t('title'),
+      description: t('description'),
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/assets/images/meta-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: t('title'),
+        },
+      ],
+    },
   };
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-  // Ensure that the incoming `locale` is valid
   const { locale } = await params;
   const auHide = await cmsGetIsAboutUsHidden();
   const fpHide = await cmsGetIsForPartnersHidden();
@@ -54,7 +77,6 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html className='h-full' lang={locale}>
-      {/* <body className={clsx(inter.className, 'flex h-full flex-col')}> */}
       <body>
         <NextIntlClientProvider>
           <AppProvider>

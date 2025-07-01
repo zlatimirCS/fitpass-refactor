@@ -235,51 +235,56 @@ const MobileNav = ({
                 {t('exploreNetwork')}
               </div>
             )}
-            {!clHide && (
+            {!clHide &&
+              process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
+                <div
+                  onClick={() =>
+                    handleOpenLinkAndCloseNav(
+                      `${
+                        locale ===
+                        `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
+                          ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['club']}`
+                          : '/en/club'
+                      }`
+                    )
+                  }
+                >
+                  {t('club')}
+                </div>
+              )}
+            {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
               <div
                 onClick={() =>
                   handleOpenLinkAndCloseNav(
                     `${
                       locale ===
                       `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                        ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['club']}`
-                        : '/en/club'
+                        ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['faq']}`
+                        : '/en/faq'
                     }`
                   )
                 }
               >
-                {t('club')}
+                {t('faqNav')}
               </div>
             )}
-            <div
-              onClick={() =>
-                handleOpenLinkAndCloseNav(
-                  `${
-                    locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                      ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['faq']}`
-                      : '/en/faq'
-                  }`
-                )
-              }
-            >
-              {t('faqNav')}
-            </div>
-            {!ctHide && (
-              <div
-                onClick={() =>
-                  handleOpenLinkAndCloseNav(
-                    `${
-                      locale ===
-                      `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                        ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['contact']}`
-                        : '/en/contact'
-                    }`
-                  )
-                }
-              >
-                {t('contact')}
-              </div>
-            )}
+            {!ctHide &&
+              process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
+                <div
+                  onClick={() =>
+                    handleOpenLinkAndCloseNav(
+                      `${
+                        locale ===
+                        `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
+                          ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['contact']}`
+                          : '/en/contact'
+                      }`
+                    )
+                  }
+                >
+                  {t('contact')}
+                </div>
+              )}
           </div>
           <div className='mobile-nav-footer'>
             <p>{t('followUs')}</p>
@@ -305,45 +310,68 @@ const MobileNav = ({
               >
                 <i className='fab fa-linkedin-in'></i>
               </a>
+              {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION === 'fr' && (
+                <a
+                  href='https://www.youtube.com/@Fitpassmorocco'
+                  target='_blank'
+                  className='social youtube'
+                >
+                  <i className='fab fa-youtube'></i>
+                </a>
+              )}
             </div>
-            <div>
-              <p>{t('comingSoon')}</p>
-              <div className='mobile-nav-footer__icons'>
-                <a
-                  href='https://apps.apple.com/us/app/fitpass-sport-and-recreation/id1444181297'
-                  target='_blank'
-                >
-                  <Image
-                    src='/assets/icons/app-store.png'
-                    alt='App Store'
-                    width={1200}
-                    height={1200}
-                  />
-                </a>
-                <a
-                  href='https://play.google.com/store/apps/details?id=rs.abstract.fitpass&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1'
-                  target='_blank'
-                >
-                  <Image
-                    src='/assets/icons/google-play.png'
-                    alt='Google Play'
-                    width={1200}
-                    height={1200}
-                  />
-                </a>
-                <a
-                  href='https://appgallery.huawei.com/#/app/C102996943?channelId=EURSMKT20201007FP&detailType=0'
-                  target='_blank'
-                >
-                  <Image
-                    src='/assets/icons/huawei-croped.png'
-                    alt='App Gallery'
-                    width={1200}
-                    height={1200}
-                  />
-                </a>
+            {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
+              <div>
+                <p>{t('comingSoon')}</p>
+                <div className='mobile-nav-footer__icons'>
+                  <a
+                    href='https://apps.apple.com/us/app/fitpass-sport-and-recreation/id1444181297'
+                    target='_blank'
+                  >
+                    <Image
+                      src='/assets/icons/app-store.png'
+                      alt='App Store'
+                      width={320}
+                      height={112}
+                      style={{
+                        objectFit: 'contain',
+                        objectPosition: 'top left',
+                      }}
+                    />
+                  </a>
+                  <a
+                    href='https://play.google.com/store/apps/details?id=rs.abstract.fitpass&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1'
+                    target='_blank'
+                  >
+                    <Image
+                      src='/assets/icons/google-play.png'
+                      alt='Google Play'
+                      width={320}
+                      height={112}
+                      style={{
+                        objectFit: 'contain',
+                        objectPosition: 'top left',
+                      }}
+                    />
+                  </a>
+                  <a
+                    href='https://appgallery.huawei.com/#/app/C102996943?channelId=EURSMKT20201007FP&detailType=0'
+                    target='_blank'
+                  >
+                    <Image
+                      src='/assets/icons/huawei-croped.png'
+                      alt='App Gallery'
+                      width={320}
+                      height={112}
+                      style={{
+                        objectFit: 'contain',
+                        objectPosition: 'top left',
+                      }}
+                    />
+                  </a>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
