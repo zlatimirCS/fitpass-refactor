@@ -4,6 +4,27 @@
     "title": "Fitpass | One pass fits all",
     "description": "Fitpass je istaknuti brend u oblasti sporta i rekreacije, osnovan 2014. godine u Srbiji. Fitpass koncept donio je revoluciju u fitness, omogućavajući korisnicima da sa jednom članarinom pristupe širokom spektru sportskih objekata i aktivnosti širom zemlje."
   },
+  "AboutUsMetaData": {
+    "title": "Fitpass | O nama"
+  },
+  "ClubMetaData": {
+    "title": "Fitpass | Klub"
+  },
+  "ContactMetaData": {
+    "title": "Fitpass | Kontakt"
+  },
+  "ExploreNetworkMetaData": {
+    "title": "Fitpass | Istražite mrežu"
+  },
+  "FaqMetaData": {
+    "title": "Fitpass | FAQ"
+  },
+  "ForCompaniesMetaData": {
+    "title": "Fitpass | Za kompanije"
+  },
+  "ForPartnersMetaData": {
+    "title": "Fitpass | Za partnere"
+  },
   "Header": {
     "topBarText": "Želiš da imaš najnovije informacije?",
     "topBarLink": "Prijavi se na newsletter",

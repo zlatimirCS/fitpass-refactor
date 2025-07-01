@@ -1,12 +1,25 @@
 import ClubContent from '@/components/club/ClubContent';
 import { getClubCards, getClubContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Suspense, use } from 'react';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
 };
+
+export async function generateMetadata(props: Omit<Props, 'children'>) {
+  const { locale } = await props.params;
+
+  const t = await getTranslations({ locale, namespace: 'ClubMetaData' });
+
+  return {
+    title: t('title'),
+    openGraph: {
+      title: t('title'),
+    },
+  };
+}
 
 const Club = async ({ locale }: { locale: string }) => {
   const cmsDataClub = await getClubContent(locale);

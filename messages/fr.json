@@ -4,6 +4,27 @@
     "title": "Fitpass | Un seul pass, pour tous !",
     "description": "Fitpass est une marque reconnue dans le secteur du sport et des loisirs, fondée en 2014 en Serbie. Le concept Fitpass a révolutionné le fitness en offrant aux utilisateurs un accès à un large réseau d’installations sportives via un seul abonnement. Notre objectif est d’encourager un mode de vie actif et sain en permettant une flexibilité dans le choix des disciplines sportives."
   },
+  "AboutUsMetaData": {
+    "title": "Fitpass | À propos de nous"
+  },
+  "ClubMetaData": {
+    "title": "Fitpass | Club"
+  },
+  "ContactMetaData": {
+    "title": "Fitpass | Contact"
+  },
+  "ExploreNetworkMetaData": {
+    "title": "Fitpass | Explorer le réseau"
+  },
+  "FaqMetaData": {
+    "title": "Fitpass | FAQ"
+  },
+  "ForCompaniesMetaData": {
+    "title": "Fitpass | Pour les entreprises"
+  },
+  "ForPartnersMetaData": {
+    "title": "Fitpass | Pour les partenaires"
+  },
   "Header": {
     "topBarText": "Vous voulez rester informé ?",
     "topBarLink": "Abonnez-vous à la newsletter",
