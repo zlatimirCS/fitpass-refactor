@@ -15,6 +15,7 @@ import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ReactNode, Suspense } from 'react';
+import { Toaster } from 'react-hot-toast';
 import '../../styles/main.scss';
 import './styles.css';
 type Props = {
@@ -103,6 +104,20 @@ export default async function LocaleLayout({ children, params }: Props) {
               ctHide={ctHide}
             />
           </AppProvider>
+          <Toaster
+            toastOptions={{
+              style: {
+                fontSize: '16px',
+                fontWeight: '500',
+                color: '#000',
+                backgroundColor: '#fff',
+                borderRadius: '10px',
+                padding: '10px',
+                border: '1px solid #000',
+                // ⬅️ apply to all toasts
+              },
+            }}
+          />
         </NextIntlClientProvider>
       </body>
     </html>

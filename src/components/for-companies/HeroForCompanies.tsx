@@ -19,11 +19,11 @@ import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Tooltip from '@mui/material/Tooltip';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { notification } from 'antd';
 import axios from 'axios';
 import { useLocale, useTranslations } from 'next-intl';
 import { memo, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import toast from 'react-hot-toast';
 
 const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
   const t = useTranslations('ForCompanies');
@@ -205,55 +205,40 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
       }));
     }
     if (!companyName) {
-      notification.error({
-        message: t('requiredFieldsMessage'),
-      });
+      toast.error(t('requiredFieldsMessage'));
       return;
     }
     if (isNaN(Number(companyID))) {
-      notification.error({
-        message: t('companyNumberValid'),
-      });
+      toast.error(t('companyNumberValid'));
       return;
     }
     if (!address || !nameSurname || !email) {
-      notification.error({
-        message: t('requiredFieldsMessage'),
-      });
+      toast.error(t('requiredFieldsMessage'));
       return;
     }
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailPattern.test(email)) {
-      notification.error({
-        message: t('validEmail'),
-      });
+      toast.error(t('validEmail'));
       return;
     }
     if (!phoneNumber) {
-      notification.error({
-        message: t('requiredFieldsMessage'),
-      });
+      toast.error(t('requiredFieldsMessage'));
       return;
     }
     if (isNaN(Number(phoneNumber))) {
-      notification.error({
-        message: t('phoneNumberValid'),
-      });
+      toast.error(t('phoneNumberValid'));
       return;
     }
     if (!role || !teamSize) {
-      notification.error({
-        message: t('requiredFieldsMessage'),
-      });
+      toast.error(t('requiredFieldsMessage'));
       return;
     }
     if (!terms) {
-      notification.error({
-        message: t('acceptTerms'),
-      });
+      toast.error(t('acceptTerms'));
       return;
     }
     if (!form.recaptchaToken) {
+      toast.error(t('recaptchaValidationError'));
       setRecaptchaError(t('recaptchaValidationError'));
       return;
     }
@@ -279,14 +264,8 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
       }),
     })
       .then(() => {})
-      .catch(() =>
-        notification.error({
-          message: t('formErrorMessage'),
-        })
-      );
-    notification.success({
-      message: t('formSuccessMessage'),
-    });
+      .catch(() => toast.error(t('formErrorMessage')));
+    toast.success(t('formSuccessMessage'));
     setForm({
       companyName: '',
       role: '',
