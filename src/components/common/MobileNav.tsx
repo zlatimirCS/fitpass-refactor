@@ -336,6 +336,8 @@ const MobileNav = ({
                       style={{
                         objectFit: 'contain',
                         objectPosition: 'top left',
+                        width: '100%',
+                        height: '35px',
                       }}
                     />
                   </a>
@@ -351,6 +353,8 @@ const MobileNav = ({
                       style={{
                         objectFit: 'contain',
                         objectPosition: 'top left',
+                        width: '100%',
+                        height: '35px',
                       }}
                     />
                   </a>
@@ -366,6 +370,8 @@ const MobileNav = ({
                       style={{
                         objectFit: 'contain',
                         objectPosition: 'top left',
+                        width: '100%',
+                        height: '35px',
                       }}
                     />
                   </a>

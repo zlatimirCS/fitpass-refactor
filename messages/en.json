@@ -75,7 +75,22 @@
     "phoneNumberValid": "Please enter a valid phone number.",
     "acceptTerms": "Please accept the Terms and conditions and Privacy policy.",
     "formErrorMessage": "Something went wrong. Please try again later.",
-    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
+    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass",
+    "formSuccessMessage": "Your request is successfully sent to Fitpass team. Our team will reach out to you in short notice.",
+    "submitButton": "Submit",
+    "mandatoryFields": "Mandatory fields",
+    "agreeOnFitpass": "I agree on Fitpass",
+    "termsAndConditions": "Terms and conditions",
+    "privacyPolicy": "Privacy policy",
+    "and": "and",
+    "companyName": "Company name*",
+    "companyNumber": "TIN*",
+    "pibTooltip": "Enter the company number (TIN)",
+    "address": "Address*",
+    "nameSurname": "Name and surname*",
+    "phoneNumber": "Phone number*",
+    "yourPosition": "Your role*",
+    "yourTeamSize": "Your team size*"
   },
   "ForPartners": {
     "recaptchaValidationError": "Please verify that you are human",

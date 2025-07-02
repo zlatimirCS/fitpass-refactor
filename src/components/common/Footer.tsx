@@ -150,21 +150,25 @@ const Footer = ({
                       E-mail:{' '}
                       <a
                         href={`mailto:${
-                          locale === 'cg'
+                          process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION === 'cg'
                             ? 'kontakt@fitpass.me'
-                            : locale === 'sr'
+                            : process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION ===
+                                'sr'
                               ? 'kontakt@fitpass.me'
-                              : locale === 'fr'
+                              : process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION ===
+                                  'fr'
                                 ? 'contact@fitpass.ma'
                                 : ''
                         }`}
                         className='email-link'
                       >
-                        {locale === 'cg'
+                        {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION === 'cg'
                           ? 'kontakt@fitpass.me'
-                          : locale === 'sr'
+                          : process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION ===
+                              'sr'
                             ? 'kontakt@fitpass.me'
-                            : locale === 'fr'
+                            : process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION ===
+                                'fr'
                               ? 'contact@fitpass.ma'
                               : ''}
                       </a>
@@ -190,8 +194,9 @@ const Footer = ({
                         src='/assets/icons/app-store.png'
                         alt='App Store'
                         className='store-icon'
-                        width={1200}
-                        height={1200}
+                        width={100}
+                        height={35}
+                        style={{ width: '100%', height: '35px' }}
                       />
                     </a>
                     <a
@@ -202,8 +207,9 @@ const Footer = ({
                         src='/assets/icons/google-play.png'
                         alt='Google Play'
                         className='store-icon'
-                        width={1200}
-                        height={1200}
+                        width={100}
+                        height={35}
+                        style={{ width: '100%', height: '35px' }}
                       />
                     </a>
                     <a
@@ -214,8 +220,9 @@ const Footer = ({
                         src='/assets/icons/huawei-croped.png'
                         alt='App Gallery'
                         className='store-icon'
-                        width={1200}
-                        height={1200}
+                        width={100}
+                        height={35}
+                        style={{ width: '100%', height: '35px' }}
                       />
                     </a>
                   </div>

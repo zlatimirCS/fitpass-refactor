@@ -272,7 +272,10 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
         email: form.email,
         phoneNumber: form.phoneNumber,
         newsUpdates: form.newsUpdates,
-        language: locale === 'cg' ? 'cnr' : locale,
+        language:
+          process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION === 'cg'
+            ? 'cnr'
+            : process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION,
       }),
     })
       .then(() => {})
@@ -282,7 +285,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
         })
       );
     notification.success({
-      message: 'Form submitted successfully!',
+      message: t('formSuccessMessage'),
     });
     setForm({
       companyName: '',
@@ -335,7 +338,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
               {/*Company name*/}
               <TextField
                 id='outlined-basic'
-                label={'Company name'}
+                label={t('companyName')}
                 variant='filled'
                 value={form.companyName}
                 name='companyName'
@@ -407,7 +410,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
               {/*PIB*/}
               <TextField
                 id='outlined-basic'
-                label={'Company number'}
+                label={t('companyNumber')}
                 variant='filled'
                 value={form.companyID}
                 name='companyID'
@@ -417,11 +420,11 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                     <InputAdornment
                       sx={{ '& > svg': { color: '#000' } }}
                       position='end'
-                      title={'Enter the company number (TIN)'}
+                      title={t('pibTooltip')}
                     >
                       <Tooltip
                         enterTouchDelay={0}
-                        title={'Enter the company number (TIN)'}
+                        title={t('pibTooltip')}
                         componentsProps={{
                           tooltip: {
                             sx: {
@@ -499,7 +502,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
               {/*Address*/}
               <TextField
                 id='outlined-basic'
-                label={'Address'}
+                label={t('address')}
                 variant='filled'
                 value={form.address}
                 name='address'
@@ -565,7 +568,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
               {/*Name surname*/}
               <TextField
                 id='outlined-basic'
-                label={'Name and surname'}
+                label={t('nameSurname')}
                 variant='filled'
                 value={form.nameSurname}
                 name='nameSurname'
@@ -703,7 +706,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
               {/*Phone Number*/}
               <TextField
                 id='outlined-basic'
-                label={'Phone number'}
+                label={t('phoneNumber')}
                 variant='filled'
                 value={form.phoneNumber}
                 name='phoneNumber'
@@ -801,7 +804,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                     },
                   }}
                 >
-                  {'Your position'}
+                  {t('yourPosition')}
                 </InputLabel>
                 <Select
                   labelId='demo-simple-select-filled-label'
@@ -885,7 +888,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                     },
                   }}
                 >
-                  {'Your team size'}
+                  {t('yourTeamSize')}
                 </InputLabel>
                 <Select
                   labelId='demo-simple-select-filled-label'
@@ -948,71 +951,41 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
               {/*Team size*/}
 
               <div className='form-bottom'>
-                <div className='form-bottom-flex'>
-                  <input
-                    type='checkbox'
-                    name='terms'
-                    onChange={handleFormChange}
-                    checked={form.terms}
-                  />
-                  <p className={`links-form`}>
-                    <span>
-                      {locale === 'en' ? (
+                {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
+                  <div className='form-bottom-flex'>
+                    <input
+                      type='checkbox'
+                      name='terms'
+                      onChange={handleFormChange}
+                      checked={form.terms}
+                    />
+                    <p className={`links-form`}>
+                      <span>
                         <span
                           className={`${formError.terms ? 'terms-error' : ''}`}
                         >
-                          I agree on Fitpass{' '}
+                          {t('agreeOnFitpass')}&nbsp;
                           <a
                             href='/assets/terms-of-service.pdf'
                             target='_blank'
-                            className={`${
-                              formError.terms ? 'terms-error' : ''
-                            }`}
+                            className={`${formError.terms ? 'terms-error' : ''}`}
                           >
-                            Terms and conditions
+                            {t('termsAndConditions')}
                           </a>{' '}
-                          and&nbsp;
+                          {t('and')}&nbsp;
                           <a
                             href='/assets/privacy-policy.pdf'
                             target='_blank'
-                            className={`${
-                              formError.terms ? 'terms-error' : ''
-                            }`}
+                            className={`${formError.terms ? 'terms-error' : ''}`}
                           >
-                            Privacy&nbsp;policy
+                            {t('privacyPolicy')}
                           </a>
                           *
                         </span>
-                      ) : (
-                        <span
-                          className={`${formError.terms ? 'terms-error' : ''}`}
-                        >
-                          Ovim prihvatam Fitpass{' '}
-                          <a
-                            href='/assets/terms-of-service.pdf'
-                            target='_blank'
-                            className={`${
-                              formError.terms ? 'terms-error' : ''
-                            }`}
-                          >
-                            Uslove korišćenja
-                          </a>{' '}
-                          i&nbsp;
-                          <a
-                            href='/assets/privacy-policy.pdf'
-                            target='_blank'
-                            className={`${
-                              formError.terms ? 'terms-error' : ''
-                            }`}
-                          >
-                            Politiku&nbsp;privatnosti
-                          </a>
-                          *
-                        </span>
-                      )}
-                    </span>
-                  </p>
-                </div>
+                      </span>
+                    </p>
+                  </div>
+                )}
                 <div className='form-bottom-flex'>
                   <input
                     type='checkbox'
@@ -1021,10 +994,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                     checked={form.newsUpdates}
                   />
                   <p>
-                    <span>
-                      {t('agreeToReceiveNews') ||
-                        'I agree to receive news and updates.'}
-                    </span>
+                    <span>{t('agreeToReceiveNews')}</span>
                   </p>
                 </div>
                 <button
@@ -1035,7 +1005,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                     padding: '15px 0',
                   }}
                 >
-                  {'Submit'}
+                  {t('submitButton')}
                 </button>
                 <p
                   style={{
@@ -1045,7 +1015,7 @@ const HeroForCompanies = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
                     fontWeight: 800,
                   }}
                 >
-                  {'* Mandatory fields'}
+                  * {t('mandatoryFields')}
                 </p>
               </div>
             </form>
