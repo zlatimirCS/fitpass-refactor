@@ -6,11 +6,11 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { notification } from 'antd';
 import axios from 'axios';
 import { useLocale, useTranslations } from 'next-intl';
 import { memo, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import toast from 'react-hot-toast';
 
 declare global {
   interface Window {
@@ -183,38 +183,28 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
       }));
     }
     if (!venueName || !venueType || !address || !nameSurname || !email) {
-      notification.error({
-        message: 'Please fill out all required fields.',
-      });
+      toast.error(t('requiredFieldsMessage'));
       return;
     }
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailPattern.test(email)) {
-      notification.error({
-        message: 'Please enter a valid email address.',
-      });
+      toast.error(t('validEmail'));
       return;
     }
     if (!phoneNumber) {
-      notification.error({
-        message: 'Please fill out all required fields.',
-      });
+      toast.error(t('requiredFieldsMessage'));
       return;
     }
     if (isNaN(Number(phoneNumber))) {
-      notification.error({
-        message: 'Please enter a valid phone number.',
-      });
+      toast.error(t('phoneNumberValid'));
       return;
     }
     if (!terms) {
-      notification.error({
-        message: 'Please accept the Terms and conditions and Privacy policy.',
-      });
+      toast.error(t('acceptTerms'));
       return;
     }
     if (!form.recaptchaToken) {
-      setRecaptchaError('Please verify that you are human');
+      setRecaptchaError(t('recaptchaValidationError'));
       return;
     }
     fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/contact-partners`, {
@@ -234,14 +224,8 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
       }),
     })
       .then(() => {})
-      .catch(() =>
-        notification.error({
-          message: 'Something went wrong. Please try again later.',
-        })
-      );
-    notification.success({
-      message: 'Form submitted successfully!',
-    });
+      .catch(() => toast.error(t('formErrorMessage')));
+    toast.success(t('formSuccessMessage'));
     setForm({
       venueName: '',
       venueType: '',
@@ -291,7 +275,7 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
               {/*Venue name*/}
               <TextField
                 id='outlined-basic'
-                label={'Venue name'}
+                label={t('venueName')}
                 variant='filled'
                 value={form.venueName as string}
                 name='venueName'
@@ -382,7 +366,7 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
                     },
                   }}
                 >
-                  {'Venue type'}
+                  {t('venueType')}
                 </InputLabel>
                 <Select
                   labelId='demo-simple-select-filled-label'
@@ -439,7 +423,7 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
               {/*Address*/}
               <TextField
                 id='outlined-basic'
-                label={'Address'}
+                label={t('address')}
                 variant='filled'
                 value={form.address as string}
                 name='address'
@@ -504,7 +488,7 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
               {/*Name surname*/}
               <TextField
                 id='outlined-basic'
-                label={'Name and surname'}
+                label={t('nameSurname')}
                 variant='filled'
                 value={form.nameSurname as string}
                 name='nameSurname'
@@ -575,7 +559,7 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
               {/*Email*/}
               <TextField
                 id='outlined-basic'
-                label={'Email*'}
+                label={t('email')}
                 variant='filled'
                 value={form.email as string}
                 name='email'
@@ -640,7 +624,7 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
               {/*Phone number*/}
               <TextField
                 id='outlined-basic'
-                label={'Phone number'}
+                label={t('phoneNumber')}
                 variant='filled'
                 value={form.phoneNumber as string}
                 name='phoneNumber'
@@ -730,51 +714,27 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
                   />
                   <p className='links-form'>
                     <span>
-                      {locale === 'en' ? (
-                        <span
+                      <span
+                        className={`${formError.terms ? 'terms-error' : ''}`}
+                      >
+                        {t('agreeOnFitpass')}&nbsp;
+                        <a
+                          href='/assets/terms-of-service.pdf'
+                          target='_blank'
                           className={`${formError.terms ? 'terms-error' : ''}`}
                         >
-                          I agree on Fitpass{' '}
-                          <a
-                            href='/assets/terms-of-service.pdf'
-                            target='_blank'
-                            className={`$${formError.terms ? 'terms-error' : ''}`}
-                          >
-                            Terms and conditions
-                          </a>{' '}
-                          and&nbsp;
-                          <a
-                            href='/assets/privacy-policy.pdf'
-                            target='_blank'
-                            className={`$${formError.terms ? 'terms-error' : ''}`}
-                          >
-                            Privacy&nbsp;policy
-                          </a>
-                          *
-                        </span>
-                      ) : (
-                        <span
+                          {t('termsAndConditions')}
+                        </a>{' '}
+                        {t('and')}&nbsp;
+                        <a
+                          href='/assets/privacy-policy.pdf'
+                          target='_blank'
                           className={`${formError.terms ? 'terms-error' : ''}`}
                         >
-                          Ovim prihvatam Fitpass{' '}
-                          <a
-                            href='/assets/terms-of-service.pdf'
-                            target='_blank'
-                            className={`$${formError.terms ? 'terms-error' : ''}`}
-                          >
-                            Uslove korišćenja
-                          </a>{' '}
-                          i&nbsp;
-                          <a
-                            href='/assets/privacy-policy.pdf'
-                            target='_blank'
-                            className={`$${formError.terms ? 'terms-error' : ''}`}
-                          >
-                            Politiku&nbsp;privatnosti
-                          </a>
-                          *
-                        </span>
-                      )}
+                          {t('privacyPolicy')}
+                        </a>
+                        *
+                      </span>
                     </span>
                   </p>
                 </div>
@@ -800,7 +760,7 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
                     padding: '15px 0',
                   }}
                 >
-                  {'Submit'}
+                  {t('submitButton')}
                 </button>
                 <p
                   style={{
@@ -810,7 +770,7 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
                     fontWeight: 800,
                   }}
                 >
-                  {'* Mandatory fields'}
+                  * {t('mandatoryFields')}
                 </p>
               </div>
             </form>

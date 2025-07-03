@@ -1,5 +1,6 @@
 'use client';
 import { routeTranslations } from '@/lib/routeTranslations';
+import { useLocale, useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -22,13 +23,12 @@ const SingleVenueCard = ({
   isOpen,
   workHours,
   openClosed,
-  locale,
-  t,
 }: any) => {
   const arrowRef = useRef(null);
   const [workHoursTooltipVisible, setWorkHoursTooltipVisible] = useState(false);
   const router = useRouter();
-
+  const locale = useLocale();
+  const t = useTranslations('ExploreNetworkPage');
   const maxTitleLength = 50;
   const truncatedTitle =
     title.length > maxTitleLength
@@ -65,7 +65,7 @@ const SingleVenueCard = ({
               color: day === today ? '#e6441f' : '#474244',
             }}
           >
-            {capitalizeFirstLetter(`${t[day]}`)}:<br />
+            {capitalizeFirstLetter(`${t[day as keyof typeof t]}`)}:<br />
             <span
               style={{
                 marginBottom: '2px',
@@ -73,7 +73,7 @@ const SingleVenueCard = ({
                 color: day === today ? '#e6441f' : '#474244',
               }}
             >
-              {time === '-' ? t.closed : time}
+              {time === '-' ? t('closed') : (time as string)}
             </span>
           </span>
         );
@@ -178,7 +178,7 @@ const SingleVenueCard = ({
               <div>
                 <VenueOpen
                   isOpen={isOpen}
-                  text={isOpen ? t?.open : t?.closed}
+                  text={isOpen ? t('open') : t('closed')}
                 />
               </div>
               <div

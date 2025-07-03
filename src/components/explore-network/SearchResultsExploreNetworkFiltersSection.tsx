@@ -103,7 +103,7 @@ const SearchResultsExploreNetworkFiltersSection = ({
   data,
   allCities,
 }: SearchResultsExploreNetworkFiltersSectionProps) => {
-  const t = useTranslations('SearchResultsExploreNetworkFiltersSection');
+  const t = useTranslations('ExploreNetworkPage');
   const locale = useLocale();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -539,7 +539,6 @@ const SearchResultsExploreNetworkFiltersSection = ({
                 pinPosition={data.city || null}
                 handleCloseModal={handleCloseModal}
                 handleOpenModal={handleOpenModal}
-                t={t}
               />
             )}
             <article className='single-explore-dropdown'>

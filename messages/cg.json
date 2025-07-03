@@ -68,11 +68,6 @@
     "bigYearFitpass": "Zlatna godina za Fitpass! Lansiranje Fitpass aplikacije, brend postaje dio Up grupe, začetak Fitpass-a u Gruziji.",
     "fitpassCg": "Uskoro nova tržišta! Fitpass stiže u Crnu Goru, Grčku i Moldaviju!"
   },
-  "ExploreNetworkPage": {
-    "fitpassNetworkPart1": "Fitpass",
-    "fitpassNetworkPart2": "network",
-    "searchGyms": "Search gyms & studios near you"
-  },
   "ForCompanies": {
     "source": "*Izvor:",
     "recaptchaValidationError": "Molimo da potvrdite da niste robot",
@@ -100,8 +95,34 @@
     "yourTeamSize": "Veličina vašeg tima*"
   },
   "ForPartners": {
-    "recaptchaValidationError": "Please verify that you are human",
-    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
+    "recaptchaValidationError": "Molimo da potvrdite da niste robot",
+    "agreeToReceiveNews": "Saglasan/a sam da dobijam obavještenja o Fitpass novostima",
+    "requiredFieldsMessage": "Molimo da popunite sva obavezna polja.",
+    "validEmail": "Molimo da unesete validan email.",
+    "phoneNumberValid": "Molimo da unesete validan broj telefona.",
+    "acceptTerms": "Molimo da prihvatite Uslove korišćenja i Politiku privatnosti.",
+    "formErrorMessage": "Došlo je do greške. Molimo pokušajte ponovo kasnije.",
+    "formSuccessMessage": "Email je uspešno poslat!",
+    "venueName": "Ime objekta*",
+    "venueType": "Tip objekta*",
+    "address": "Adresa*",
+    "nameSurname": "Ime i prezime*",
+    "email": "Email*",
+    "phoneNumber": "Broj telefona*",
+    "terms": "Uslovi korišćenja*",
+    "agreeOnFitpass": "Ovim prihvatam Fitpass",
+    "termsAndConditions": "Uslove korišćenja",
+    "privacyPolicy": "Politiku privatnosti",
+    "and": "i",
+    "submitButton": "Pošalji",
+    "mandatoryFields": "Obavezna polja",
+    "gym": "Teretana",
+    "pool": "Bazen",
+    "spa": "Spa i sauna",
+    "sportComplex": "Sportski kompleks",
+    "kidsActivities": "Dječije aktivnosti",
+    "groupClasses": "Grupni treninzi",
+    "other": "Ostalo"
   },
   "Faq": {
     "faqHeaderLine1": "Frequently",
@@ -143,21 +164,34 @@
     "checkOurMore": "Check our more",
     "learnMore": "Learn more"
   },
-  "SearchResultsExploreNetworkFiltersSection": {
-    "locationName": "Location name",
-    "cityInput": "City",
-    "cityArea": "City area",
-    "clear": "Clear",
-    "apply": "Apply",
-    "disciplines": "Disciplines",
-    "loading": "Loading..."
-  },
-  "SearchResultsVenues": {
+  "ExploreNetworkPage": {
+    "fitpassNetworkPart1": "Fitpass",
+    "fitpassNetworkPart2": "mrežu",
+    "searchGyms": "Pretražite teretane i studije u blizini vas",
+    "pleaseSelectAtLeastOneFilter": "Molimo da izaberete bar jedan filter",
+    "locationName": "Naziv lokacije",
+    "cityInput": "Grad",
+    "cityArea": "Gradska četvrt",
+    "clear": "Očisti",
+    "apply": "Primijeni",
+    "disciplines": "Discipline",
+    "loading": "Učitavanje...",
+    "showOnMap": "Show on map",
     "openingAt": "Opening at",
     "openingHours": "Opening hours",
     "noWorkTime": "No work time",
     "noSearchResults": "No search results",
-    "closingAt": "Closing at"
+    "closingAt": "Closing at",
+    "open": "Open",
+    "closed": "Closed",
+    "today": "Today",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
   },
   "Manifest": {
     "name": "next-intl example"

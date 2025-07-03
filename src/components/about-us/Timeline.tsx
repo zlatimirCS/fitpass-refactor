@@ -56,20 +56,42 @@ const Timeline = () => {
         <div className='timeline-dekstop'>
           <div className='wrapper'>
             {locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION && (
-              <Image
-                src='/assets/images/about-us/desktop-map-timeline.jpg'
-                alt='map picture'
-                width={800}
-                height={600}
-              />
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '700px',
+                }}
+              >
+                <Image
+                  src='/assets/images/about-us/desktop-map-timeline.jpg'
+                  alt='map picture'
+                  fill
+                  style={{
+                    objectFit: 'contain',
+                    objectPosition: 'center',
+                  }}
+                />
+              </div>
             )}
             {locale === 'en' && (
-              <Image
-                src='/assets/images/timeline-eng.jpg'
-                alt='map picture'
-                width={800}
-                height={600}
-              />
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '700px',
+                }}
+              >
+                <Image
+                  src='/assets/images/timeline-eng.jpg'
+                  alt='map picture'
+                  fill
+                  style={{
+                    objectFit: 'contain',
+                    objectPosition: 'center',
+                  }}
+                />
+              </div>
             )}
           </div>
         </div>

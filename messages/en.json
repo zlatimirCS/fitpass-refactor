@@ -67,11 +67,6 @@
     "bigYearFitpass": "A big year for Fitpass! Launch of the Fitpass app, becoming a part of Up Group, the start of Fitpass Georgia.",
     "fitpassCg": "New markets alert! Fitpass is coming to Montenegro, Greece and Moldova - SOON!"
   },
-  "ExploreNetworkPage": {
-    "fitpassNetworkPart1": "Fitpass",
-    "fitpassNetworkPart2": "network",
-    "searchGyms": "Search gyms & studios near you"
-  },
   "ForCompanies": {
     "source": "*Resource:",
     "recaptchaValidationError": "Please verify that you are human",
@@ -100,7 +95,33 @@
   },
   "ForPartners": {
     "recaptchaValidationError": "Please verify that you are human",
-    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass"
+    "agreeToReceiveNews": "I agree to receive news and updates from Fitpass",
+    "requiredFieldsMessage": "Please fill out all required fields.",
+    "validEmail": "Please enter a valid email address.",
+    "phoneNumberValid": "Please enter a valid phone number.",
+    "acceptTerms": "Please accept the Terms and conditions and Privacy policy.",
+    "formErrorMessage": "Something went wrong. Please try again later.",
+    "formSuccessMessage": "Your request is successfully sent to Fitpass team. Our team will reach out to you in short notice.",
+    "venueName": "Venue name*",
+    "venueType": "Venue type*",
+    "address": "Address*",
+    "nameSurname": "Name and surname*",
+    "email": "Email*",
+    "phoneNumber": "Phone number*",
+    "terms": "Terms and conditions*",
+    "agreeOnFitpass": "I agree on Fitpass",
+    "termsAndConditions": "Terms and conditions",
+    "privacyPolicy": "Privacy policy",
+    "and": "and",
+    "submitButton": "Submit",
+    "mandatoryFields": "Mandatory fields",
+    "gym": "Gym",
+    "pool": "Pool",
+    "spa": "Spa and sauna",
+    "sportComplex": "Sport complex",
+    "kidsActivities": "Kids activities",
+    "groupClasses": "Group classes",
+    "other": "Other"
   },
   "Faq": {
     "faqHeaderLine1": "Frequently",
@@ -142,21 +163,34 @@
     "checkOurMore": "Check our more",
     "learnMore": "Learn more"
   },
-  "SearchResultsExploreNetworkFiltersSection": {
+  "ExploreNetworkPage": {
+    "fitpassNetworkPart1": "Fitpass",
+    "fitpassNetworkPart2": "network",
+    "searchGyms": "Search gyms & studios near you",
+    "pleaseSelectAtLeastOneFilter": "Please select at least one filter",
     "locationName": "Location name",
     "cityInput": "City",
     "cityArea": "City area",
     "clear": "Clear",
     "apply": "Apply",
     "disciplines": "Disciplines",
-    "loading": "Loading..."
-  },
-  "SearchResultsVenues": {
+    "loading": "Loading...",
+    "showOnMap": "Show on map",
     "openingAt": "Opening at",
     "openingHours": "Opening hours",
     "noWorkTime": "No work time",
     "noSearchResults": "No search results",
-    "closingAt": "Closing at"
+    "closingAt": "Closing at",
+    "open": "Open",
+    "closed": "Closed",
+    "today": "Today",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
   },
   "Manifest": {
     "name": "next-intl example"

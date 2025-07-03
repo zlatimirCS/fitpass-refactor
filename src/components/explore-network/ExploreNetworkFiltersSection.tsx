@@ -14,8 +14,10 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import axios from 'axios';
+import { useTranslations } from 'next-intl';
 import { useParams, useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import GoogleMap from './GoogleMap';
 
 interface City {
@@ -81,6 +83,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
   const router = useRouter();
   const params = useParams();
   const locale = params.locale as string;
+  const t = useTranslations('ExploreNetworkPage');
 
   const [loading, setLoading] = useState(false);
   const [cities, setCities] = useState<City[]>(allCities);
@@ -394,7 +397,8 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
     e.preventDefault();
 
     if (query === '') {
-      console.log('Please select at least one filter');
+      // console.log('Please select at least one filter');
+      toast.error(t('pleaseSelectAtLeastOneFilter'));
       return;
     }
     setLoading(true);
@@ -469,7 +473,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                       handleApplyFilters(e as any);
                     }
                   }}
-                  placeholder='Location name'
+                  placeholder={t('locationName')}
                   value={searchTerm}
                   sx={{
                     width: '100%',
@@ -595,7 +599,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                               lineHeight: '1',
                             }}
                           >
-                            City Area
+                            {t('cityArea')}
                           </span>
                         );
                       }
@@ -630,7 +634,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                     }}
                   >
                     <MenuItem disabled value=''>
-                      <em>City Area</em>
+                      <em>{t('cityArea')}</em>
                     </MenuItem>
                     {citiesParts.map((area: CityArea) => (
                       <MenuItem
@@ -668,7 +672,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                             handleSelectClose('cityPart');
                           }}
                         >
-                          Clear
+                          {t('clear')}
                         </button>
                         <button
                           className='search-btn filters-options'
@@ -677,7 +681,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                             handleOkButtonClick(e, 'cityPart');
                           }}
                         >
-                          Apply
+                          {t('apply')}
                         </button>
                       </div>
                     </CustomMenu>
@@ -737,7 +741,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                               lineHeight: '1',
                             }}
                           >
-                            Disciplines
+                            {t('disciplines')}
                           </span>
                         );
                       }
@@ -768,7 +772,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                     }}
                   >
                     <MenuItem disabled value=''>
-                      <em>Disciplines</em>
+                      <em>{t('disciplines')}</em>
                     </MenuItem>
                     {initialDisciplines &&
                       initialDisciplines.length > 0 &&
@@ -808,7 +812,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                             handleSelectClose('disciplines');
                           }}
                         >
-                          Clear
+                          {t('clear')}
                         </button>
                         <button
                           className='search-btn filters-options'
@@ -817,7 +821,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                             handleOkButtonClick(e, 'disciplines');
                           }}
                         >
-                          Apply
+                          {t('apply')}
                         </button>
                       </div>
                     </CustomMenu>
@@ -833,13 +837,13 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
               style={{ color: '#666666', border: '1px solid #666666' }}
               onClick={handleResetWholeForm}
             >
-              Clear
+              {t('clear')}
             </button>
             <button
               className='search-btn'
               onClick={(e: React.MouseEvent) => handleApplyFilters(e as any)}
             >
-              {loading ? 'Loading' : 'Apply'}
+              {loading ? t('loading') : t('apply')}
             </button>
           </div>
         </aside>

@@ -1,6 +1,8 @@
+import { useTranslations } from 'next-intl';
 import GoogleMap from './GoogleMap';
 
-const SearchResultsMap = ({ pinPosition, handleOpenModal, t }: any) => {
+const SearchResultsMap = ({ pinPosition, handleOpenModal }: any) => {
+  const t = useTranslations('ExploreNetworkPage');
   const latLng = {
     lat: pinPosition?.lat,
     lng: pinPosition?.lng,
@@ -29,7 +31,7 @@ const SearchResultsMap = ({ pinPosition, handleOpenModal, t }: any) => {
         )}
         <div className='explore-network-search-results-map__map__overlay'>
           <button className='btn-venue-map' onClick={handleShowVenuesModal}>
-            {t?.showOnMap}
+            {t('showOnMap')}
           </button>
         </div>
       </div>

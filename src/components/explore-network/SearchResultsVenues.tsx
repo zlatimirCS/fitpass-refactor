@@ -88,7 +88,7 @@ const findNextAvailableWorkday = (
 };
 
 const SearchResultsVenues = ({ data }: SearchResultsVenuesProps) => {
-  const t = useTranslations('SearchResultsVenues');
+  const t = useTranslations('ExploreNetworkPage');
   const locale = useLocale();
   const openClosedVenue = (workHours: WorkHours): string => {
     if (!workHours[currentDay] || workHours[currentDay] === '-') {
@@ -180,8 +180,6 @@ const SearchResultsVenues = ({ data }: SearchResultsVenuesProps) => {
                 isOpen={isOpen}
                 workHours={item.workHours}
                 openClosed={openClosed}
-                t={t}
-                locale={locale}
               />
             );
           })
