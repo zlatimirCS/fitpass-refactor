@@ -1,3 +1,4 @@
+import CookiesScreen from '@/components/common/CookiesScreen';
 import Footer from '@/components/common/Footer';
 import NavBar from '@/components/common/NavBar';
 import TopBar from '@/components/common/TopBar';
@@ -11,9 +12,11 @@ import {
   cmsGetIsForCompaniesHidden,
   cmsGetIsForPartnersHidden,
 } from '@/lib/fetchData';
+import { GoogleTagManager } from '@next/third-parties/google';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import NextTopLoader from 'nextjs-toploader';
 import { ReactNode, Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 import '../../styles/main.scss';
@@ -79,7 +82,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html className='h-full' lang={locale}>
       <body>
+        <NextTopLoader />
         <NextIntlClientProvider>
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY || ''} />
           <AppProvider>
             <Suspense fallback={<div></div>}>
               <TopBar />
@@ -118,6 +123,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               },
             }}
           />
+          <CookiesScreen />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,4 +1,10 @@
 {
+  "Common": {
+    "useCookies": "Koristimo kolačiće kako bismo poboljšali vaše iskustvo na fitpass.me stranici.",
+    "clickAccept": "Klikom na 'Prihvatam' pristajete na njihovu upotrebu.",
+    "accept": "Prihvatam",
+    "cookiesSettings": "Podešavanja kolačića"
+  },
   "MetaDataGeneric": {
     "siteName": "Fitpass",
     "title": "Fitpass | One pass fits all",

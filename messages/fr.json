@@ -1,4 +1,10 @@
 {
+  "Common": {
+    "useCookies": "Nous utilisons des cookies pour vous offrir la meilleure expérience sur notre site web.",
+    "clickAccept": "Cliquez sur 'Accepter' pour accepter tous les cookies ou cliquez sur 'Paramètres' pour gérer vos préférences.",
+    "accept": "Accepter",
+    "cookiesSettings": "Paramètres des cookies"
+  },
   "MetaDataGeneric": {
     "siteName": "Fitpass",
     "title": "Fitpass | Un seul pass, pour tous !",

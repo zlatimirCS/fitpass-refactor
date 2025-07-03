@@ -2,6 +2,12 @@
 // See: https://next-intl.dev/docs/workflows/typescript#messages-arguments
 
 declare const messages: {
+  "Common": {
+    "useCookies": "We use cookies to ensure you get the best experience on our website.",
+    "clickAccept": "Click accept to accept all cookies or click settings to manage your preferences.",
+    "accept": "Accept",
+    "cookiesSettings": "Cookies settings"
+  },
   "MetaDataGeneric": {
     "siteName": "Fitpass",
     "title": "Fitpass | One pass fits all",
