@@ -117,6 +117,125 @@ export const faqCg = {
   },
 };
 
+export const faqSr = {
+  whatIsFitpass: {
+    mainTitle: 'Šta je Fitpass i kako se koristi? ',
+    items: [
+      {
+        id: 1,
+        title: '1. Šta je Fitpass? ',
+        content: `<p>Fitpass je digitalna članarina koja vam omogućava pristup najboljim sportskim objektima i aktivnostima širom Srbije – uključujući teretane, fitness centre, cross fit programe, funkcionalne treninge i wellness centre.</p>`,
+      },
+      {
+        id: 2,
+        title: '2. Kako se prijaviti sa QR kodom?',
+        content: `<p>Preuzmite Fitpass aplikaciju , ulogujte se i skenirajte QR kod na ulazu u objekat. Jednostavno i brzo – bez papira, vaš digitalni ključ za bolje treninge. </p>`,
+      },
+      {
+        id: 3,
+        title: '3. Koji su benefiti Fitpass-a?',
+        content: `<p>Jedna članarina, neograničene mogućnosti. Posetite teretane, fitness centre, wellness centre i učestvujte u različitim grupnim treninzima širom Srbije, prilagođavajući aktivnosti svojim potrebama. </p>`,
+      },
+      {
+        id: 4,
+        title: '4. Koliko često mogu koristiti Fitpass članarinu?',
+        content: `<p>Možete koristiti jedan termin dnevno, bilo da trenirate u teretani, učestvujete u cross fit programu ili uživate u wellness centru. </p>`,
+      },
+      {
+        id: 5,
+        title: '5. U kojim gradovima mogu koristiti Fitpass?',
+        content: `<p>Fitpass je dostupan širom Srbije. Pogledajte mrežu objekata ovde <a href="${process.env.NEXT_PUBLIC_SITE_URL}/sr/istrazi-mrezu">ISTRAŽITE MREŽU</a>.</p>`,
+      },
+      {
+        id: 6,
+        title: '6. Da li drugi mogu koristiti moju članarinu? ',
+        content: `<p>Fitpass članarina je personalizovana i dostupna isključivo vama. Roditelji mogu svoje termine ustupiti detetu do 15 godina, uz obavezno prisustvo. </p>`,
+      },
+      {
+        id: 7,
+        title: '7. Mogu li moju članarinu koristiti moja deca?',
+        content: `<p>Da, deca do 15 godina mogu koristiti vašu članarinu, ali isključivo uz vaše prisustvo. Nije moguće u isto vreme koristiti članarinu za dete i roditelja koristeći jednu članarinu.  </p>`,
+      },
+      {
+        id: 8,
+        title: '8. Ne mogu da se ulogujem na svoj profil? ',
+        content: `<p>Ako imate poteškoća sa prijavom, proverite: </p>
+        <ul>
+        <li>Da li koristite ispravan VC broj iz Fitpass aplikacije?</li>
+        <li>Da li ste se ulogovali sa e-mail adresom koju ste koristili pri registraciji? </li>
+        <li>Da li ste odabrali opciju „Uloguj se“ umesto „Registruj se“? </li>
+        </ul>
+        <p>Ako problem i dalje postoji, pišite nam na  <a href="mailto:kontakt@fitpass.me">kontakt@fitpass.me</a>  ili se obratite našem chat supportu na sajtu sa svojim imenom, prezimenom, e-mail adresom i kontakt telefonom, i neko iz našeg tima će vam pomoći. </p>`,
+      },
+    ],
+  },
+  facilities: {
+    mainTitle: 'O sportskim objektima i disciplinama',
+    items: [
+      {
+        id: 9,
+        title: '1. Koji sportski objekti su dostupni u Fitpass sistemu?',
+        content: `<p>Fitpass uključuje širok spektar sportskih objekata širom Srbije – od teretana i fitness centara, do cross fit programa i wellness objekata. Tačan spisak je dostupan ovde <a href="${process.env.NEXT_PUBLIC_SITE_URL}/sr/istrazi-mrezu">ISTRAŽITE MREŽU</a>.</p>`,
+      },
+      {
+        id: 10,
+        title:
+          '2. Kako da pronađem željeni sportski objekat ili disciplinu u mojoj blizini? ',
+        content: `<p>Koristite pretragu ili mapu u Fitpass aplikaciji kako biste pronašli sportske objekte i aktivnosti u blizini vaše trenutne lokacije. Pretragu možete filtrirati prema vrsti aktivnosti ili gradu. </p>`,
+      },
+      {
+        id: 11,
+        title: '3. Kako da saznam više informacija o sportskom objektu?',
+        content: `<p>Detalji poput radnog vremena, adrese, vrsta aktivnosti i recenzija drugih korisnika dostupni su u opisu svakog objekta u Fitpass aplikaciji i na sajtu. </p>`,
+      },
+      {
+        id: 12,
+        title:
+          '4. Da li mogu da posećujem više sportskih objekata tokom jednog meseca?',
+        content: `<p>Da, sa Fitpass članarinom možete posetiti različite sportske objekte tokom meseca, uz korišćenje jednog termina dnevno. </p>`,
+      },
+      {
+        id: 13,
+        title:
+          '5. Koje discipline i aktivnosti mogu da koristim u sklopu Fitpass sistema?',
+        content: `<p>Fitpass nudi širok izbor aktivnosti – teretane, fitness, cross fit, wellness, grupne treninge i još mnogo toga. Pogledajte kompletan spisak ovde <a href="${process.env.NEXT_PUBLIC_SITE_URL}/sr/istrazi-mrezu">ISTRAŽITE MREŽU</a>.</p>`,
+      },
+      {
+        id: 14,
+        title: '6. Da li su sve discipline/aktivnosti bez doplate?',
+        content: `<p>Većina aktivnosti je uključena u članarinu, dok pojedini objekti zahtevaju doplatu. Ove informacije su jasno naznačene na profilu svakog partnera u aplikaciji i na sajtu.  </p>`,
+      },
+      {
+        id: 15,
+        title:
+          '7. Da li je potrebna najava ili rezervacija prije odlaska u sportski objekat? ',
+        content: `<p>Za većinu objekata nije potrebna najava, ali neki zahtevaju rezervaciju. Proverite detalje u profilu objekta putem Fitpass aplikacije. </p>`,
+      },
+    ],
+  },
+  fitpassCompany: {
+    mainTitle: 'Kako do Fitpass članarine? ',
+    items: [
+      {
+        id: 45,
+        title: '1. Kako da nabavim Fitpass članarinu?',
+        content: `<p>Fitpass članarinu možete dobiti ako je vaš poslodavac deo Fitpass sistema. Ako vaša kompanija još nije deo sistema, predložite im saradnju tako što ćete nas kontaktirati na  <a href="mailto:kontakt@fitpass.me">kontakt@fitpass.me</a>  ili poslati kontakt podatke HR službe. Mi ćemo ih kontaktirati i predložiti saradnju. </p>`,
+      },
+      {
+        id: 46,
+        title: '2. Kako mogu da platim Fitpass članarinu?',
+        content: `<p>Način plaćanja zavisi od ugovora između Fitpass-a i vaše kompanije. Za više informacija, obratite se HR službi ili osobi zaduženoj za benefite zaposlenih. </p>`,
+      },
+      {
+        id: 47,
+        title:
+          '3. Moja kompanija nije u sklopu Fitpass sistema. Šta da radim? ',
+        content: `<p>Ako želite da vaša kompanija postane deo Fitpass sistema i omogući zaposlenima ovaj benefit, pišite nam na  <a href="mailto:kontakt@fitpass.me">kontakt@fitpass.me</a>  sa kontakt podacima HR službe ili odgovorne osobe, i mi ćemo ih kontaktirati sa predlogom saradnje. </p>`,
+      },
+    ],
+  },
+};
+
 export const faqEn = {
   whatIsFitpass: {
     mainTitle: 'What is Fitpass and how to use it?',

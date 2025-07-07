@@ -13,7 +13,7 @@ const AboutUsContent = ({ cmsDataAboutUs }: CmsDataAboutUs) => {
       {!cmsDataAboutUs.section1Hide && (
         <OurStory cmsDataAboutUs={cmsDataAboutUs} />
       )}
-      <Timeline />
+      {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr ' && <Timeline />}
     </>
   );
 };

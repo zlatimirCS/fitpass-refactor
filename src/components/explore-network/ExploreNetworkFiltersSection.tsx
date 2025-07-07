@@ -529,7 +529,7 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                   renderInput={(params: any) => (
                     <TextField
                       {...params}
-                      placeholder='City'
+                      placeholder={t('cityInput')}
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           '&.Mui-focused fieldset': {

@@ -1,4 +1,5 @@
 import { CmsDataExploreNetwork } from '@/types/types';
+import ExploreNetworkFavoritesSection from './ExploreNetworkFavoritesSection';
 import ExploreNetworkFiltersSection from './ExploreNetworkFiltersSection';
 import ExploreNetworkHeroSection from './ExploreNetworkHeroSection';
 
@@ -13,6 +14,7 @@ const ExploreNetworkContent = ({
     <>
       <ExploreNetworkHeroSection />
       <ExploreNetworkFiltersSection allCities={allCities} />
+      <ExploreNetworkFavoritesSection />
     </>
   );
 };

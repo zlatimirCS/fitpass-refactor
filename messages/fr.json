@@ -68,7 +68,7 @@
     "fitpassCg": "New markets alert! Fitpass is coming to Montenegro, Greece and Moldova - SOON!"
   },
   "ForCompanies": {
-    "source": "*Resource:",
+    "source": "*Ressource:",
     "recaptchaValidationError": "Veuillez vérifier que vous n'êtes pas un robot",
     "companyNumberValid": "Veuillez entrer un numéro de TVA valide.",
     "requiredFieldsMessage": "Veuillez remplir tous les champs requis.",
@@ -123,15 +123,15 @@
     "other": "Autre"
   },
   "Faq": {
-    "faqHeaderLine1": "Frequently",
-    "faqHeaderLine2": "Asked Questions",
-    "faqHeaderText": "Find answers to the most common questions about Fitpass.",
-    "content": "Content",
-    "whatIsFitpass": "What is Fitpass?",
-    "facilities": "Facilities",
-    "howToGetFitpass": "How to get Fitpass?",
-    "fitpassCompany": "Fitpass Company",
-    "buyingFitpass": "Buying Fitpass",
+    "faqHeaderLine1": "Foire aux",
+    "faqHeaderLine2": "questions",
+    "faqHeaderText": "Vous trouverez ci-dessous les réponses aux questions fréquemment posées concernant votre abonnement Fitpass",
+    "content": "CONTENU",
+    "whatIsFitpass": "Qu’est-ce que Fitpass et comment l’utiliser ?",
+    "facilities": "À propos des établissements sportifs et des disciplines",
+    "howToGetFitpass": "Comment obtenir un abonnement Fitpass ?",
+    "fitpassCompany": "Fitpass Entreprise",
+    "buyingFitpass": "Acheter un Fitpass",
     "club": "Club"
   },
   "Contact": {
@@ -157,10 +157,10 @@
     "send": "Send"
   },
   "Club": {
-    "readyToExploreDiscounts": "Ready to explore discounts",
-    "allDiscounts": "All discounts",
-    "checkOurMore": "Check our more",
-    "learnMore": "Learn more"
+    "readyToExploreDiscounts": "Prêt à découvrir des promotions ?",
+    "allDiscounts": "Toutes les promos",
+    "checkOurMore": "Voir plus",
+    "learnMore": "En savoir plus"
   },
   "ExploreNetworkPage": {
     "fitpassNetworkPart1": "Fitpass",
@@ -189,7 +189,17 @@
     "thursday": "Thursday",
     "friday": "Friday",
     "saturday": "Saturday",
-    "sunday": "Sunday"
+    "sunday": "Sunday",
+    "favorites": "Favorites",
+    "in": "In",
+    "noviSad": "Novi Sad",
+    "family": "Family",
+    "friendly": "Friendly",
+    "teamBuilding": "Team building",
+    "teamBuildingActivities": "Team building activities",
+    "special": "Special",
+    "offer": "Offer",
+    "belgrade": "Belgrade"
   },
   "Manifest": {
     "name": ""

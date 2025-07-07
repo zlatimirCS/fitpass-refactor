@@ -193,7 +193,17 @@ declare const messages: {
     "thursday": "Thursday",
     "friday": "Friday",
     "saturday": "Saturday",
-    "sunday": "Sunday"
+    "sunday": "Sunday",
+    "favorites": "Favorites",
+    "in": "In",
+    "noviSad": "Novi Sad",
+    "family": "Family",
+    "friendly": "Friendly",
+    "teamBuilding": "Team building",
+    "teamBuildingActivities": "Team building activities",
+    "special": "Special",
+    "offer": "Offer",
+    "belgrade": "Belgrade"
   },
   "Manifest": {
     "name": "next-intl example"

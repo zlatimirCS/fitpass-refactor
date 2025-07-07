@@ -8,7 +8,14 @@ import FaqSingleAccordionDesktop from './FaqSingleAccordionDesktop';
 const FaqMobile = () => {
   const locale = useLocale();
   const t = useTranslations('Faq');
-  const faq = locale === 'en' ? faqEn : locale === 'cg' ? faqCg : faqEn;
+  const faq =
+    locale === 'en'
+      ? faqEn
+      : locale === 'cg'
+        ? faqCg
+        : locale === 'sr'
+          ? faqCg
+          : faqEn;
 
   return (
     <section className='faq-desktop'>
