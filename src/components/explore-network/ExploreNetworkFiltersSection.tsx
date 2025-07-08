@@ -776,10 +776,10 @@ const ExploreNetworkFiltersSection = ({ allCities }: { allCities: City[] }) => {
                     </MenuItem>
                     {initialDisciplines &&
                       initialDisciplines.length > 0 &&
-                      initialDisciplines.map((discipline: Discipline) => (
+                      initialDisciplines.map((discipline: any) => (
                         <MenuItem
                           key={discipline._id}
-                          value={discipline._id}
+                          value={discipline}
                           sx={{
                             justifyContent: 'space-between',
                             fontSize: '16px',
