@@ -200,7 +200,22 @@
     "teamBuildingActivities": "Team building activities",
     "special": "Special",
     "offer": "Offer",
-    "belgrade": "Belgrade"
+    "belgrade": "Belgrade",
+    "workHours": "Work hours",
+    "readComments": "Read comments",
+    "readMore": "Read more",
+    "readLess": "Read less",
+    "schedule": "Schedule",
+    "prevDay": "Previous day",
+    "nextDay": "Next day",
+    "noActivities": "No activities",
+    "commentsAndGrades": "Comments and grades",
+    "equipment": "Equipment",
+    "stuff": "Stuff",
+    "hygiene": "Hygiene",
+    "rooms": "Rooms",
+    "howToGrade": "How to grade",
+    "howToGradeAnswer": "If you want to rate a facility, it is enough to go to a training session at the desired facility and at the end of the day you will receive an e-mail (to the address you left during registration) with instructions on how to rate the facility"
   },
   "Manifest": {
     "name": "next-intl example"

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 // import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import Tooltip from '@mui/material/Tooltip';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import StarRatings from 'react-star-ratings';
 import 'swiper/css';
@@ -26,8 +27,6 @@ const SingleVenueDisplayMobile = ({
   calculateScorePercentage,
   setReadMore,
   selectedDate,
-  t,
-  locale,
   comments,
   atLeastOneActivity,
   isGeneralActivities,
@@ -41,6 +40,8 @@ const SingleVenueDisplayMobile = ({
   // const { isLoaded, loadError } = useJsApiLoader({
   //   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   // });
+  const t = useTranslations('ExploreNetworkPage');
+  const locale = useLocale();
   const [isWorksHoursOpen, setIsWorksHoursOpen] = useState(false);
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
 
@@ -143,7 +144,7 @@ const SingleVenueDisplayMobile = ({
                     </a>
                     <a href='#comments-section-anchor'>
                       <p>
-                        {t?.readComments}{' '}
+                        {t('readComments')}{' '}
                         {data?.total_comments > 0
                           ? `(${data?.total_comments})`
                           : ''}
@@ -165,7 +166,7 @@ const SingleVenueDisplayMobile = ({
                       className='read-more-less'
                       onClick={() => setReadMore((prev: any) => !prev)}
                     >
-                      {t?.readMore}
+                      {t('readMore')}
                     </p>
                   )}
                   {aboutUs?.html?.length > readMoreTextLength && readMore && (
@@ -174,7 +175,7 @@ const SingleVenueDisplayMobile = ({
                       className='read-more-less'
                       onClick={() => setReadMore((prev: any) => !prev)}
                     >
-                      {t?.readLess}
+                      {t('readLess')}
                     </p>
                   )}
                 </div>
@@ -404,7 +405,7 @@ const SingleVenueDisplayMobile = ({
                           width={20}
                           height={20}
                         />
-                        <div className='work-hours-title'>{t?.workHours}</div>
+                        <div className='work-hours-title'>{t('workHours')}</div>
                       </div>
                       <div className='work-hours-head--right'>
                         <Image
@@ -428,45 +429,45 @@ const SingleVenueDisplayMobile = ({
                     >
                       <div className='work-hours-details'>
                         <div className='work-hours-detail'>
-                          <span>{t?.monday}</span>{' '}
+                          <span>{t('monday')}</span>{' '}
                           {data?.workHours?.monday === '-'
-                            ? t?.closed
+                            ? t('closed')
                             : data?.workHours?.monday}
                         </div>
                         <div className='work-hours-detail'>
-                          <span>{t?.tuesday}</span>{' '}
+                          <span>{t('tuesday')}</span>{' '}
                           {data?.workHours?.tuesday === '-'
-                            ? t?.closed
+                            ? t('closed')
                             : data?.workHours?.tuesday}
                         </div>
                         <div className='work-hours-detail'>
-                          <span>{t?.wednesday}</span>{' '}
+                          <span>{t('wednesday')}</span>{' '}
                           {data?.workHours?.wednesday === '-'
-                            ? t?.closed
+                            ? t('closed')
                             : data?.workHours?.wednesday}
                         </div>
                         <div className='work-hours-detail'>
-                          <span>{t?.thursday}</span>{' '}
+                          <span>{t('thursday')}</span>{' '}
                           {data?.workHours?.thursday === '-'
-                            ? t?.closed
+                            ? t('closed')
                             : data?.workHours?.thursday}
                         </div>
                         <div className='work-hours-detail'>
-                          <span>{t?.friday}</span>{' '}
+                          <span>{t('friday')}</span>{' '}
                           {data?.workHours?.friday === '-'
-                            ? t?.closed
+                            ? t('closed')
                             : data?.workHours?.friday}
                         </div>
                         <div className='work-hours-detail'>
-                          <span>{t?.saturday}</span>{' '}
+                          <span>{t('saturday')}</span>{' '}
                           {data?.workHours?.saturday === '-'
-                            ? t?.closed
+                            ? t('closed')
                             : data?.workHours?.saturday}
                         </div>
                         <div className='work-hours-detail'>
-                          <span>{t?.sunday}</span>{' '}
+                          <span>{t('sunday')}</span>{' '}
                           {data?.workHours?.sunday === '-'
-                            ? t?.closed
+                            ? t('closed')
                             : data?.workHours?.sunday}
                         </div>
                       </div>
@@ -489,7 +490,7 @@ const SingleVenueDisplayMobile = ({
                         width={20}
                         height={20}
                       />
-                      <div className='schedule-title'>{t?.schedule}:</div>
+                      <div className='schedule-title'>{t('schedule')}:</div>
                     </div>
                     <div className='schedule-head--right'>
                       <Image
@@ -650,7 +651,7 @@ const SingleVenueDisplayMobile = ({
                         })}
                       {filteredActivities &&
                         filteredActivities?.length === 0 && (
-                          <p className='no-activities'>{t?.noActivities}</p>
+                          <p className='no-activities'>{t('noActivities')}</p>
                         )}
                     </div>
                   </div>
@@ -668,7 +669,7 @@ const SingleVenueDisplayMobile = ({
                         width={20}
                         height={20}
                       />
-                      <div className='schedule-title'>{t?.schedule}:</div>
+                      <div className='schedule-title'>{t('schedule')}:</div>
                     </div>
                     <div className='schedule-head--right'>
                       <Image
@@ -801,7 +802,7 @@ const SingleVenueDisplayMobile = ({
                 {/*venue grades top*/}
                 <div className='grades-top'>
                   <h4>
-                    {t?.commentsAndGrades}
+                    {t('commentsAndGrades')}
                     <span>{`(${data.score.num_reviews})`}</span>
                   </h4>
                   <article>
@@ -819,7 +820,7 @@ const SingleVenueDisplayMobile = ({
                     <div className='grades-top-grid'>
                       <div className='grades-top-grid-item'>
                         <p>
-                          {t?.equipment} <span>{data.score.equipment}</span>
+                          {t('equipment')} <span>{data.score.equipment}</span>
                         </p>
                         <div className='scale'>
                           <div
@@ -834,7 +835,7 @@ const SingleVenueDisplayMobile = ({
                       </div>
                       <div className='grades-top-grid-item'>
                         <p>
-                          {t?.stuff} <span>{data.score.staff}</span>
+                          {t('stuff')} <span>{data.score.staff}</span>
                         </p>
                         <div className='scale'>
                           <div
@@ -847,7 +848,7 @@ const SingleVenueDisplayMobile = ({
                       </div>
                       <div className='grades-top-grid-item'>
                         <p>
-                          {t?.hygiene} <span>{data.score.hygiene}</span>
+                          {t('hygiene')} <span>{data.score.hygiene}</span>
                         </p>
                         <div className='scale'>
                           <div
@@ -862,7 +863,7 @@ const SingleVenueDisplayMobile = ({
                       </div>
                       <div className='grades-top-grid-item'>
                         <p>
-                          {t?.rooms} <span>{data.score.interior}</span>
+                          {t('rooms')} <span>{data.score.interior}</span>
                         </p>
                         <div className='scale'>
                           <div
@@ -882,8 +883,8 @@ const SingleVenueDisplayMobile = ({
                 {/*venue grades bottom*/}
                 <div className='grades-bottom'>
                   <div className='grades-bottom-content'>
-                    <h4>{t?.howToGrade}</h4>
-                    <p>{t?.howToGradeAnswer}</p>
+                    <h4>{t('howToGrade')}</h4>
+                    <p>{t('howToGradeAnswer')}</p>
                   </div>
                 </div>
                 {/*venue grades bottom*/}

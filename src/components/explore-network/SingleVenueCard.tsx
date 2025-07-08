@@ -53,6 +53,7 @@ const SingleVenueCard = ({
   const workHoursForTooltip = (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       {Object.entries(workHours).map(([day, time], index, array) => {
+        console.log('day', day);
         return (
           <span
             key={day}
@@ -65,7 +66,8 @@ const SingleVenueCard = ({
               color: day === today ? '#e6441f' : '#474244',
             }}
           >
-            {capitalizeFirstLetter(`${t[day as keyof typeof t]}`)}:<br />
+            {/* {capitalizeFirstLetter(`${t[day as keyof typeof t]}`)}: */}
+            {capitalizeFirstLetter(`${t(day as any)}`)}:<br />
             <span
               style={{
                 marginBottom: '2px',
@@ -99,21 +101,21 @@ const SingleVenueCard = ({
   };
 
   return (
-    <Link
-      href={`/${locale}/${
-        locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
-          ? routeTranslations[locale as keyof typeof routeTranslations][
-              'explore-network'
-            ]
-          : 'explore-network'
-      }/${redirectUrl}`}
+    <div
+      className='single-venue-card'
+      onClick={redirectSingleVenueView}
+      // onContextMenu={handleRightClick}
     >
-      <div
-        className='single-venue-card'
-        onClick={redirectSingleVenueView}
-        // onContextMenu={handleRightClick}
-      >
-        <div className='single-venue-card__image-wrapper'>
+      <div className='single-venue-card__image-wrapper'>
+        <Link
+          href={`/${locale}/${
+            locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
+              ? routeTranslations[locale as keyof typeof routeTranslations][
+                  'explore-network'
+                ]
+              : 'explore-network'
+          }/${redirectUrl}`}
+        >
           <div
             className='single-venue-card__image'
             onClick={redirectSingleVenueView}
@@ -125,102 +127,101 @@ const SingleVenueCard = ({
               })`,
             }}
           ></div>
-          <div className='mobile-reviews-view'>
-            <span className='orange'>{venueRating}</span>
-            <span style={{ marginTop: '-2px' }}>
-              <StarRatings
-                rating={rating}
-                starRatedColor='#e5431f'
-                numberOfStars={5}
-                name='rating'
-                starDimension='22px'
-                starSpacing='1px'
-              />
-            </span>
-          </div>
+        </Link>
+        <div className='mobile-reviews-view'>
+          <span className='orange'>{venueRating}</span>
+          <span style={{ marginTop: '-2px' }}>
+            <StarRatings
+              rating={rating}
+              starRatedColor='#e5431f'
+              numberOfStars={5}
+              name='rating'
+              starDimension='22px'
+              starSpacing='1px'
+            />
+          </span>
         </div>
-        {/* </Link> */}
-        <div className='single-venue-card__content'>
-          <h3
-            className='single-venue-card__title'
-            style={{ letterSpacing: '0.5px' }}
-            onClick={redirectSingleVenueView}
-          >
-            {truncatedTitle}
-          </h3>
-          <div className='single-venue-card-item single-venue-card__reviews'>
-            <span className='orange'>{venueRating}</span>
-            <span style={{ marginTop: '-2px' }}>
-              <StarRatings
-                rating={rating}
-                starRatedColor='#e5431f'
-                numberOfStars={5}
-                name='rating'
-                starDimension='22px'
-                starSpacing='1px'
+      </div>
+      {/* </Link> */}
+      <div className='single-venue-card__content'>
+        <h3
+          className='single-venue-card__title'
+          style={{ letterSpacing: '0.5px' }}
+          onClick={redirectSingleVenueView}
+        >
+          {truncatedTitle}
+        </h3>
+        <div className='single-venue-card-item single-venue-card__reviews'>
+          <span className='orange'>{venueRating}</span>
+          <span style={{ marginTop: '-2px' }}>
+            <StarRatings
+              rating={rating}
+              starRatedColor='#e5431f'
+              numberOfStars={5}
+              name='rating'
+              starDimension='22px'
+              starSpacing='1px'
+            />
+          </span>
+        </div>
+        <div className='single-venue-card-item single-venue-card__location'>
+          <Image
+            src='/assets/icons/venue-location-icon.svg'
+            alt='location icon'
+            width={20}
+            height={20}
+            className='large'
+          />
+          <span style={{ letterSpacing: '1px' }}>
+            {address && `${address.street} ${address.number}, ${address.city}`}
+          </span>
+        </div>
+        <div className='single-venue-card-item single-venue-card__hours'>
+          <Image
+            src='/assets/icons/venue-working-hours-icon.svg'
+            alt='hours icon'
+            width={16}
+            height={16}
+            className='smaller'
+          />
+          <div className='inner-flex'>
+            <div>
+              <VenueOpen
+                isOpen={isOpen}
+                text={isOpen ? t('open') : t('closed')}
               />
-            </span>
-          </div>
-          <div className='single-venue-card-item single-venue-card__location'>
-            <Image
-              src='/assets/icons/venue-location-icon.svg'
-              alt='location icon'
-              width={20}
-              height={20}
-              className='large'
-            />
-            <span style={{ letterSpacing: '1px' }}>
-              {address &&
-                `${address.street} ${address.number}, ${address.city}`}
-            </span>
-          </div>
-          <div className='single-venue-card-item single-venue-card__hours'>
-            <Image
-              src='/assets/icons/venue-working-hours-icon.svg'
-              alt='hours icon'
-              width={16}
-              height={16}
-              className='smaller'
-            />
-            <div className='inner-flex'>
-              <div>
-                <VenueOpen
-                  isOpen={isOpen}
-                  text={isOpen ? t('open') : t('closed')}
-                />
-              </div>
+            </div>
+            <div
+              className='inner-open-closed-hours'
+              onClick={e => {
+                e.stopPropagation();
+                e.preventDefault();
+                setWorkHoursTooltipVisible(prev => !prev);
+              }}
+            >
+              <span>{openClosed}</span>
+              <Image
+                ref={arrowRef}
+                className={`work-hours-arrow ${
+                  workHoursTooltipVisible ? 'active' : ''
+                }`}
+                src='/assets/icons/switch-arrow-gray.svg'
+                alt='chevron down'
+                width={16}
+                height={16}
+              />
               <div
-                className='inner-open-closed-hours'
-                onClick={e => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  setWorkHoursTooltipVisible(prev => !prev);
-                }}
+                className={`work-hours-tooltip ${
+                  workHoursTooltipVisible ? 'active' : ''
+                }`}
               >
-                <span>{openClosed}</span>
-                <Image
-                  ref={arrowRef}
-                  className={`work-hours-arrow ${
-                    workHoursTooltipVisible ? 'active' : ''
-                  }`}
-                  src='/assets/icons/switch-arrow-gray.svg'
-                  alt='chevron down'
-                  width={16}
-                  height={16}
-                />
-                <div
-                  className={`work-hours-tooltip ${
-                    workHoursTooltipVisible ? 'active' : ''
-                  }`}
-                >
-                  {workHoursForTooltip}
-                </div>
+                {workHoursForTooltip}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 export default SingleVenueCard;

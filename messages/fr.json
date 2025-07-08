@@ -199,7 +199,22 @@
     "teamBuildingActivities": "Activités",
     "special": "Spécial",
     "offer": "Offre",
-    "belgrade": "Belgrade"
+    "belgrade": "Belgrade",
+    "workHours": "Horaires de travail",
+    "readComments": "Lire les commentaires",
+    "readMore": "Lire plus",
+    "readLess": "Lire moins",
+    "schedule": "Programme",
+    "prevDay": "Jour précédent",
+    "nextDay": "Jour suivant",
+    "noActivities": "Aucune activité",
+    "commentsAndGrades": "Commentaires et notes",
+    "equipment": "Équipement",
+    "stuff": "Livres",
+    "hygiene": "Hygiène",
+    "rooms": "Salles",
+    "howToGrade": "Comment évaluer un établissement ?",
+    "howToGradeAnswer": "Pour évaluer un établissement, il suffit de venir faire un entraînement dans l'établissement souhaité et à la fin de la journée, vous recevrez un e-mail (à l'adresse que vous avez laissée lors de votre inscription) avec des instructions sur la façon d'évaluer l'établissement."
   },
   "Manifest": {
     "name": ""
