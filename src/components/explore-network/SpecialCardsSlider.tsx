@@ -91,7 +91,7 @@ export const SpecialCardsSlider = (props: {
                               locale ===
                               `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
                                 ? `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['explore-network']}/${item.slug}`
-                                : `/${locale}/explore-network/${item.slug}`
+                                : `/${locale}/${routeTranslations[locale as keyof typeof routeTranslations]['explore-network']}/${item.slug}`
                             }
                           >
                             <SpecialCard item={item} />

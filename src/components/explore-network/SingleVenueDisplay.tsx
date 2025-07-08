@@ -133,9 +133,22 @@ const SingleVenueDisplay = ({
   const maxScore = 10; // Define your maximum score here
   const rating = data?.rating ? calculateRating(data?.rating, maxScore) : 0;
 
+  const orderedSequenceImages =
+    data?.photos && data?.photos?.length > 0
+      ? data?.photos?.sort(
+          (a: { sequence_nbr: number }, b: { sequence_nbr: number }) => {
+            return a.sequence_nbr - b.sequence_nbr;
+          }
+        )
+      : [];
+
+  console.log('orderedSequenceImages', orderedSequenceImages);
+
   const imagesForCarousel =
-    data && data?.photos && data?.photos?.length > 0
-      ? data?.photos.map((item: { url: { large: any } }) => item.url.large)
+    orderedSequenceImages && orderedSequenceImages.length > 0
+      ? orderedSequenceImages.map(
+          (item: { url: { large: any } }) => item.url.large
+        )
       : [];
 
   const singleVenueDisplayProps = {

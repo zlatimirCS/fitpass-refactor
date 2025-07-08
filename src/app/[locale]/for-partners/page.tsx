@@ -1,8 +1,12 @@
 import ForPartnersContent from '@/components/for-partners/ForPartnersContent';
-import { getForPartnersContent } from '@/lib/fetchData';
+import {
+  cmsGetIsForPartnersHidden,
+  getForPartnersContent,
+} from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { Suspense, use } from 'react';
+import { redirect } from 'next/navigation';
+import { Suspense } from 'react';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -29,8 +33,13 @@ const ForPartners = async ({ locale }: { locale: string }) => {
   return <ForPartnersContent cmsDataForPartners={cmsDataForPartners} />;
 };
 
-export default function ForPartnersPage({ params }: Props) {
-  const { locale } = use(params);
+export default async function ForPartnersPage({ params }: Props) {
+  const { locale } = await params;
+
+  const fpHide = await cmsGetIsForPartnersHidden();
+  if (fpHide) {
+    redirect('/');
+  }
 
   // Enable static rendering
   setRequestLocale(locale);

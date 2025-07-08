@@ -1,8 +1,9 @@
 import AboutUsContent from '@/components/about-us/AboutUsContent';
-import { getAboutUsContent } from '@/lib/fetchData';
+import { cmsGetIsAboutUsHidden, getAboutUsContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { Suspense, use } from 'react';
+import { redirect } from 'next/navigation';
+import { Suspense } from 'react';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -26,8 +27,13 @@ const About = async ({ locale }: { locale: string }) => {
   return <AboutUsContent cmsDataAboutUs={cmsDataAboutUs} />;
 };
 
-export default function AboutUsPage({ params }: Props) {
-  const { locale } = use(params);
+export default async function AboutUsPage({ params }: Props) {
+  const { locale } = await params;
+
+  const auHide = await cmsGetIsAboutUsHidden();
+  if (auHide) {
+    redirect('/');
+  }
 
   // Enable static rendering
   setRequestLocale(locale);

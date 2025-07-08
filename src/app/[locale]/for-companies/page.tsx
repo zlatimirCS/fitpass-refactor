@@ -1,8 +1,12 @@
 import ForCompaniesContent from '@/components/for-companies/ForCompaniesContent';
-import { getForCompaniesContent } from '@/lib/fetchData';
+import {
+  cmsGetIsForCompaniesHidden,
+  getForCompaniesContent,
+} from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { Suspense, use } from 'react';
+import { redirect } from 'next/navigation';
+import { Suspense } from 'react';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -29,8 +33,13 @@ const ForCompanies = async ({ locale }: { locale: string }) => {
   return <ForCompaniesContent cmsDataForCompanies={cmsDataForCompanies} />;
 };
 
-export default function ForCompaniesPage({ params }: Props) {
-  const { locale } = use(params);
+export default async function ForCompaniesPage({ params }: Props) {
+  const { locale } = await params;
+
+  const fcHide = await cmsGetIsForCompaniesHidden();
+  if (fcHide) {
+    redirect('/');
+  }
 
   // Enable static rendering
   setRequestLocale(locale);

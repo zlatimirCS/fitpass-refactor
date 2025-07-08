@@ -62,5 +62,29 @@ export const routing = defineRouting({
           'explore-network'
         ),
     },
+    '/explore-network/[slug]': {
+      en: '/explore-network/[slug]',
+      [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]:
+        getLocalizedPath(
+          process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string,
+          'explore-network'
+        ) + '/[slug]',
+    },
+    '/faq': {
+      en: '/faq',
+      [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]:
+        getLocalizedPath(
+          process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string,
+          'faq'
+        ),
+    },
+    '/contact': {
+      en: '/contact',
+      [process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string]:
+        getLocalizedPath(
+          process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION as string,
+          'contact'
+        ),
+    },
   },
 });

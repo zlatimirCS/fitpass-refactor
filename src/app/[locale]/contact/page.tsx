@@ -1,8 +1,9 @@
 import ContactContent from '@/components/contact/ContactContent';
-import { getContactContent } from '@/lib/fetchData';
+import { cmsGetIsContactHidden, getContactContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { Suspense, use } from 'react';
+import { redirect } from 'next/navigation';
+import { Suspense } from 'react';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -26,8 +27,13 @@ const Contact = async ({ locale }: { locale: string }) => {
   return <ContactContent cmsDataContact={cmsDataContact} />;
 };
 
-export default function ContactPage({ params }: Props) {
-  const { locale } = use(params);
+export default async function ContactPage({ params }: Props) {
+  const { locale } = await params;
+
+  const ctHide = await cmsGetIsContactHidden();
+  if (ctHide) {
+    redirect('/');
+  }
 
   // Enable static rendering
   setRequestLocale(locale);

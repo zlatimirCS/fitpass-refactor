@@ -87,7 +87,15 @@ const SingleVenueCard = ({
       document.body.classList.remove('fixed');
     }
     NProgress.start();
-    router.push(`/${locale}/explore-network/${redirectUrl}`);
+    router.push(
+      `/${locale}/${
+        locale === process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION
+          ? routeTranslations[locale as keyof typeof routeTranslations][
+              'explore-network'
+            ]
+          : 'explore-network'
+      }/${redirectUrl}`
+    );
   };
 
   return (

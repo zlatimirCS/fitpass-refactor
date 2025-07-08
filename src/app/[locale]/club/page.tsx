@@ -1,8 +1,13 @@
 import ClubContent from '@/components/club/ClubContent';
-import { getClubCards, getClubContent } from '@/lib/fetchData';
+import {
+  cmsGetIsFitpassClubHidden,
+  getClubCards,
+  getClubContent,
+} from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { Suspense, use } from 'react';
+import { redirect } from 'next/navigation';
+import { Suspense } from 'react';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -27,8 +32,13 @@ const Club = async ({ locale }: { locale: string }) => {
   return <ClubContent cmsDataClub={cmsDataClub} data={data} />;
 };
 
-export default function ClubPage({ params }: Props) {
-  const { locale } = use(params);
+export default async function ClubPage({ params }: Props) {
+  const { locale } = await params;
+
+  const clHide = await cmsGetIsFitpassClubHidden();
+  if (clHide) {
+    redirect('/');
+  }
 
   // Enable static rendering
   setRequestLocale(locale);

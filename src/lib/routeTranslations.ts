@@ -2,6 +2,7 @@ export const routeTranslations = {
   en: {
     'about-us': 'about-us',
     'explore-network': 'explore-network',
+
     'explore-network/search': 'explore-network/search',
     'for-companies': 'for-companies',
     'for-partners': 'for-partners',

@@ -1,4 +1,6 @@
 import { CmsDataExploreNetwork } from '@/types/types';
+import ExploreNetworkCompaniesPartnersGrid from './ExploreNetworkCompaniesPartnersGrid';
+import ExploreNetworkEveryoneWins from './ExploreNetworkEveryoneWins';
 import ExploreNetworkFavoritesSection from './ExploreNetworkFavoritesSection';
 import ExploreNetworkFiltersSection from './ExploreNetworkFiltersSection';
 import ExploreNetworkHeroSection from './ExploreNetworkHeroSection';
@@ -15,6 +17,16 @@ const ExploreNetworkContent = ({
       <ExploreNetworkHeroSection />
       <ExploreNetworkFiltersSection allCities={allCities} />
       <ExploreNetworkFavoritesSection />
+      {!cmsDataExploreNetwork?.section1Hide && (
+        <ExploreNetworkCompaniesPartnersGrid
+          cmsDataExploreNetwork={cmsDataExploreNetwork}
+        />
+      )}
+      {!cmsDataExploreNetwork?.section2Hide && (
+        <ExploreNetworkEveryoneWins
+          cmsDataExploreNetwork={cmsDataExploreNetwork}
+        />
+      )}
     </>
   );
 };

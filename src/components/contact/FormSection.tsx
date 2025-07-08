@@ -214,7 +214,10 @@ const FormSection = ({
         phoneNumber: form.phone,
         message: form.message,
         checkBox: checkBoxString,
-        language: process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION,
+        language:
+          process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION === 'cg'
+            ? 'cnr'
+            : process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION,
       }),
     })
       .then(r => {
