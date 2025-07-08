@@ -16,7 +16,9 @@ const ExploreNetworkContent = ({
     <>
       <ExploreNetworkHeroSection />
       <ExploreNetworkFiltersSection allCities={allCities} />
-      <ExploreNetworkFavoritesSection />
+      {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION === 'sr' && (
+        <ExploreNetworkFavoritesSection />
+      )}
       {!cmsDataExploreNetwork?.section1Hide && (
         <ExploreNetworkCompaniesPartnersGrid
           cmsDataExploreNetwork={cmsDataExploreNetwork}
