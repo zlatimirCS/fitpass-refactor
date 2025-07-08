@@ -216,7 +216,7 @@
     "hygiene": "Higijena",
     "rooms": "Sobe",
     "howToGrade": "Kako da oceniš objekat?",
-    "howToGradeAnswer": "Ako želiš da oceniš neki objekat, dovoljno je da odeš na trening u željeni objekat i na kraju dana će ti stići e-mail (na adresu koju si ostavio/la prilikom registracije) sa uputstvima kako da ocenite objekat."
+    "howToGradeAnswer": "Ako želiš da oceniš neki objekat, dovoljno je da odeš na trening u željeni objekat i na kraju dana će ti stići e-mail (na adresu koju si ostavio/la prilikom registracije) sa uputstvima kako da ocenite objekat"
   },
   "Manifest": {
     "name": "next-intl example"
