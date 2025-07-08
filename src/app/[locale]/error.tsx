@@ -5,10 +5,9 @@ import { useEffect } from 'react';
 
 type Props = {
   error: Error;
-  reset(): void;
 };
 
-export default function Error({ error, reset }: Props) {
+export default function Error({ error }: Props) {
   const t = useTranslations('Error');
 
   useEffect(() => {
@@ -17,7 +16,13 @@ export default function Error({ error, reset }: Props) {
 
   return (
     <>
-      <div>
+      <section className='topBottomSpacing'>
+        <div className='wrapper'>
+          <h3>{t('title')}</h3>
+          <p style={{ textWrap: 'balance' }}>{t('description')}</p>
+        </div>
+      </section>
+      {/* <div>
         {t.rich('description', {
           p: chunks => <p className='mt-4'>{chunks}</p>,
           retry: chunks => (
@@ -30,7 +35,7 @@ export default function Error({ error, reset }: Props) {
             </button>
           ),
         })}
-      </div>
+      </div> */}
     </>
   );
 }

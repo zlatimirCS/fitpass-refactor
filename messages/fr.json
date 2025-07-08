@@ -220,11 +220,11 @@
     "name": ""
   },
   "NotFoundPage": {
-    "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln.",
-    "title": "Seite nicht gefunden"
+    "description": "La page que vous cherchez n'existe pas. Veuillez vérifier l'adresse dans la barre d'adresse ou utiliser la navigation pour accéder à une page connue.",
+    "title": "Page non trouvée"
   },
   "Error": {
-    "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
-    "title": "Etwas ist schief gelaufen!"
+    "description": "Une erreur est survenue. Veuillez réessayer plus tard.",
+    "title": "Une erreur est survenue !"
   }
 }

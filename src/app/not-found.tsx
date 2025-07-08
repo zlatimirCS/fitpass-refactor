@@ -10,7 +10,11 @@ export default function GlobalNotFound() {
   return (
     <html lang='en'>
       <body>
-        <Error statusCode={404} />;
+        <section className='topBottomSpacing'>
+          <div className='wrapper'>
+            <Error statusCode={404} />;
+          </div>
+        </section>
       </body>
     </html>
   );

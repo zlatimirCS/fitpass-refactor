@@ -228,7 +228,7 @@ declare const messages: {
     "title": "Page not found"
   },
   "Error": {
-    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+    "description": "We've unfortunately encountered an error. Please try again later.",
     "title": "Something went wrong!"
   }
 };
