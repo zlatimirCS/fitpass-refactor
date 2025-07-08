@@ -1,3 +1,4 @@
+import Loader from '@/components/common/Loader';
 import SingleVenueContent from '@/components/explore-network/SingleVenueContent';
 import { getSingleVenueData } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
@@ -38,7 +39,7 @@ export default function SingleVenuePage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p>Single venue page loading...</p>}>
+      <Suspense fallback={<Loader />}>
         <SingleVenue slug={slug} locale={locale} />
       </Suspense>
     </>

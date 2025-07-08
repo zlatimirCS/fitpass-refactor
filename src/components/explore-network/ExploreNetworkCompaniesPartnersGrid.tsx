@@ -16,7 +16,7 @@ const ExploreNetworkCompaniesPartnersGrid = ({
                   backgroundImage: `url(${
                     cmsDataExploreNetwork?.section1Card1Icon
                       ? cmsDataExploreNetwork?.section1Card1Icon
-                      : '/assets/icons/iconComp.svg'
+                      : '/assets/images/placeholder.svg'
                   })`,
                 }}
                 className='card-icon'
@@ -57,7 +57,7 @@ const ExploreNetworkCompaniesPartnersGrid = ({
                   backgroundImage: `url(${
                     cmsDataExploreNetwork?.section1Card2Icon
                       ? cmsDataExploreNetwork?.section1Card2Icon
-                      : '/assets/icons/iconComp.svg'
+                      : '/assets/images/placeholder.svg'
                   })`,
                 }}
                 className='card-icon'

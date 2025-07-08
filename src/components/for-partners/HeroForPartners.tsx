@@ -697,7 +697,7 @@ const HeroForPartners = ({ cmsDataForPartners }: CmsDataForPartners) => {
                   process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY || ''
                 }
                 onChange={handleRecaptcha}
-                hl={`${locale === 'en' ? 'en' : 'hr'}`}
+                hl={`${locale === 'en' ? 'en' : locale === 'fr' ? 'fr' : 'hr'}`}
               />
               {recaptchaError && (
                 <p style={{ margin: 0, fontSize: '14px', color: '#ff0033' }}>

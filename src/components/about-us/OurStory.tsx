@@ -60,7 +60,7 @@ const OurStory = ({ cmsDataAboutUs }: CmsDataAboutUs) => {
                 src={
                   cmsDataAboutUs?.section1Image1
                     ? cmsDataAboutUs?.section1Image1
-                    : '/assets/images/about-us/pins.svg'
+                    : '/assets/images/placeholder.svg'
                 }
                 width={190}
                 height={180}
@@ -82,7 +82,7 @@ const OurStory = ({ cmsDataAboutUs }: CmsDataAboutUs) => {
                 src={
                   cmsDataAboutUs?.section1Image2
                     ? cmsDataAboutUs?.section1Image2
-                    : '/assets/images/about-us/goreruke.svg'
+                    : '/assets/images/placeholder.svg'
                 }
                 width={190}
                 height={180}

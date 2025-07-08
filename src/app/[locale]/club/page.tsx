@@ -1,4 +1,5 @@
 import ClubContent from '@/components/club/ClubContent';
+import Loader from '@/components/common/Loader';
 import {
   cmsGetIsFitpassClubHidden,
   getClubCards,
@@ -45,7 +46,7 @@ export default async function ClubPage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p></p>}>
+      <Suspense fallback={<Loader />}>
         <Club locale={locale} />
       </Suspense>
     </>

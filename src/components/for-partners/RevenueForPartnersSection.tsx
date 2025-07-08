@@ -15,7 +15,7 @@ const RevenueForPartnersSection = ({
               backgroundImage: `url(${
                 cmsDataForPartners?.section1Image
                   ? cmsDataForPartners?.section1Image
-                  : ''
+                  : '/assets/images/placeholder.svg'
               })`,
             }}
             className='revenue-left'
@@ -24,7 +24,7 @@ const RevenueForPartnersSection = ({
               src={
                 cmsDataForPartners?.section1Image
                   ? cmsDataForPartners?.section1Image
-                  : ''
+                  : '/assets/images/placeholder.svg'
               }
               alt='Fitpass'
               width={400}

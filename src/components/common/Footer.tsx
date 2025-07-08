@@ -95,19 +95,18 @@ const Footer = ({
                     <li>{t('faqNav')}</li>
                   </Link>
                 )}
-                {!ctHide &&
-                  process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
-                    <Link
-                      href={`${
-                        locale ===
-                        `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                          ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['contact']}`
-                          : '/en/contact'
-                      }`}
-                    >
-                      <li>{t('contact')}</li>
-                    </Link>
-                  )}
+                {!ctHide && (
+                  <Link
+                    href={`${
+                      locale ===
+                      `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
+                        ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['contact']}`
+                        : '/en/contact'
+                    }`}
+                  >
+                    <li>{t('contact')}</li>
+                  </Link>
+                )}
               </ul>
             </article>
             <article>

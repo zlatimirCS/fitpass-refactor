@@ -31,7 +31,10 @@ const HeroAboutUs = ({ cmsDataAboutUs }: CmsDataAboutUs) => {
 
         {(screenWidth ?? 0) < 1200 && (
           <Image
-            src={cmsDataAboutUs?.sectionHeroHeaderImage ?? ''}
+            src={
+              cmsDataAboutUs?.sectionHeroHeaderImage ??
+              '/assets/images/placeholder.svg'
+            }
             alt='mobile phone screen'
             className='hero-about-us-hero-img'
             width={1200}
@@ -57,7 +60,10 @@ const HeroAboutUs = ({ cmsDataAboutUs }: CmsDataAboutUs) => {
 
         {(screenWidth ?? 0) >= 1200 && (
           <Image
-            src={cmsDataAboutUs?.sectionHeroHeaderImage ?? ''}
+            src={
+              cmsDataAboutUs?.sectionHeroHeaderImage ??
+              '/assets/images/placeholder.svg'
+            }
             alt='mobile phone screen'
             className='hero-about-us-hero-img'
             width={1200}

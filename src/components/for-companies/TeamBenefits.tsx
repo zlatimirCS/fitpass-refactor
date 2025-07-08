@@ -13,7 +13,7 @@ const TeamBenefits = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
         : '',
       icon: cmsDataForCompanies?.section3Image1
         ? cmsDataForCompanies?.section3Image1
-        : '',
+        : '/assets/images/placeholder.svg',
     },
     {
       title: cmsDataForCompanies?.section3Card2Title
@@ -24,7 +24,7 @@ const TeamBenefits = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
         : '',
       icon: cmsDataForCompanies?.section3Image2
         ? cmsDataForCompanies?.section3Image2
-        : '',
+        : '/assets/images/placeholder.svg',
     },
     {
       title: cmsDataForCompanies?.section3Card3Title
@@ -35,7 +35,7 @@ const TeamBenefits = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
         : '',
       icon: cmsDataForCompanies?.section3Image3
         ? cmsDataForCompanies?.section3Image3
-        : '',
+        : '/assets/images/placeholder.svg',
     },
     {
       title: cmsDataForCompanies?.section3Card4Title
@@ -46,7 +46,7 @@ const TeamBenefits = ({ cmsDataForCompanies }: CmsDataForCompanies) => {
         : '',
       icon: cmsDataForCompanies?.section3Image4
         ? cmsDataForCompanies?.section3Image4
-        : '',
+        : '/assets/images/placeholder.svg',
     },
   ];
   return (

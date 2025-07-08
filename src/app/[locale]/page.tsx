@@ -1,4 +1,5 @@
 export const dynamic = 'force-dynamic';
+import Loader from '@/components/common/Loader';
 import HomepageContent from '@/components/homepage/HomepageContent';
 import { getHpContent, getMainSlideshowData } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
@@ -28,7 +29,7 @@ export default function HomePage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p></p>}>
+      <Suspense fallback={<Loader />}>
         <Homepage locale={locale} />
       </Suspense>
     </>

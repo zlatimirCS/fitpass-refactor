@@ -36,7 +36,7 @@ const BenefitsForCompaniesSection = ({
                   src={
                     cmsDataForCompanies?.section1Image1
                       ? cmsDataForCompanies?.section1Image1
-                      : ''
+                      : '/assets/images/placeholder.svg'
                   }
                   alt='25% higher perfomance'
                   width={400}
@@ -99,7 +99,7 @@ const BenefitsForCompaniesSection = ({
                   src={
                     cmsDataForCompanies?.section1Image2
                       ? cmsDataForCompanies?.section1Image2
-                      : ''
+                      : '/assets/images/placeholder.svg'
                   }
                   alt='10% increase retention rates'
                   className='left higher'
@@ -112,7 +112,7 @@ const BenefitsForCompaniesSection = ({
                   src={
                     cmsDataForCompanies?.section1Image2
                       ? cmsDataForCompanies?.section1Image2
-                      : ''
+                      : '/assets/images/placeholder.svg'
                   }
                   alt='10% increase retention rates'
                   className='left'
@@ -134,7 +134,7 @@ const BenefitsForCompaniesSection = ({
                   src={
                     cmsDataForCompanies?.section1Image3
                       ? cmsDataForCompanies?.section1Image3
-                      : ''
+                      : '/assets/images/placeholder.svg'
                   }
                   alt='70% company recommend'
                   width={400}
@@ -146,7 +146,7 @@ const BenefitsForCompaniesSection = ({
                   src={
                     cmsDataForCompanies?.section1Image3
                       ? cmsDataForCompanies?.section1Image3
-                      : ''
+                      : '/assets/images/placeholder.svg'
                   }
                   alt='70% company recommend'
                   width={400}

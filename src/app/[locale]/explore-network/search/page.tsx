@@ -1,3 +1,4 @@
+import Loader from '@/components/common/Loader';
 import SearchExploreNetworkContent from '@/components/explore-network/SearchExploreNetworkContent';
 import { getCities, getSearchExploreNetworkContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
@@ -43,7 +44,7 @@ export default function SearchExploreNetworkPage({
 
   return (
     <>
-      <Suspense fallback={<p>Search explore network page loading...</p>}>
+      <Suspense fallback={<Loader />}>
         <SearchExploreNetwork searchParams={querySearchParams} />
       </Suspense>
     </>

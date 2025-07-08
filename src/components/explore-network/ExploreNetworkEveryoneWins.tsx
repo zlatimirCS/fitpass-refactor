@@ -71,25 +71,15 @@ const EveryoneWinsHomeSection = ({
               }}
               className='bg-image-wrap'
             >
-              {/* <Image
-                src={cmsDataExploreNetwork?.section2Image1}
-                alt="veselo drustvo"
-                fill
-                style={{ objectFit: "cover" }}
-                sizes="100%"
-              /> */}
-              {/* <img
-                src={cmsDataExploreNetwork?.section2Image1}
-                alt='veselo drustvo'
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              /> */}
-              <Image
-                src={cmsDataExploreNetwork?.section2Image1 || ''}
-                alt='veselo drustvo'
-                fill
-                style={{ objectFit: 'cover' }}
-                sizes='100%'
-              />
+              {cmsDataExploreNetwork?.section2Image1 && (
+                <Image
+                  src={cmsDataExploreNetwork?.section2Image1}
+                  alt='veselo drustvo'
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes='100%'
+                />
+              )}
             </div>
           </article>
         </div>

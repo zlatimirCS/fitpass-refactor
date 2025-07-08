@@ -402,7 +402,7 @@ const FormSection = ({
                     process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY || ''
                   }
                   onChange={handleRecaptcha}
-                  hl={locale === 'en' ? 'en' : 'hr'}
+                  hl={`${locale === 'en' ? 'en' : locale === 'fr' ? 'fr' : 'hr'}`}
                 />
               </div>
               {recaptchaError && (

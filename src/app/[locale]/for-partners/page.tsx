@@ -1,3 +1,4 @@
+import Loader from '@/components/common/Loader';
 import ForPartnersContent from '@/components/for-partners/ForPartnersContent';
 import {
   cmsGetIsForPartnersHidden,
@@ -46,7 +47,7 @@ export default async function ForPartnersPage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p></p>}>
+      <Suspense fallback={<Loader />}>
         <ForPartners locale={locale} />
       </Suspense>
     </>

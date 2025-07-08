@@ -1,3 +1,4 @@
+import Loader from '@/components/common/Loader';
 import FaqContent from '@/components/faq/FaqContent';
 import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -33,7 +34,7 @@ export default function FaqPage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p></p>}>
+      <Suspense fallback={<Loader />}>
         <FaqContent />
         <div className='faq-desktop-only'>
           <FaqDesktop />

@@ -114,7 +114,7 @@ const LocalPartnerForCompaniesSection = ({
                 src={
                   cmsDataForPartners?.section2Image
                     ? cmsDataForPartners?.section2Image
-                    : ''
+                    : '/assets/images/placeholder.svg'
                 }
                 alt='Fitpass logo'
                 width={200}

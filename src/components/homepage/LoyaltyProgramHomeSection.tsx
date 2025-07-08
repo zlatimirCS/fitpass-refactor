@@ -27,7 +27,11 @@ const LoyaltyProgramHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                   : ''}
               </p>
               <Image
-                src={cmsDataHp?.section3Icon1 ? cmsDataHp?.section3Icon1 : ''}
+                src={
+                  cmsDataHp?.section3Icon1
+                    ? cmsDataHp?.section3Icon1
+                    : '/assets/images/placeholder.svg'
+                }
                 alt={
                   cmsDataHp?.section3Card1Title
                     ? cmsDataHp?.section3Card1Title
@@ -51,7 +55,11 @@ const LoyaltyProgramHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                   : ''}
               </p>
               <Image
-                src={cmsDataHp?.section3Icon2 ? cmsDataHp?.section3Icon2 : ''}
+                src={
+                  cmsDataHp?.section3Icon2
+                    ? cmsDataHp?.section3Icon2
+                    : '/assets/images/placeholder.svg'
+                }
                 alt={
                   cmsDataHp?.section3Card2Title
                     ? cmsDataHp?.section3Card2Title
@@ -75,7 +83,11 @@ const LoyaltyProgramHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                   : ''}
               </p>
               <Image
-                src={cmsDataHp?.section3Icon3 ? cmsDataHp?.section3Icon3 : ''}
+                src={
+                  cmsDataHp?.section3Icon3
+                    ? cmsDataHp?.section3Icon3
+                    : '/assets/images/placeholder.svg'
+                }
                 alt={
                   cmsDataHp?.section3Card3Title
                     ? cmsDataHp?.section3Card3Title
@@ -99,7 +111,11 @@ const LoyaltyProgramHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                   : ''}
               </p>
               <Image
-                src={cmsDataHp?.section3Icon4 ? cmsDataHp?.section3Icon4 : ''}
+                src={
+                  cmsDataHp?.section3Icon4
+                    ? cmsDataHp?.section3Icon4
+                    : '/assets/images/placeholder.svg'
+                }
                 alt={
                   cmsDataHp?.section3Card4Title
                     ? cmsDataHp?.section3Card4Title
@@ -123,7 +139,11 @@ const LoyaltyProgramHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                   : ''}
               </p>
               <Image
-                src={cmsDataHp?.section3Icon5 ? cmsDataHp?.section3Icon5 : ''}
+                src={
+                  cmsDataHp?.section3Icon5
+                    ? cmsDataHp?.section3Icon5
+                    : '/assets/images/placeholder.svg'
+                }
                 alt={
                   cmsDataHp?.section3Card5Title
                     ? cmsDataHp?.section3Card5Title
@@ -147,7 +167,11 @@ const LoyaltyProgramHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                   : ''}
               </p>
               <Image
-                src={cmsDataHp?.section3Icon6 ? cmsDataHp?.section3Icon6 : ''}
+                src={
+                  cmsDataHp?.section3Icon6
+                    ? cmsDataHp?.section3Icon6
+                    : '/assets/images/placeholder.svg'
+                }
                 alt={
                   cmsDataHp?.section3Card6Title
                     ? cmsDataHp?.section3Card6Title

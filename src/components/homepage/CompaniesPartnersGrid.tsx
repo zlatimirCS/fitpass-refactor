@@ -12,9 +12,9 @@ const CompaniesPartnersGrid = ({ cmsDataHp }: CmsDataHp) => {
                 <div
                   style={{
                     backgroundImage: `url(${
-                      cmsDataHp
+                      cmsDataHp?.section1Card1Icon
                         ? cmsDataHp?.section1Card1Icon
-                        : '/assets/icons/iconComp.svg'
+                        : '/assets/images/placeholder.svg'
                     })`,
                   }}
                   className='card-icon'
@@ -56,7 +56,7 @@ const CompaniesPartnersGrid = ({ cmsDataHp }: CmsDataHp) => {
                     backgroundImage: `url(${
                       cmsDataHp?.section1Card2Icon
                         ? cmsDataHp?.section1Card2Icon
-                        : '/assets/icons/iconPartn.svg'
+                        : '/assets/images/placeholder.svg'
                     })`,
                   }}
                 ></div>

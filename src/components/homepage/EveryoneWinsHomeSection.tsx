@@ -114,7 +114,7 @@ const EveryoneWinsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                   src={
                     cmsDataHp?.section2Image1
                       ? cmsDataHp?.section2Image1
-                      : '/assets/images/everyone-wins-img-1.webp'
+                      : '/assets/images/placeholder.svg'
                   }
                   alt='everyone wins'
                   width={600}
@@ -183,7 +183,7 @@ const EveryoneWinsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                   src={
                     cmsDataHp?.section2Image2
                       ? cmsDataHp?.section2Image2
-                      : '/assets/images/veselodrustvo.jpg'
+                      : '/assets/images/placeholder.svg'
                   }
                   alt='everyone wins'
                   width={600}

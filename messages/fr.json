@@ -90,7 +90,8 @@
     "nameSurname": "Nom et prénom*",
     "phoneNumber": "Numéro de téléphone*",
     "yourPosition": "Votre rôle*",
-    "yourTeamSize": "Taille de votre équipe*"
+    "yourTeamSize": "Taille de votre équipe*",
+    "pibTooltip": "Entrez le numéro de la société (TIN)"
   },
   "ForPartners": {
     "recaptchaValidationError": "Veuillez vérifier que vous n'êtes pas un robot",

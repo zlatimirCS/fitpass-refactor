@@ -1,4 +1,5 @@
 import AboutUsContent from '@/components/about-us/AboutUsContent';
+import Loader from '@/components/common/Loader';
 import { cmsGetIsAboutUsHidden, getAboutUsContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -40,7 +41,7 @@ export default async function AboutUsPage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p></p>}>
+      <Suspense fallback={<Loader />}>
         <About locale={locale} />
       </Suspense>
     </>

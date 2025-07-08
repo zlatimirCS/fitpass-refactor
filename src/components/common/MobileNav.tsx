@@ -235,56 +235,51 @@ const MobileNav = ({
                 {t('exploreNetwork')}
               </div>
             )}
-            {!clHide &&
-              process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
-                <div
-                  onClick={() =>
-                    handleOpenLinkAndCloseNav(
-                      `${
-                        locale ===
-                        `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                          ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['club']}`
-                          : '/en/club'
-                      }`
-                    )
-                  }
-                >
-                  {t('club')}
-                </div>
-              )}
-            {process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
+            {!clHide && (
               <div
                 onClick={() =>
                   handleOpenLinkAndCloseNav(
                     `${
                       locale ===
                       `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                        ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['faq']}`
-                        : '/en/faq'
+                        ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['club']}`
+                        : '/en/club'
                     }`
                   )
                 }
               >
-                {t('faqNav')}
+                {t('club')}
               </div>
             )}
-            {!ctHide &&
-              process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION !== 'fr' && (
-                <div
-                  onClick={() =>
-                    handleOpenLinkAndCloseNav(
-                      `${
-                        locale ===
-                        `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
-                          ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['contact']}`
-                          : '/en/contact'
-                      }`
-                    )
-                  }
-                >
-                  {t('contact')}
-                </div>
-              )}
+            <div
+              onClick={() =>
+                handleOpenLinkAndCloseNav(
+                  `${
+                    locale === `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
+                      ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['faq']}`
+                      : '/en/faq'
+                  }`
+                )
+              }
+            >
+              {t('faqNav')}
+            </div>
+            {!ctHide && (
+              <div
+                onClick={() =>
+                  handleOpenLinkAndCloseNav(
+                    `${
+                      locale ===
+                      `${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}`
+                        ? `/${process.env.NEXT_PUBLIC_PRIMARY_CC_EXTENSION}/${routeTranslations[locale as keyof typeof routeTranslations]['contact']}`
+                        : '/en/contact'
+                    }`
+                  )
+                }
+              >
+                {t('contact')}
+              </div>
+            )}
           </div>
           <div className='mobile-nav-footer'>
             <p>{t('followUs')}</p>

@@ -1,3 +1,4 @@
+import Loader from '@/components/common/Loader';
 import ContactContent from '@/components/contact/ContactContent';
 import { cmsGetIsContactHidden, getContactContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
@@ -40,7 +41,7 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p></p>}>
+      <Suspense fallback={<Loader />}>
         <Contact locale={locale} />
       </Suspense>
     </>

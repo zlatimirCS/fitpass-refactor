@@ -1,3 +1,4 @@
+import Loader from '@/components/common/Loader';
 import ForCompaniesContent from '@/components/for-companies/ForCompaniesContent';
 import {
   cmsGetIsForCompaniesHidden,
@@ -46,7 +47,7 @@ export default async function ForCompaniesPage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p></p>}>
+      <Suspense fallback={<Loader />}>
         <ForCompanies locale={locale} />
       </Suspense>
     </>

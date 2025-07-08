@@ -1,3 +1,4 @@
+import Loader from '@/components/common/Loader';
 import ExploreNetworkContent from '@/components/explore-network/ExploreNetworkContent';
 import { getCities, getExploreNetworkContent } from '@/lib/fetchData';
 import { Locale } from 'next-intl';
@@ -43,7 +44,7 @@ export default function ExploreNetworkPage({ params }: Props) {
 
   return (
     <>
-      <Suspense fallback={<p></p>}>
+      <Suspense fallback={<Loader />}>
         <ExploreNetwork locale={locale} />
       </Suspense>
     </>

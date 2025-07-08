@@ -14,7 +14,7 @@ const GetFitpassStepsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
               src={
                 cmsDataHp?.section4Image1
                   ? cmsDataHp?.section4Image1
-                  : '/assets/images/placeholder.jpg'
+                  : '/assets/images/placeholder.svg'
               }
               alt='Get Fitpass Steps'
               width={400}
@@ -58,12 +58,14 @@ const GetFitpassStepsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
             </div>
             <div className='simple-steps-container'>
               <div className='simple-step'>
-                <Image
-                  src='/assets/icons/znakic.svg'
-                  alt='fitpass icon'
-                  width={32}
-                  height={32}
-                />
+                {cmsDataHp?.section4Step1Title && (
+                  <Image
+                    src='/assets/icons/znakic.svg'
+                    alt='fitpass icon'
+                    width={32}
+                    height={32}
+                  />
+                )}
                 <div className='simple-step-content'>
                   <h3>
                     {cmsDataHp?.section4Step1Title
@@ -78,12 +80,14 @@ const GetFitpassStepsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                 </div>
               </div>
               <div className='simple-step'>
-                <Image
-                  src='/assets/icons/znakic.svg'
-                  alt='fitpass icon'
-                  width={32}
-                  height={32}
-                />
+                {cmsDataHp?.section4Step2Title && (
+                  <Image
+                    src='/assets/icons/znakic.svg'
+                    alt='fitpass icon'
+                    width={32}
+                    height={32}
+                  />
+                )}
                 <div className='simple-step-content'>
                   <h3>
                     {cmsDataHp?.section4Step2Title
@@ -98,12 +102,14 @@ const GetFitpassStepsHomeSection = ({ cmsDataHp }: CmsDataHp) => {
                 </div>
               </div>
               <div className='simple-step'>
-                <Image
-                  src='/assets/icons/znakic.svg'
-                  alt='fitpass icon'
-                  width={32}
-                  height={32}
-                />
+                {cmsDataHp?.section4Step3Title && (
+                  <Image
+                    src='/assets/icons/znakic.svg'
+                    alt='fitpass icon'
+                    width={32}
+                    height={32}
+                  />
+                )}
                 <div className='simple-step-content'>
                   <h3>
                     {cmsDataHp?.section4Step3Title

@@ -81,7 +81,7 @@ const ClientSupportForCompanies = ({
               src={
                 cmsDataForCompanies?.section2Image
                   ? cmsDataForCompanies?.section2Image
-                  : ''
+                  : '/assets/images/placeholder.svg'
               }
               alt='Fitpass'
               width={400}
